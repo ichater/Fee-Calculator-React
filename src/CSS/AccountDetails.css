@@ -1,0 +1,14 @@
+.personal-details__self-wrapper {
+  width: 500px;
+  padding-left: 5%;
+}
+
+.personal-details__self {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.personal-details__self label {
+}
+
+.personal-details__self input {
+}
