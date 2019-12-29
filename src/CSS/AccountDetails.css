@@ -1,14 +1,33 @@
-.personal-details__self-wrapper {
+.personal-details-total {
   width: 500px;
   padding-left: 5%;
+  padding-top: 2%;
 }
 
 .personal-details__self {
   display: grid;
   grid-template-columns: auto 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 .personal-details__self label {
 }
 
 .personal-details__self input {
+  border-radius: 5px;
+}
+
+.AdviserDetails1Expanded__grid {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+.AdviserDetails1Expanded__grid-ANDOR {
+  grid-column: span 2;
+}
+
+.AdviserDetails1Expanded__grid input {
+  border-radius: 5px;
 }

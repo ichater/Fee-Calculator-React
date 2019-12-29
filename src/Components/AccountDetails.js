@@ -8,13 +8,11 @@ import AdviserDetails3 from "./Account-details/AdviserDetails3";
 const AccountDetails = () => {
   return (
     <>
-      <div className="personal-details-experiment">
+      <div className="personal-details-total">
         <PersonalDetails />
         <h2>Account Type</h2>
         <AccountType />
-        <h2>Adviser Service Fee</h2>
         <AdviserDetails1 />
-        <h2>Adviser Service Fee</h2>
         <AdviserDetails2 />
         <h2>Adviser Details</h2>
         <AdviserDetails3 />

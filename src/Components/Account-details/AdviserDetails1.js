@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import AdviserDetails1Expanded from "./AdviserDetails1Expanded";
 
 const AdviserDetails1 = () => {
+  const [showText, setShowText] = useState(false);
   return (
     <>
-      <label>Yes</label>
-      <input type="radio"></input>
-      <label>No</label>
-      <input type="radio"></input>
+      <h2>Adviser Initial Service Fee</h2>
+      <form>
+        <label for="yes-fee1">Yes</label>
+        <input
+          type="radio"
+          name="fee1"
+          id="yes-fee1"
+          onClick={() => setShowText(true)}
+        ></input>
+        <label for="no-fee1">No</label>
+        <input
+          type="radio"
+          name="fee1"
+          id="no-fee1"
+          onClick={() => setShowText(false)}
+        ></input>
+      </form>
+      {showText && (
+        <div>
+          <AdviserDetails1Expanded />
+        </div>
+      )}
     </>
   );
 };
