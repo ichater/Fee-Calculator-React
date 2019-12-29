@@ -9,10 +9,10 @@ const Maintabs = () => {
     <>
       {" "}
       <Tabs>
-        <TabList>
-          <Tab>Personal Details</Tab>
-          <Tab>Main</Tab>
-          <Tab>Investments</Tab>
+        <TabList className="MainTabs">
+          <Tab className="Tab">Personal Details</Tab>
+          <Tab className="Tab">Main</Tab>
+          <Tab className="Tab">Investments</Tab>
         </TabList>
         <TabPanel>
           <AccountDetails />

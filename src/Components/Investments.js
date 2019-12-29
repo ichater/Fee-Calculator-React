@@ -1,6 +1,10 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import SMADisplay from "./InvestmentLists/SMADisplay";
+import FundDisplay from "./InvestmentLists/FundDisplay";
+import ShareDisplay from "./InvestmentLists/ShareDisplay";
+import InSpecie from "./InvestmentLists/InSpecie";
 
 const Investments = () => {
   return (
@@ -13,10 +17,18 @@ const Investments = () => {
           <Tab>Shares</Tab>
           <Tab>In specie option</Tab>
         </TabList>
-        <TabPanel>SMA/TDs</TabPanel>
-        <TabPanel>Managed Funds</TabPanel>
-        <TabPanel>Shares</TabPanel>
-        <TabPanel>Add a Fund</TabPanel>
+        <TabPanel>
+          <SMADisplay />
+        </TabPanel>
+        <TabPanel>
+          <FundDisplay />
+        </TabPanel>
+        <TabPanel>
+          <ShareDisplay />
+        </TabPanel>
+        <TabPanel>
+          <InSpecie />
+        </TabPanel>
       </Tabs>
     </>
   );
