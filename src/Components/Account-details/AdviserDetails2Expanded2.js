@@ -6,10 +6,11 @@ const AdviserDetails2Expanded2 = () => {
       <div>
         <input type="radio"></input>
         <label>Increase by: %</label>
-        <input type="number"></input> <div>or</div>
-        <input type="radio"></input>
-        <label>CPI per year</label>
+        <input type="number"></input>
       </div>
+      or
+      <input type="radio"></input>
+      <label>CPI per year</label>
     </>
   );
 };

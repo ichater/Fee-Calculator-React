@@ -22,11 +22,7 @@ const AdviserDetails2 = () => {
           onClick={() => setShowText(false)}
         ></input>
       </form>
-      {showText && (
-        <div>
-          <AdviserDetails2Expanded />
-        </div>
-      )}
+      {showText && <AdviserDetails2Expanded />}
     </>
   );
 };
