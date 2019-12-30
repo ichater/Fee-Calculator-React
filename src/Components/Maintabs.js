@@ -2,9 +2,10 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AccountDetails from "./AccountDetails";
-import Investments from "./Investments.js";
+import Investments from "./Investments";
+import Main from "./Main";
 
-const Maintabs = () => {
+const Maintabs = ({ SMA }) => {
   return (
     <>
       {" "}
@@ -15,10 +16,13 @@ const Maintabs = () => {
           <Tab className="Tab">Investments</Tab>
         </TabList>
         <TabPanel>
+          <Main SMA={SMA} />
+        </TabPanel>
+        <TabPanel>
           <AccountDetails />
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <Main SMA={SMA} />
         </TabPanel>
         <TabPanel>
           <Investments />
