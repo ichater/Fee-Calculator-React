@@ -1,8 +1,3 @@
-.investment-table__default {
-  border: 1px solid black;
-  margin-top: 25px;
-}
-
 .main-page_grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

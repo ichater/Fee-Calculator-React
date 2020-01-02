@@ -1,7 +1,7 @@
 import React from "react";
 import MainFundDisplay1 from "./MainFundDisplay1";
 
-const MainFundDisplay = Funds => {
+const MainFundDisplay = Fund => {
   return (
     <>
       <table className="investment-table__default">
@@ -13,8 +13,8 @@ const MainFundDisplay = Funds => {
           <th>% value</th>
           <th>$ value</th>
         </tr>
-        {Funds.map(Funds => {
-          return <MainFundDisplay1 key={Funds.id} {...Funds} />;
+        {Fund.map(Fund => {
+          return <MainFundDisplay1 key={Fund.id} {...Fund} />;
         })}
       </table>
     </>

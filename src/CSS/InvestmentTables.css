@@ -1,0 +1,45 @@
+.investment-table__default {
+  border: 1px solid black;
+  margin-top: 25px;
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.Main-table-Left {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.investment-table__default input {
+  width: 70%;
+}
+
+.investment-table__default th {
+  padding: 10px;
+}
+
+.investment-table__default td {
+  padding: 5px;
+}
+
+.investment-table__default td {
+  border: 1px solid black;
+}
+
+.investment-table__default tr td:nth-child(1) {
+  width: 35%;
+}
+
+.investment-table__default tr td:nth-child(2) {
+  width: 12%;
+}
+
+.investment-table__default tr td:nth-last-child(1) {
+  width: 10%;
+}
+
+.investment-table__default tr td:nth-last-child(2) {
+  width: 10%;
+}

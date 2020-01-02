@@ -1,42 +1,17 @@
 import React from "react";
 import AccountDetailsandSearch from "./MainPageDisplay/AccountDetailsandSearch";
-import MainFundDisplay from "./MainPageDisplay/MainFundDisplay";
-import MainShareDisplay from "./MainPageDisplay/MainShareDisplay";
+import MainFundDisplay1 from "./MainPageDisplay/MainFundDisplay1";
+import MainShareDisplay1 from "./MainPageDisplay/MainShareDisplay1";
 import FeeTable from "./MainPageDisplay/FeeTable";
 import MainSMAdisplay1 from "./MainPageDisplay/MainSMAdisplay1";
 import MainSMAdisplay from "./MainPageDisplay/MainSMAdisplay";
 
 const Main = ({ SMA, Shares, Funds }) => {
-  const tieredFee = [
-    balance,
-    tierOne
-    // tierTwo,
-    // tierThree,
-    // totalFee
-  ];
-
-  function tierOne(balance) {
-    if (balance * 0.4 < 375) {
-      return 375;
-    } else if (balance * 0.4 > 8000) {
-      return 8000;
-    } else {
-      return balance * 0.04;
-    }
-  }
-
-  function balance(input) {
-    balance = input.value;
-  }
   return (
     <>
-      <AccountDetailsandSearch tieredFee={tieredFee} />
+      <AccountDetailsandSearch />
       <div className="main-page_grid">
         <div className="Main-table-Left">
-          {/* <MainSMAdisplay SMA={SMA} />
-          <MainFundDisplay Funds={Funds} />
-          
-          <MainShareDisplay Shares={Shares} /> */}
           <table className="investment-table__default">
             <tr>
               <th>Name</th>
@@ -51,23 +26,35 @@ const Main = ({ SMA, Shares, Funds }) => {
             })}
           </table>
 
-          {/* <MainSMAdisplay SMA={SMA} /> */}
-
-          {/* <table className="investment-table__default">
+          <table className="investment-table__default">
             <tr>
+              <th>Name</th>
+              <th>APIR</th>
+              <th>Nab</th>
+              <th>MER</th>
+              <th>% value</th>
+              <th>$ value</th>
+            </tr>
+            {Funds.map(Funds => {
+              return <MainFundDisplay1 key={Funds.id} {...Funds} />;
+            })}
+          </table>
+
+          <table className="investment-table__default">
+            <tr>
+              <th>Name</th>
               <th>ASX</th>
-              <th>name</th>
               <th>Category</th>
               <th>% value</th>
               <th>$ value</th>
             </tr>
             {Shares.map(Shares => {
-              return <MainShareDisplay key={Shares.id} {...Shares} />;
+              return <MainShareDisplay1 key={Shares.id} {...Shares} />;
             })}
-          </table> */}
+          </table>
         </div>
         <div className="investment-info_right">
-          <FeeTable tieredFee={tieredFee} />
+          <FeeTable />
         </div>
       </div>
     </>

@@ -5,8 +5,8 @@ const ShareDisplay = props => {
   return (
     <>
       <tr>
-        <td>{ASXcode}</td>
         <td>{ListedInvestmentName}</td>
+        <td>{ASXcode}</td>
         <td>{Category}</td>
         <td>
           %<input type="number"></input>
