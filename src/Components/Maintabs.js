@@ -5,7 +5,7 @@ import AccountDetails from "./AccountDetails";
 import Investments from "./Investments";
 import Main from "./Main";
 
-const Maintabs = ({ SMA }) => {
+const Maintabs = ({ SMA, Shares, Funds }) => {
   return (
     <>
       {" "}
@@ -16,13 +16,13 @@ const Maintabs = ({ SMA }) => {
           <Tab className="Tab">Investments</Tab>
         </TabList>
         <TabPanel>
-          <Main SMA={SMA} />
+          <Main SMA={SMA} Shares={Shares} Funds={Funds} />
         </TabPanel>
         <TabPanel>
           <AccountDetails />
         </TabPanel>
         <TabPanel>
-          <Main SMA={SMA} />
+          <Main SMA={SMA} Shares={Shares} Funds={Funds} />
         </TabPanel>
         <TabPanel>
           <Investments />

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import SMA from "./Data/SMA";
 
 const SMAdisplay = () => {
   return (
     <>
+      <div>
+        <label> Search </label>
+        <input type="text"></input>
+      </div>
       <table>
         <tr>
           <th>Select</th>
