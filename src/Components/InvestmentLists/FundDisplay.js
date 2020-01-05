@@ -5,26 +5,30 @@ const FundDisplay = () => {
   return (
     <>
       <table>
-        <tr>
-          <th>Select</th>
-          <th>Name</th>
-          <th>APIR</th>
-          <th>Nab</th>
-          <th>MER</th>
-        </tr>
-        {NAVMFs.map((funds, index) => {
-          return (
-            <tr>
-              <td>
-                <input type="checkbox"></input>
-              </td>
-              <td>{funds.FundName}</td>
-              <td>{funds.APIR}</td>
-              <td>{funds.NabOwned}</td>
-              <td>{funds.MER}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>APIR</th>
+            <th>Nab</th>
+            <th>MER</th>
+          </tr>
+        </thead>
+        <tbody>
+          {NAVMFs.map((funds, index) => {
+            return (
+              <tr>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>{funds.FundName}</td>
+                <td>{funds.APIR}</td>
+                <td>{funds.NabOwned}</td>
+                <td>{funds.MER}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </>
   );
