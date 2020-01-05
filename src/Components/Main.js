@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AccountDetailsandSearch from "./MainPageDisplay/AccountDetailsandSearch";
 import MainFundDisplay1 from "./MainPageDisplay/MainFundDisplay1";
 import MainShareDisplay1 from "./MainPageDisplay/MainShareDisplay1";
@@ -7,9 +7,11 @@ import MainSMAdisplay1 from "./MainPageDisplay/MainSMAdisplay1";
 import MainSMAdisplay from "./MainPageDisplay/MainSMAdisplay";
 
 const Main = ({ SMA, Shares, Funds }) => {
+  const [balance, setBalance] = useState(0);
+
   return (
     <>
-      <AccountDetailsandSearch />
+      <AccountDetailsandSearch setBalance={setBalance} />
       <div className="main-page_grid">
         <div className="Main-table-Left">
           <table className="investment-table__default">
@@ -54,7 +56,7 @@ const Main = ({ SMA, Shares, Funds }) => {
           </table>
         </div>
         <div className="investment-info_right">
-          <FeeTable />
+          <FeeTable balance={balance} />
         </div>
       </div>
     </>

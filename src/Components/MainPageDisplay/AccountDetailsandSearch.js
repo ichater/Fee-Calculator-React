@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-const AccountDetailsandSearch = props => {
-  const { balance, tierOne } = props;
+const AccountDetailsandSearch = ({ setBalance }) => {
   return (
     <>
       <label htmlFor="balance">Account Balance total: $</label>
@@ -10,7 +9,7 @@ const AccountDetailsandSearch = props => {
         name="balance"
         id="balance"
         defaultValue="0"
-        onChange={e => balance({ balance: e.target.value })}
+        onChange={e => setBalance(e.target.value)}
       />
     </>
   );

@@ -9,7 +9,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
   return (
     <>
       {" "}
-      <Tabs>
+      <Tabs className="MainTabs-border">
         <TabList className="MainTabs">
           <Tab className="Tab">Personal Details</Tab>
           <Tab className="Tab">Main</Tab>
