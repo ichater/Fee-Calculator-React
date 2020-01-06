@@ -21,7 +21,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
         <TabPanel>
-          <SummaryMain name={name} surname={surname} dob={dob} />
+          <Main SMA={SMA} Shares={Shares} Funds={Funds} />
         </TabPanel>
         <TabPanel>
           <AccountDetails
