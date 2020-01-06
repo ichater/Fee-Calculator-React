@@ -1,6 +1,7 @@
 import React from "react";
 
-const AccountDetailsandSearch = ({ setBalance }) => {
+const AccountDetailsandSearch = props => {
+  const { setBalance } = props;
   return (
     <>
       <label htmlFor="balance">Account Balance total: $</label>

@@ -5,11 +5,16 @@ import AdviserDetails2 from "./Account-details/AdviserDetails2";
 import AccountType from "./Account-details/AccountType";
 import AdviserDetails3 from "./Account-details/AdviserDetails3";
 
-const AccountDetails = () => {
+const AccountDetails = props => {
+  const { setName, setSurname, setDob } = props;
   return (
     <>
       <div className="personal-details-total">
-        <PersonalDetails />
+        <PersonalDetails
+          setName={setName}
+          setSurname={setSurname}
+          setDob={setDob}
+        />
         <h2>Account Type</h2>
         <AccountType />
         <AdviserDetails1 />

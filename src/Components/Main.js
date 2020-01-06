@@ -7,7 +7,7 @@ import MainSMAdisplay1 from "./MainPageDisplay/MainSMAdisplay1";
 import MainSMAdisplay from "./MainPageDisplay/MainSMAdisplay";
 
 const Main = ({ SMA, Shares, Funds }) => {
-  const [balance, setBalance] = useState(0);
+  const { balance, setBalance } = useState(0);
 
   return (
     <>

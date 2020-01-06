@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AccountDetails from "./AccountDetails";
 import Investments from "./Investments";
 import Main from "./Main";
+import SummaryMain from "./SummaryMain";
 
 const Maintabs = ({ SMA, Shares, Funds }) => {
+  const [name, setName] = useState("Please fill in name");
+  const [surname, setSurname] = useState("Please fill in surname");
+  const [dob, setDob] = useState();
   return (
     <>
       {" "}
@@ -14,18 +18,26 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Personal Details</Tab>
           <Tab className="Tab">Main</Tab>
           <Tab className="Tab">Investments</Tab>
+          <Tab className="Tab">Summary Page</Tab>
         </TabList>
         <TabPanel>
-          <Investments />
+          <SummaryMain name={name} surname={surname} dob={dob} />
         </TabPanel>
         <TabPanel>
-          <AccountDetails />
+          <AccountDetails
+            setName={setName}
+            setSurname={setSurname}
+            setDob={setDob}
+          />
         </TabPanel>
         <TabPanel>
           <Main SMA={SMA} Shares={Shares} Funds={Funds} />
         </TabPanel>
         <TabPanel>
           <Investments />
+        </TabPanel>
+        <TabPanel>
+          <SummaryMain name={name} />
         </TabPanel>
       </Tabs>
     </>
