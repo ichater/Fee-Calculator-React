@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SMA from "./Data/SMA";
 
 const SMAdisplay = () => {
-  const [test, handleTest] = useState();
-
   return (
     <>
       <div>

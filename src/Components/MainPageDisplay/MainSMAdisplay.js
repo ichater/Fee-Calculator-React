@@ -1,7 +1,7 @@
 import React from "react";
 import MainSMAdisplay1 from "./MainSMAdisplay1";
 
-const MainSMAdisplay = SMA => {
+const MainSMAdisplay = ({ SMA }) => {
   return (
     <>
       <table className="investment-table__default">

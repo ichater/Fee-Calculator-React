@@ -10,6 +10,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
   const [name, setName] = useState("Please fill in name");
   const [surname, setSurname] = useState("Please fill in surname");
   const [dob, setDob] = useState();
+  const [accountType, setAccountType] = useState("Please Select Account type");
   return (
     <>
       {" "}
@@ -21,13 +22,11 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
         <TabPanel>
-          <Main SMA={SMA} Shares={Shares} Funds={Funds} />
-        </TabPanel>
-        <TabPanel>
           <AccountDetails
             setName={setName}
             setSurname={setSurname}
             setDob={setDob}
+            setAccountType={setAccountType}
           />
         </TabPanel>
         <TabPanel>
@@ -37,7 +36,12 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Investments />
         </TabPanel>
         <TabPanel>
-          <SummaryMain name={name} />
+          <SummaryMain
+            name={name}
+            surname={surname}
+            dob={dob}
+            accountType={accountType}
+          />
         </TabPanel>
       </Tabs>
     </>
