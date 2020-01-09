@@ -11,6 +11,13 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
   const [surname, setSurname] = useState("Please fill in surname");
   const [dob, setDob] = useState();
   const [accountType, setAccountType] = useState("Please Select Account type");
+  const [adviserInitialFee$, setAdviserInitialFee$] = useState(
+    "No initial dollar fee specified"
+  );
+  const [adviserInitialFeeP, setAdviserInitialFeeP] = useState(
+    "No Initial Persentage fee specified"
+  );
+
   return (
     <>
       {" "}
@@ -27,6 +34,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             setSurname={setSurname}
             setDob={setDob}
             setAccountType={setAccountType}
+            setAdviserInitialFee$={setAdviserInitialFee$}
+            setAdviserInitialFeeP={setAdviserInitialFeeP}
           />
         </TabPanel>
         <TabPanel>
@@ -41,6 +50,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             surname={surname}
             dob={dob}
             accountType={accountType}
+            adviserInitialFee$={adviserInitialFee$}
+            adviserInitialFeeP={adviserInitialFeeP}
           />
         </TabPanel>
       </Tabs>

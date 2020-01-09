@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdviserDetails1Expanded from "./AdviserDetails1Expanded";
 
-const AdviserDetails1 = () => {
+const AdviserDetails1 = ({ setAdviserInitialFee$, setAdviserInitialFeeP }) => {
   const [showText, setShowText] = useState(false);
   return (
     <>
@@ -24,7 +24,10 @@ const AdviserDetails1 = () => {
       </form>
       {showText && (
         <div>
-          <AdviserDetails1Expanded />
+          <AdviserDetails1Expanded
+            setAdviserInitialFee$={setAdviserInitialFee$}
+            setAdviserInitialFeeP={setAdviserInitialFeeP}
+          />
         </div>
       )}
     </>

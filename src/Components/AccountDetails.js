@@ -6,7 +6,14 @@ import AccountType from "./Account-details/AccountType";
 import AdviserDetails3 from "./Account-details/AdviserDetails3";
 
 const AccountDetails = props => {
-  const { setName, setSurname, setDob, setAccountType } = props;
+  const {
+    setName,
+    setSurname,
+    setDob,
+    setAccountType,
+    setAdviserInitialFee$,
+    setAdviserInitialFeeP
+  } = props;
   return (
     <>
       <div className="personal-details-total">
@@ -17,7 +24,10 @@ const AccountDetails = props => {
         />
         <h2>Account Type</h2>
         <AccountType setAccountType={setAccountType} />
-        <AdviserDetails1 />
+        <AdviserDetails1
+          setAdviserInitialFee$={setAdviserInitialFee$}
+          setAdviserInitialFeeP={setAdviserInitialFeeP}
+        />
         <AdviserDetails2 />
         <h2>Adviser Details</h2>
         <AdviserDetails3 />
