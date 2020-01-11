@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import AdviserDetails2Expanded2 from "./AdviserDetails2Expanded2";
 
-const AdviserDetails2Expanded = () => {
+const AdviserDetails2Expanded = props => {
+  const {
+    setAdviserOngoingFee$,
+    setAdviserOngoingFeeP,
+    setadviserOngoingFeeIncrease,
+    setCpi
+  } = props;
   const [showText, setShowText] = useState(false);
   const [showText1, setShowText1] = useState(false);
   const [showText2, setShowText2] = useState(false);
@@ -26,7 +32,10 @@ const AdviserDetails2Expanded = () => {
           <>
             <div>
               <span>$</span>
-              <input type="number"></input>
+              <input
+                type="number"
+                onChange={e => setAdviserOngoingFee$("$" + e.target.value)}
+              ></input>
             </div>
 
             <div>Increase my $ based fee per year</div>
@@ -50,7 +59,10 @@ const AdviserDetails2Expanded = () => {
             </div>
             {showText && (
               <div>
-                <AdviserDetails2Expanded2 />
+                <AdviserDetails2Expanded2
+                  setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+                  setCpi={setCpi}
+                />
               </div>
             )}
           </>
@@ -68,12 +80,15 @@ const AdviserDetails2Expanded = () => {
               }
             }}
           ></input>
-          <labal>percentage based Fee</labal>
+          <labal>Percentage based Fee</labal>
         </div>
         {showText2 && (
           <div>
             <span>%</span>
-            <input type="number"></input>
+            <input
+              type="number"
+              onChange={e => setAdviserOngoingFeeP(e.target.value + "%")}
+            ></input>
           </div>
         )}
       </div>

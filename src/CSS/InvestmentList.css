@@ -1,0 +1,10 @@
+.investmentList-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.Tab1 {
+  text-decoration: none;
+  cursor: pointer;
+  width: 25%;
+}

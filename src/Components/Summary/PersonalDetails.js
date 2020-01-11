@@ -3,9 +3,11 @@ import React from "react";
 const PersonalDetails = props => {
   const { name, surname, dob } = props;
   return (
-    <>
-      Name: {name} Surname: {surname} DOB:{dob}
-    </>
+    <div className="Details-grid">
+      <span>Name:</span> {name} <span>Surname:</span> {surname}{" "}
+      <span>DOB:</span>
+      {dob}
+    </div>
   );
 };
 

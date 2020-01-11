@@ -1,0 +1,40 @@
+.summaryMain-grid {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 25px;
+  width: 50%;
+  justify-self: center;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.summaryMain-grid h1 {
+  margin: auto;
+}
+
+.Details-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 20px;
+  margin-left: 5%;
+}
+
+.Details-grid span {
+  font-weight: bold;
+}
+
+.Details-grid_adviser {
+  margin-left: 5%;
+}
+
+.feeDivSummary {
+  margin-left: 5%;
+  background: ;
+}
+.AdviserInitialFee-summary {
+  display: grid;
+  grid-template-columns: 1fr;
+}

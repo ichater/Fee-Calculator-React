@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import AdviserDetails2Expanded from "./AdviserDetails2Expanded";
 
-const AdviserDetails2 = () => {
+const AdviserDetails2 = props => {
+  const {
+    setAdviserOngoingFee$,
+    setAdviserOngoingFeeP,
+    setadviserOngoingFeeIncrease,
+    setCpi
+  } = props;
   const [showText, setShowText] = useState(false);
   return (
     <>
@@ -22,7 +28,14 @@ const AdviserDetails2 = () => {
           onClick={() => setShowText(false)}
         ></input>
       </form>
-      {showText && <AdviserDetails2Expanded />}
+      {showText && (
+        <AdviserDetails2Expanded
+          setAdviserOngoingFee$={setAdviserOngoingFee$}
+          setAdviserOngoingFeeP={setAdviserOngoingFeeP}
+          setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+          setCpi={setCpi}
+        />
+      )}
     </>
   );
 };

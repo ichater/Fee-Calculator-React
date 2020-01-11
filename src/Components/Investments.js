@@ -11,11 +11,11 @@ const Investments = () => {
     <>
       {" "}
       <Tabs>
-        <TabList>
-          <Tab>SMA/TDs</Tab>
-          <Tab>Managed Funds</Tab>
-          <Tab>Shares</Tab>
-          <Tab>In specie option</Tab>
+        <TabList className="investmentList-tabs">
+          <Tab className="Tab1">SMA/TDs</Tab>
+          <Tab className="Tab1">Managed Funds</Tab>
+          <Tab className="Tab1">Shares</Tab>
+          <Tab className="Tab1">In specie option</Tab>
         </TabList>
         <TabPanel>
           <SMADisplay />

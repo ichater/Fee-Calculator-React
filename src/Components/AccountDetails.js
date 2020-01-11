@@ -12,7 +12,14 @@ const AccountDetails = props => {
     setDob,
     setAccountType,
     setAdviserInitialFee$,
-    setAdviserInitialFeeP
+    setAdviserInitialFeeP,
+    setAdviserOngoingFee$,
+    setAdviserOngoingFeeP,
+    setadviserOngoingFeeIncrease,
+    setCpi,
+    setAdviserName,
+    setAdviserCode,
+    setDealerGroup
   } = props;
   return (
     <>
@@ -28,11 +35,18 @@ const AccountDetails = props => {
           setAdviserInitialFee$={setAdviserInitialFee$}
           setAdviserInitialFeeP={setAdviserInitialFeeP}
         />
-        <AdviserDetails2 />
+        <AdviserDetails2
+          setAdviserOngoingFee$={setAdviserOngoingFee$}
+          setAdviserOngoingFeeP={setAdviserOngoingFeeP}
+          setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+          setCpi={setCpi}
+        />
         <h2>Adviser Details</h2>
-        <AdviserDetails3 />
-        <br />
-        <button>Submit</button>
+        <AdviserDetails3
+          setAdviserName={setAdviserName}
+          setAdviserCode={setAdviserCode}
+          setDealerGroup={setDealerGroup}
+        />
       </div>
     </>
   );

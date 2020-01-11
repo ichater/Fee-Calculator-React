@@ -7,16 +7,19 @@ import Main from "./Main";
 import SummaryMain from "./SummaryMain";
 
 const Maintabs = ({ SMA, Shares, Funds }) => {
-  const [name, setName] = useState("Please fill in name");
-  const [surname, setSurname] = useState("Please fill in surname");
-  const [dob, setDob] = useState();
-  const [accountType, setAccountType] = useState("Please Select Account type");
-  const [adviserInitialFee$, setAdviserInitialFee$] = useState(
-    "No initial dollar fee specified"
-  );
-  const [adviserInitialFeeP, setAdviserInitialFeeP] = useState(
-    "No Initial Persentage fee specified"
-  );
+  const [name, setName] = useState("John"),
+    [surname, setSurname] = useState("Doe"),
+    [dob, setDob] = useState("01/01/1900"),
+    [accountType, setAccountType] = useState("Please Select Account type"),
+    [adviserInitialFee$, setAdviserInitialFee$] = useState(),
+    [adviserInitialFeeP, setAdviserInitialFeeP] = useState(),
+    [adviserOngoingFee$, setAdviserOngoingFee$] = useState(),
+    [adviserOngoingFeeP, setAdviserOngoingFeeP] = useState(),
+    [cpi, setCpi] = useState(false),
+    [adviserOngoingFeeIncrease, setadviserOngoingFeeIncrease] = useState(),
+    [adviserName, setAdviserName] = useState("Jane Doe Inc"),
+    [adviserCode, setAdviserCode] = useState("133766"),
+    [dealerGroup, setDealerGroup] = useState("Borkuf enterprises");
 
   return (
     <>
@@ -29,6 +32,9 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
         <TabPanel>
+          <Investments />
+        </TabPanel>
+        <TabPanel>
           <AccountDetails
             setName={setName}
             setSurname={setSurname}
@@ -36,6 +42,13 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             setAccountType={setAccountType}
             setAdviserInitialFee$={setAdviserInitialFee$}
             setAdviserInitialFeeP={setAdviserInitialFeeP}
+            setAdviserOngoingFee$={setAdviserOngoingFee$}
+            setAdviserOngoingFeeP={setAdviserOngoingFeeP}
+            setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+            setCpi={setCpi}
+            setAdviserName={setAdviserName}
+            setAdviserCode={setAdviserCode}
+            setDealerGroup={setDealerGroup}
           />
         </TabPanel>
         <TabPanel>
@@ -52,6 +65,13 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             accountType={accountType}
             adviserInitialFee$={adviserInitialFee$}
             adviserInitialFeeP={adviserInitialFeeP}
+            adviserOngoingFee$={adviserOngoingFee$}
+            adviserOngoingFeeP={adviserOngoingFeeP}
+            adviserOngoingFeeIncrease={adviserOngoingFeeIncrease}
+            cpi={cpi}
+            adviserName={adviserName}
+            adviserCode={adviserCode}
+            dealerGroup={dealerGroup}
           />
         </TabPanel>
       </Tabs>
