@@ -4,7 +4,9 @@
 }
 
 .Tab1 {
-  text-decoration: none;
+  list-style-type: none;
   cursor: pointer;
   width: 25%;
+  text-align: center;
+  border: 1px solid black;
 }
