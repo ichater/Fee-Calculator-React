@@ -2,7 +2,7 @@ import React from "react";
 
 const AccountType = ({ setAccountType }) => {
   return (
-    <>
+    <div className="DetailsPage-positioning">
       <select
         name="account-type"
         onChange={e => setAccountType(e.target.value)}
@@ -12,7 +12,7 @@ const AccountType = ({ setAccountType }) => {
         <option>Pension</option>
         <option>Investment</option>
       </select>
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ const PersonalDetails = props => {
   const { setName, setSurname, setDob } = props;
   return (
     <>
-      <h1>Fill out details Below</h1>
+      <h2> Personal details</h2>
       <div className="personal-details__self">
         <label>Name:</label>
         <input type="text" onChange={e => setName(e.target.value)}></input>

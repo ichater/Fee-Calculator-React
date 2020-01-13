@@ -23,6 +23,10 @@ const AccountDetails = props => {
   } = props;
   return (
     <>
+      <div className="IntroHeader-container">
+        <p>Adviser /Personal details</p>
+        <h1>Fill out Details Below</h1>
+      </div>
       <div className="personal-details-total">
         <PersonalDetails
           setName={setName}
@@ -31,10 +35,12 @@ const AccountDetails = props => {
         />
         <h2>Account Type</h2>
         <AccountType setAccountType={setAccountType} />
+        <h2>Adviser Initial Service Fee</h2>
         <AdviserDetails1
           setAdviserInitialFee$={setAdviserInitialFee$}
           setAdviserInitialFeeP={setAdviserInitialFeeP}
         />
+        <h2>Adviser Ongoing Service Fee</h2>
         <AdviserDetails2
           setAdviserOngoingFee$={setAdviserOngoingFee$}
           setAdviserOngoingFeeP={setAdviserOngoingFeeP}

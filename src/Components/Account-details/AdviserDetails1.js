@@ -4,8 +4,7 @@ import AdviserDetails1Expanded from "./AdviserDetails1Expanded";
 const AdviserDetails1 = ({ setAdviserInitialFee$, setAdviserInitialFeeP }) => {
   const [showText, setShowText] = useState(false);
   return (
-    <>
-      <h2>Adviser Initial Service Fee</h2>
+    <div className="DetailsPage-positioning">
       <form>
         <label for="yes-fee1">Yes</label>
         <input
@@ -30,7 +29,7 @@ const AdviserDetails1 = ({ setAdviserInitialFee$, setAdviserInitialFeeP }) => {
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 

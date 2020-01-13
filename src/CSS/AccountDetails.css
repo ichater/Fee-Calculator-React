@@ -2,15 +2,18 @@
   width: 500px;
   padding-left: 5%;
   padding-top: 2%;
+  margin-left: 20%;
 }
 
 .personal-details__self {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-row-gap: 17px;
+  margin-left: 20%;
 }
 .personal-details__self label {
+  justify-self: right;
 }
 
 .personal-details__self input {
@@ -30,4 +33,39 @@
 
 .AdviserDetails1Expanded__grid input {
   border-radius: 5px;
+}
+
+.DetailsPage-positioning {
+  margin-left: 20%;
+  margin-top: 30px;
+}
+
+.IntroHeader-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #c95109;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+  margin-right: 0;
+  grid-gap: 0px;
+}
+
+.IntroHeader-container p {
+  margin-left: 16%;
+  margin-bottom: 0px;
+}
+
+.IntroHeader-container h1 {
+  margin-top: 10px;
+  margin-left: 16%;
+  font-size: 34px;
+}
+
+.personal-details-total input {
+  height: 25px;
+}
+.personal-details-total input:focus {
+  border: 1px solid #c95109;
 }

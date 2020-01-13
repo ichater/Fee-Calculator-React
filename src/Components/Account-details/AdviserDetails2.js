@@ -10,8 +10,7 @@ const AdviserDetails2 = props => {
   } = props;
   const [showText, setShowText] = useState(false);
   return (
-    <>
-      <h2>Adviser Ongoing Service Fee</h2>
+    <div className="DetailsPage-positioning">
       <form>
         <label for="yes-fee2">Yes</label>
         <input
@@ -36,7 +35,7 @@ const AdviserDetails2 = props => {
           setCpi={setCpi}
         />
       )}
-    </>
+    </div>
   );
 };
 
