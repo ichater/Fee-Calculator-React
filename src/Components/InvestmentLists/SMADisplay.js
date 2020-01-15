@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SMA from "./Data/SMA";
 
 const SMAdisplay = () => {
+  const [searchSMA, setSearchSMA] = useState("");
+
+  const [searchResults, setSearchResults] = React.useState([]);
+
+  const handleSearchInputChanges = e => {
+    setSearchSMA(e.target.value);
+  };
+
+  React.useEffect(() => {
+    const results = SMA.filter(SMA =>
+      SMA.Name.toLowerCase().includes(searchSMA)
+    );
+    setSearchResults(results);
+  }, [searchSMA]);
+
   return (
     <>
       <div>
         <label> Search </label>
-        <input type="text"></input>
+        <input
+          type="text"
+          value={searchSMA}
+          onChange={handleSearchInputChanges}
+        />
       </div>
       <table>
         <thead>
@@ -19,7 +38,7 @@ const SMAdisplay = () => {
           </tr>
         </thead>
         <tbody>
-          {SMA.map((investment, index) => {
+          {searchResults.map((investment, index) => {
             return (
               <tr>
                 <td>
