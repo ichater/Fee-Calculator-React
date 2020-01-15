@@ -1,32 +1,37 @@
 import React, { useState } from "react";
 
 const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
-  const [showText, setShowText] = useState(false);
+  const [showPIncrease, setshowPIncrease] = useState(false);
+
   return (
     <>
       <div>
         <input
+          name="setshowPIncrease"
           type="radio"
-          name="increaseFee"
-          onClick={() => setShowText(true)}
-          onClick={() => setCpi(false)}
+          for="setshowPIncrease"
+          onChange={() => setshowPIncrease(true)}
+
+          // onClick={() => setCpi(false)}
         />
-        <label>Increase by %</label>
-        {showText && (
-          <input
-            type="number"
-            onChange={e => setadviserOngoingFeeIncrease(e.target.value + "%")}
-          />
+        <label id="setshowPIncrease">Increase by %</label>
+        {showPIncrease && (
+          <>
+            <input
+              type="number"
+              onChange={e => setadviserOngoingFeeIncrease(e.target.value + "%")}
+            />
+          </>
         )}
       </div>
       or
       <input
         type="radio"
-        name="increaseFee"
-        onClick={() => setShowText(false)}
-        onClick={() => setCpi(true)}
+        name="setshowPIncrease"
+        // onClick={() => setshowPIncrease(false)}
+        onClick={(() => setCpi(true), () => setshowPIncrease(false))}
       />
-      <label>CPI per year</label>
+      <label>CPI per yearuu</label>
     </>
   );
 };

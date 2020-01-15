@@ -4,6 +4,10 @@ import NAVMFs from "./Data/NAVMFs";
 const FundDisplay = () => {
   return (
     <>
+      <div>
+        <label> Search </label>
+        <input type="text"></input>
+      </div>
       <table>
         <thead>
           <tr>

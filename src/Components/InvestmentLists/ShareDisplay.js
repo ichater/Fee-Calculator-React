@@ -4,6 +4,10 @@ import NavShares1 from "./Data/NavShares1";
 const ShareDisplay = () => {
   return (
     <>
+      <div>
+        <label> Search </label>
+        <input type="text"></input>
+      </div>
       <table>
         <tr>
           <th>Select</th>

@@ -8,12 +8,12 @@ const AdviserDetails2Expanded = props => {
     setadviserOngoingFeeIncrease,
     setCpi
   } = props;
-  const [showText, setShowText] = useState(false);
+  const [showTexti, setShowTexti] = useState(false);
   const [showText1, setShowText1] = useState(false);
   const [showText2, setShowText2] = useState(false);
+
   return (
     <>
-      {" "}
       <div className="AdviserDetails1Expanded__grid">
         <div>
           <input
@@ -45,19 +45,19 @@ const AdviserDetails2Expanded = props => {
                 name="increasefee"
                 type="radio"
                 for="increase-yes"
-                onClick={() => setShowText(true)}
+                onClick={() => setShowTexti(true)}
               ></input>
               <label id="increase-yes">Yes</label>
               <input
                 name="increasefee"
                 type="radio"
                 id="increase-no"
-                checked="checked"
-                onClick={() => setShowText(false)}
+                // checked="checked"
+                onClick={() => setShowTexti(false)}
               ></input>{" "}
               <label for="increase-no">no</label>
             </div>
-            {showText && (
+            {showTexti && (
               <div>
                 <AdviserDetails2Expanded2
                   setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}

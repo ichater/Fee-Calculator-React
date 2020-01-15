@@ -27,14 +27,14 @@ const AdviserDetails2 = props => {
           onClick={() => setShowText(false)}
         ></input>
       </form>
-      {showText && (
-        <AdviserDetails2Expanded
-          setAdviserOngoingFee$={setAdviserOngoingFee$}
-          setAdviserOngoingFeeP={setAdviserOngoingFeeP}
-          setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
-          setCpi={setCpi}
-        />
-      )}
+      {/* {showText && ( */}
+      <AdviserDetails2Expanded
+        setAdviserOngoingFee$={setAdviserOngoingFee$}
+        setAdviserOngoingFeeP={setAdviserOngoingFeeP}
+        setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+        setCpi={setCpi}
+      />
+      {/* )} */}
     </div>
   );
 };
