@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import NavShares1 from "./Data/NavShares1";
 
 const ShareDisplay = () => {
+  const [searchShares, setSearchShares] = useState("");
+
+  const [searchResults, setSearchResults] = React.useState([]);
+
+  const handleSearchInputChanges = e => {
+    setSearchShares(e.target.value);
+  };
+
+  React.useEffect(() => {
+    const results = NavShares1.filter(
+      NavShares1 => NavShares1.ASXcode.toLowerCase().includes(searchShares),
+      NavShares1 =>
+        NavShares1.ListedInvestmentName.toLowerCase().includes(searchShares),
+      NavShares1 => NavShares1.Category.includes(searchShares)
+    );
+    setSearchResults(results);
+  }, [searchShares]);
+
   return (
     <>
       <div>
         <label> Search </label>
-        <input type="text"></input>
+        <input
+          type="text"
+          value={searchShares}
+          onChange={handleSearchInputChanges}
+        ></input>
       </div>
       <table>
         <tr>
@@ -15,7 +37,7 @@ const ShareDisplay = () => {
           <th>Name</th>
           <th>Category</th>
         </tr>
-        {NavShares1.map((investment, index) => {
+        {searchResults.map(investment => {
           return (
             <tr>
               <td>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SMA from "./Data/SMA";
 
 const SMAdisplay = () => {
@@ -11,8 +11,10 @@ const SMAdisplay = () => {
   };
 
   React.useEffect(() => {
-    const results = SMA.filter(SMA =>
-      SMA.Name.toLowerCase().includes(searchSMA)
+    const results = SMA.filter(
+      SMA => SMA.Name.toLowerCase().includes(searchSMA),
+      SMA => SMA.APIR.toLowerCase().includes(searchSMA),
+      SMA => SMA.MER.includes(searchSMA)
     );
     setSearchResults(results);
   }, [searchSMA]);
