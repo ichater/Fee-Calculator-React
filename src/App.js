@@ -2,9 +2,9 @@ import React from "react";
 import "./CSS/App.css";
 import "react-tabs/style/react-tabs.css";
 import Maintabs from "./Components/Maintabs";
-import { render } from "react-dom";
-import { transitions, positions, Provider as AlertProvider } from "react-alert";
-import AlertTemplate from "react-alert-template-basic";
+// import { render } from "react-dom";
+// import { transitions, positions, Provider as AlertProvider } from "react-alert";
+// import AlertTemplate from "react-alert-template-basic";
 
 function App() {
   return (

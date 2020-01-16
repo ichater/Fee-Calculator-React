@@ -32,9 +32,9 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Investments</Tab>
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
-        <TabPanel>
+        {/* <TabPanel>
           <Investments setSelectSMA={setSelectSMA} selectSMA={selectSMA} />
-        </TabPanel>
+        </TabPanel> */}
         <TabPanel>
           <AccountDetails
             setName={setName}

@@ -14,3 +14,8 @@
 .investment-searchdiv {
   margin-bottom: 15px;
 }
+
+.investment-Checkbox {
+  color: red;
+  border: 3px solid black;
+}

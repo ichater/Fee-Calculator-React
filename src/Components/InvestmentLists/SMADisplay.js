@@ -3,15 +3,14 @@ import SMA from "./Data/SMA";
 import uuidv4 from "uuid/v4";
 
 const SMAdisplay = props => {
-  const { setSelectSMA, selectSMA } = props;
+  const { setSelectSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
-
   const [searchResults, setSearchResults] = React.useState([]);
 
   const handleSearchInputChanges = e => {
     setSearchSMA(e.target.value);
   };
-
+  //search through investments
   React.useEffect(() => {
     const results = SMA.filter(
       SMA => SMA.Name.toLowerCase().includes(searchSMA),
@@ -20,7 +19,7 @@ const SMAdisplay = props => {
     );
     setSearchResults(results);
   }, [searchSMA]);
-
+  //Give each investment ID
   SMA.forEach(item => {
     item.id = uuidv4();
   });
@@ -51,7 +50,7 @@ const SMAdisplay = props => {
             return (
               <tr key={investment.id}>
                 <td>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="investment-Checkbox" />
                 </td>
                 <td>{investment.Name}</td>
                 <td>{investment.APIR}</td>
