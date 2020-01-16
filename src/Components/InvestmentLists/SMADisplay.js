@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SMA from "./Data/SMA";
+import uuidv4 from "uuid/v4";
 
 const SMAdisplay = props => {
   const { setSelectSMA, selectSMA } = props;
@@ -19,6 +20,10 @@ const SMAdisplay = props => {
     );
     setSearchResults(results);
   }, [searchSMA]);
+
+  SMA.forEach(item => {
+    item.id = uuidv4();
+  });
 
   return (
     <>
@@ -44,7 +49,7 @@ const SMAdisplay = props => {
         <tbody>
           {searchResults.map((investment, index) => {
             return (
-              <tr>
+              <tr key={investment.id}>
                 <td>
                   <input type="checkbox" />
                 </td>
