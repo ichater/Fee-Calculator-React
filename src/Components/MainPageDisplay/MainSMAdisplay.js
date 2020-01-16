@@ -1,21 +1,26 @@
 import React from "react";
 import MainSMAdisplay1 from "./MainSMAdisplay1";
 
-const MainSMAdisplay = ({ SMA }) => {
+const MainSMAdisplay = ({ SMA, selectSMA }) => {
   return (
     <>
+      {selectSMA && <div>HELLO WORLD!</div>}
       <table className="investment-table__default">
-        <tr>
-          <th>Name</th>
-          <th>APIR</th>
-          <th>Nab</th>
-          <th>MER</th>
-          <th>% value</th>
-          <th>$ value</th>
-        </tr>
-        {SMA.map(SMA => {
-          return <MainSMAdisplay1 key={SMA.id} {...SMA} />;
-        })}
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>APIR</th>
+            <th>Nab</th>
+            <th>MER</th>
+            <th>% value</th>
+            <th>$ value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {SMA.map(SMA => {
+            return <MainSMAdisplay1 key={SMA.id} {...SMA} />;
+          })}
+        </tbody>
       </table>
     </>
   );

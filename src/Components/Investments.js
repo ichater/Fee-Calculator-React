@@ -6,7 +6,8 @@ import FundDisplay from "./InvestmentLists/FundDisplay";
 import ShareDisplay from "./InvestmentLists/ShareDisplay";
 import InSpecie from "./InvestmentLists/InSpecie";
 
-const Investments = () => {
+const Investments = props => {
+  const { setSelectSMA, selectSMA } = props;
   return (
     <>
       {" "}
@@ -18,7 +19,7 @@ const Investments = () => {
           <Tab className="Tab1">In specie option</Tab>
         </TabList>
         <TabPanel>
-          <SMADisplay />
+          <SMADisplay setSelectSMA={setSelectSMA} selectSMA={selectSMA} />
         </TabPanel>
         <TabPanel>
           <FundDisplay />

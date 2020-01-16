@@ -19,7 +19,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
     [adviserOngoingFeeIncrease, setadviserOngoingFeeIncrease] = useState(),
     [adviserName, setAdviserName] = useState("Jane Doe Inc"),
     [adviserCode, setAdviserCode] = useState("133766"),
-    [dealerGroup, setDealerGroup] = useState("Borkuf enterprises");
+    [dealerGroup, setDealerGroup] = useState("Borkuf enterprises"),
+    [selectSMA, setSelectSMA] = useState(false);
 
   return (
     <>
@@ -32,7 +33,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
         <TabPanel>
-          <Investments />
+          <Investments setSelectSMA={setSelectSMA} selectSMA={selectSMA} />
         </TabPanel>
         <TabPanel>
           <AccountDetails
@@ -52,10 +53,10 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
           />
         </TabPanel>
         <TabPanel>
-          <Main SMA={SMA} Shares={Shares} Funds={Funds} />
+          <Main SMA={SMA} Shares={Shares} Funds={Funds} selectSMA={selectSMA} />
         </TabPanel>
         <TabPanel>
-          <Investments />
+          <Investments setSelectSMA={setSelectSMA} selectSMA={selectSMA} />
         </TabPanel>
         <TabPanel>
           <SummaryMain

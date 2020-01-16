@@ -22,7 +22,7 @@ const ShareDisplay = () => {
 
   return (
     <>
-      <div>
+      <div className="investment-searchdiv">
         <label> Search </label>
         <input
           type="text"

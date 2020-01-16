@@ -23,7 +23,7 @@ const FundDisplay = () => {
   }, [searchFunds]);
   return (
     <>
-      <div>
+      <div className="investment-searchdiv">
         <label> Search </label>
         <input
           type="text"

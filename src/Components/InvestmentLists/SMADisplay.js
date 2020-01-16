@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SMA from "./Data/SMA";
 
-const SMAdisplay = () => {
+const SMAdisplay = props => {
+  const { setSelectSMA, selectSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
 
   const [searchResults, setSearchResults] = React.useState([]);
@@ -21,13 +22,14 @@ const SMAdisplay = () => {
 
   return (
     <>
-      <div>
+      <div className="investment-searchdiv">
         <label> Search </label>
         <input
           type="text"
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
+        <button onClick={() => setSelectSMA(true)}> Select investment</button>
       </div>
       <table>
         <thead>
@@ -44,7 +46,7 @@ const SMAdisplay = () => {
             return (
               <tr>
                 <td>
-                  <input type="checkbox" onClick={console.log("Hello!")} />
+                  <input type="checkbox" />
                 </td>
                 <td>{investment.Name}</td>
                 <td>{investment.APIR}</td>
