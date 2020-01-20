@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SMA from "./Data/SMA";
 import uuidv4 from "uuid/v4";
+import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
   const { setSelectSMA } = props;
@@ -50,7 +51,9 @@ const SMAdisplay = props => {
             return (
               <tr key={investment.id}>
                 <td>
-                  <input type="checkbox" className="investment-Checkbox" />
+                  <label>
+                    <CheckboxStyled />
+                  </label>
                 </td>
                 <td>{investment.Name}</td>
                 <td>{investment.APIR}</td>
