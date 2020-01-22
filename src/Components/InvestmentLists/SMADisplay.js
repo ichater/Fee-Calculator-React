@@ -7,6 +7,7 @@ const SMAdisplay = props => {
   const { setSelectSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
+  const [SMASelect, setSMASelect] = useState([]);
 
   const handleSearchInputChanges = e => {
     setSearchSMA(e.target.value);
@@ -23,6 +24,10 @@ const SMAdisplay = props => {
   //Give each investment ID
   SMA.forEach(item => {
     item.id = uuidv4();
+  });
+  //set select to false
+  SMA.forEach(item => {
+    item.select = false;
   });
 
   return (
