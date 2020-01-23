@@ -7,7 +7,7 @@ const SMAdisplay = props => {
   const { setSelectSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
-  const [SMASelect, setSMASelect] = useState([]);
+  const [SMASelect, setSMASelect] = useState(true);
 
   const handleSearchInputChanges = e => {
     setSearchSMA(e.target.value);
@@ -26,6 +26,7 @@ const SMAdisplay = props => {
     item.id = uuidv4();
   });
   //set select to false
+
   SMA.forEach(item => {
     item.select = false;
   });
@@ -57,7 +58,21 @@ const SMAdisplay = props => {
               <tr key={investment.id}>
                 <td>
                   <label>
-                    <CheckboxStyled />
+                    {/* <CheckboxStyled /> */}
+                    <input
+                      onChange={e => {
+                        let checked = e.target.checked;
+                        setSMASelect(
+                          SMASelect.map(d => {
+                            if (investment.id === d.id) {
+                              d.select = checked;
+                            }
+                            return d;
+                          })
+                        );
+                      }}
+                      type="checkbox"
+                    />
                   </label>
                 </td>
                 <td>{investment.Name}</td>
