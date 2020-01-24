@@ -1,7 +1,9 @@
 import React from "react";
 import MainSMAdisplay1 from "./MainSMAdisplay1";
+import SMA from "./../InvestmentLists/Data/SMA";
 
-const MainSMAdisplay = ({ SMA, selectSMA }) => {
+const MainSMAdisplay = props => {
+  const { checkedSMA, setCheckedSMA, SMA, selectSMA } = props;
   return (
     <>
       {selectSMA && <div>HELLO WORLD!</div>}

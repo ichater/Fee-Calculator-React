@@ -1,36 +1,27 @@
 import React, { useState } from "react";
 import SMA from "./Data/SMA";
-import uuidv4 from "uuid/v4";
 import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
-  const { setSelectSMA } = props;
+  const { setSelectSMA, checkedSMA, setCheckedSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
-  const [SMASelect, setSMASelect] = useState(true);
+  // const [checkedSMA, setCheckedSMA] = useState([]);
 
   const handleSearchInputChanges = e => {
     setSearchSMA(e.target.value);
   };
   //search through investments
   React.useEffect(() => {
-    const results = SMA.filter(
+    const results = SMA.map((sma, index) => ({ ...sma, id: index })).filter(
       SMA => SMA.Name.toLowerCase().includes(searchSMA),
       SMA => SMA.APIR.toLowerCase().includes(searchSMA),
       SMA => SMA.MER.includes(searchSMA)
     );
     setSearchResults(results);
   }, [searchSMA]);
-  //Give each investment ID
-  SMA.forEach(item => {
-    item.id = uuidv4();
-  });
-  //set select to false
 
-  SMA.forEach(item => {
-    item.select = false;
-  });
-
+  console.log(checkedSMA);
   return (
     <>
       <div className="investment-searchdiv">
@@ -40,7 +31,7 @@ const SMAdisplay = props => {
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
-        <button onClick={() => setSelectSMA(true)}> Select investment</button>
+        <button> Select investment</button>
       </div>
       <table>
         <thead>
@@ -62,16 +53,18 @@ const SMAdisplay = props => {
                     <input
                       onChange={e => {
                         let checked = e.target.checked;
-                        setSMASelect(
-                          SMASelect.map(d => {
-                            if (investment.id === d.id) {
-                              d.select = checked;
-                            }
-                            return d;
-                          })
-                        );
+                        if (checked) {
+                          setCheckedSMA([...checkedSMA, investment.id]);
+                        } else {
+                          setCheckedSMA(
+                            //checkedSMA stats just
+                            checkedSMA.filter(id => id !== investment.id)
+                          );
+                        }
                       }}
                       type="checkbox"
+                      //the .includes() implicitly contains the boolean "true"
+                      checked={checkedSMA.includes(investment.id)}
                     />
                   </label>
                 </td>
