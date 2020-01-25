@@ -7,7 +7,16 @@ import FeeTable from "./MainPageDisplay/FeeTable";
 
 const Main = props => {
   const [balance, setBalance] = useState(0);
-  const { SMA, Shares, Funds, selectSMA, checkedSMA, setCheckedSMA } = props;
+  const {
+    SMA,
+    Shares,
+    Funds,
+    selectSMA,
+    checkedSMA,
+    setCheckedSMA,
+    addSMA,
+    setAddSMA
+  } = props;
 
   return (
     <>
@@ -19,6 +28,8 @@ const Main = props => {
             selectSMA={selectSMA}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}
+            addSMA={addSMA}
+            setAddSMA={setAddSMA}
           />
           <MainFundDisplay Funds={Funds} />
           <MainShareDisplay Shares={Shares} />

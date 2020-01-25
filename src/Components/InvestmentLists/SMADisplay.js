@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import SMA from "./Data/SMA";
-import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
+// import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
-  const { setSelectSMA, checkedSMA, setCheckedSMA } = props;
+  const { checkedSMA, setCheckedSMA, setAddSMA, addSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
   // const [checkedSMA, setCheckedSMA] = useState([]);
@@ -21,6 +21,17 @@ const SMAdisplay = props => {
     setSearchResults(results);
   }, [searchSMA]);
 
+  const handlesetAddSMA = () => {
+    const newSMA = {
+      id: Math.random(1),
+      Name: "test",
+      APIR: "123fku",
+      NAB: "#",
+      NER: 0.9
+    };
+    setAddSMA(SMA.push(newSMA));
+  };
+
   console.log(checkedSMA);
   return (
     <>
@@ -31,7 +42,7 @@ const SMAdisplay = props => {
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
-        <button> Select investment</button>
+        <button onClick={handlesetAddSMA}> Select investment</button>
       </div>
       <table>
         <thead>

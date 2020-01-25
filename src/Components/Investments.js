@@ -7,7 +7,7 @@ import ShareDisplay from "./InvestmentLists/ShareDisplay";
 import InSpecie from "./InvestmentLists/InSpecie";
 
 const Investments = props => {
-  const { checkedSMA, setCheckedSMA } = props;
+  const { checkedSMA, setCheckedSMA, setAddSMA, addSMA } = props;
   return (
     <>
       {" "}
@@ -19,7 +19,12 @@ const Investments = props => {
           <Tab className="Tab1">In specie option</Tab>
         </TabList>
         <TabPanel>
-          <SMADisplay setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
+          <SMADisplay
+            setCheckedSMA={setCheckedSMA}
+            checkedSMA={checkedSMA}
+            addSMA={addSMA}
+            setAddSMA={setAddSMA}
+          />
         </TabPanel>
         <TabPanel>
           <FundDisplay />

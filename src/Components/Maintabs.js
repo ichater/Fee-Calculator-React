@@ -21,7 +21,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
     [adviserCode, setAdviserCode] = useState("133766"),
     [dealerGroup, setDealerGroup] = useState("Borkuf enterprises"),
     [selectSMA, setSelectSMA] = useState(false),
-    [checkedSMA, setCheckedSMA] = useState([]);
+    [checkedSMA, setCheckedSMA] = useState([]),
+    [addSMA, setAddSMA] = useState();
 
   return (
     <>
@@ -61,6 +62,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             selectSMA={selectSMA}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}
+            addSMA={addSMA}
+            setAddSMA={setAddSMA}
           />
         </TabPanel>
         <TabPanel>
@@ -69,6 +72,8 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             selectSMA={selectSMA}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}
+            addSMA={addSMA}
+            setAddSMA={setAddSMA}
           />
         </TabPanel>
         <TabPanel>
