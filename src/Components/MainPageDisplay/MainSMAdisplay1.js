@@ -18,8 +18,7 @@ const SMAdisplay = props => {
   return (
     <>
       <tr>
-        <td>{id}</td>
-        {/* <td>{Name}</td> */}
+        <td>{Name}</td>
         <td>{APIR}</td>
         <td>{Nab}</td>
         <td>{MER}</td>

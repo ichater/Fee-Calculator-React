@@ -11,7 +11,12 @@ const MainSMAdisplay = props => {
     addSMA,
     setAddSMA
   } = props;
-  console.log(SMA);
+  let finalSMADisplay = [];
+  for (let i = 0; i < SMA.length; i++) {
+    if (SMA[i].id !== mainPageSMA[i]) {
+      finalSMADisplay.push(SMA[i]);
+    }
+  }
   return (
     <>
       {selectSMA && <div>HELLO WORLD!</div>}
@@ -27,11 +32,11 @@ const MainSMAdisplay = props => {
           </tr>
         </thead>
         <tbody>
-          {mainPageSMA.map(mainPageSMA => {
+          {finalSMADisplay.map(finalSMADisplay => {
             return (
               <MainSMAdisplay1
-                key={mainPageSMA.id}
-                {...mainPageSMA}
+                key={finalSMADisplay.id}
+                {...finalSMADisplay}
                 setCheckedSMA={setCheckedSMA}
                 checkedSMA={checkedSMA}
                 addSMA={addSMA}

@@ -22,16 +22,14 @@ const SMAdisplay = props => {
   }, [searchSMA]);
 
   const handlesetAddSMA = () => {
-    // for (var i = 0; i < SMA.length; i++) {
-    let mainPageSMA = checkedSMA;
-
+    Array.prototype.push.apply(mainPageSMA, checkedSMA);
+    // for (let i = 0; i < SMA.length; i++) {
+    //   if (SMA[i].id !== mainPageSMA[i]) {
+    //     console.log(SMA[i]);
+    //   }
     // }
-
-    // setAddSMA(mainPageSMA.push(newSMA));
-    // console.log(newSMA);
   };
 
-  // console.log(checkedSMA);
   return (
     <>
       <div className="investment-searchdiv">
