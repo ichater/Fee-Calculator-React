@@ -3,7 +3,7 @@ import SMA from "./Data/SMA";
 // import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
-  const { checkedSMA, setCheckedSMA, setAddSMA, addSMA } = props;
+  const { checkedSMA, setCheckedSMA, setAddSMA, addSMA, mainPageSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
   // const [checkedSMA, setCheckedSMA] = useState([]);
@@ -22,17 +22,16 @@ const SMAdisplay = props => {
   }, [searchSMA]);
 
   const handlesetAddSMA = () => {
-    const newSMA = {
-      id: Math.random(1),
-      Name: "test",
-      APIR: "123fku",
-      NAB: "#",
-      NER: 0.9
-    };
-    setAddSMA(SMA.push(newSMA));
+    // for (var i = 0; i < SMA.length; i++) {
+    let mainPageSMA = checkedSMA;
+
+    // }
+
+    // setAddSMA(mainPageSMA.push(newSMA));
+    // console.log(newSMA);
   };
 
-  console.log(checkedSMA);
+  // console.log(checkedSMA);
   return (
     <>
       <div className="investment-searchdiv">

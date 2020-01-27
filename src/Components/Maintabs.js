@@ -6,7 +6,7 @@ import Investments from "./Investments";
 import Main from "./Main";
 import SummaryMain from "./SummaryMain";
 
-const Maintabs = ({ SMA, Shares, Funds }) => {
+const Maintabs = ({ mainPageSMA, Shares, Funds }) => {
   const [name, setName] = useState("John"),
     [surname, setSurname] = useState("Doe"),
     [dob, setDob] = useState("01/01/1900"),
@@ -56,7 +56,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
         </TabPanel>
         <TabPanel>
           <Main
-            SMA={SMA}
+            mainPageSMA={mainPageSMA}
             Shares={Shares}
             Funds={Funds}
             selectSMA={selectSMA}
@@ -74,6 +74,7 @@ const Maintabs = ({ SMA, Shares, Funds }) => {
             checkedSMA={checkedSMA}
             addSMA={addSMA}
             setAddSMA={setAddSMA}
+            mainPageSMA={mainPageSMA}
           />
         </TabPanel>
         <TabPanel>

@@ -8,7 +8,7 @@ import FeeTable from "./MainPageDisplay/FeeTable";
 const Main = props => {
   const [balance, setBalance] = useState(0);
   const {
-    SMA,
+    mainPageSMA,
     Shares,
     Funds,
     selectSMA,
@@ -24,7 +24,7 @@ const Main = props => {
       <div className="main-page_grid">
         <div className="Main-table-Left">
           <MainSMAdisplay
-            SMA={SMA}
+            mainPageSMA={mainPageSMA}
             selectSMA={selectSMA}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}

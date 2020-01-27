@@ -7,16 +7,19 @@ const SMAdisplay = props => {
     APIR,
     Nab,
     MER,
+    id,
     checkedSMA,
     setCheckedSMA,
     addSMA,
-    setAddSMA
+    setAddSMA,
+    mainPageSMA
   } = props;
 
   return (
     <>
       <tr>
-        <td>{Name}</td>
+        <td>{id}</td>
+        {/* <td>{Name}</td> */}
         <td>{APIR}</td>
         <td>{Nab}</td>
         <td>{MER}</td>

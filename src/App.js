@@ -9,20 +9,16 @@ import Maintabs from "./Components/Maintabs";
 function App() {
   return (
     <>
-      <Maintabs Shares={sampleShares} Funds={sampleMFs} />
+      <Maintabs
+        mainPageSMA={mainPageSMA}
+        Shares={sampleShares}
+        Funds={sampleMFs}
+      />
     </>
   );
 }
 
-// const sampleSMA = [
-//   {
-//     id: ""
-//     Name: ""
-//     APIR: ""
-//     Nab: ""
-//     MER:
-//   }
-// ];
+const mainPageSMA = [];
 
 const sampleShares = [
   {

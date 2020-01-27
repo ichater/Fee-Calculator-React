@@ -6,27 +6,15 @@ const MainSMAdisplay = props => {
   const {
     checkedSMA,
     setCheckedSMA,
-    SMA,
+    mainPageSMA,
     selectSMA,
     addSMA,
     setAddSMA
   } = props;
-
-  // const handlesetAddSMA = () => {
-  //   const newSMA = {
-  //     id: Math.random(1),
-  //     Name: "test",
-  //     APIR: "123fku",
-  //     NAB: "#",
-  //     NER: 0.9
-  //   };
-  //   setAddSMA(SMA.push(newSMA));
-  // };
   console.log(SMA);
   return (
     <>
       {selectSMA && <div>HELLO WORLD!</div>}
-      {/* <button onClick={handlesetAddSMA}>test</button> */}
       <table className="investment-table__default">
         <thead>
           <tr>
@@ -39,15 +27,16 @@ const MainSMAdisplay = props => {
           </tr>
         </thead>
         <tbody>
-          {SMA.map(SMA => {
+          {mainPageSMA.map(mainPageSMA => {
             return (
               <MainSMAdisplay1
-                key={SMA.id}
-                {...SMA}
+                key={mainPageSMA.id}
+                {...mainPageSMA}
                 setCheckedSMA={setCheckedSMA}
                 checkedSMA={checkedSMA}
                 addSMA={addSMA}
                 setAddSMA={setAddSMA}
+                mainPageSMA={mainPageSMA}
               />
             );
           })}
