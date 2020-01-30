@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Maintabs
-        mainPageSMA={mainPageSMA}
+        // mainPageSMA={mainPageSMA}
         Shares={sampleShares}
         Funds={sampleMFs}
       />
@@ -18,7 +18,7 @@ function App() {
   );
 }
 
-const mainPageSMA = [];
+// const mainPageSMA = [];
 
 const sampleShares = [
   {

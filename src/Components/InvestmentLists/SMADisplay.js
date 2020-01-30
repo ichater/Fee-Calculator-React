@@ -3,7 +3,14 @@ import SMA from "./Data/SMA";
 // import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
-  const { checkedSMA, setCheckedSMA, setAddSMA, addSMA, mainPageSMA } = props;
+  const {
+    checkedSMA,
+    setCheckedSMA,
+    setAddSMA,
+    addSMA,
+    mainPageSMA,
+    setMainPageSMA
+  } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
   // const [checkedSMA, setCheckedSMA] = useState([]);
@@ -21,14 +28,9 @@ const SMAdisplay = props => {
     setSearchResults(results);
   }, [searchSMA]);
 
-  const handlesetAddSMA = () => {
-    Array.prototype.push.apply(mainPageSMA, checkedSMA);
-    // for (let i = 0; i < SMA.length; i++) {
-    //   if (SMA[i].id !== mainPageSMA[i]) {
-    //     console.log(SMA[i]);
-    //   }
-    // }
-  };
+  // const foooBar = () => {
+  //   Array.prototype.push.apply(mainPageSMA, checkedSMA);
+  // };
 
   return (
     <>
@@ -39,7 +41,14 @@ const SMAdisplay = props => {
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
-        <button onClick={handlesetAddSMA}> Select investment</button>
+        <button
+          onClick={function setMainPageSMA() {
+            Array.prototype.push.apply(mainPageSMA, checkedSMA);
+          }}
+        >
+          {" "}
+          Select investment
+        </button>
       </div>
       <table>
         <thead>

@@ -6,7 +6,7 @@ import Investments from "./Investments";
 import Main from "./Main";
 import SummaryMain from "./SummaryMain";
 
-const Maintabs = ({ mainPageSMA, Shares, Funds }) => {
+const Maintabs = ({ Shares, Funds }) => {
   const [name, setName] = useState("John"),
     [surname, setSurname] = useState("Doe"),
     [dob, setDob] = useState("01/01/1900"),
@@ -22,7 +22,8 @@ const Maintabs = ({ mainPageSMA, Shares, Funds }) => {
     [dealerGroup, setDealerGroup] = useState("Borkuf enterprises"),
     [selectSMA, setSelectSMA] = useState(false),
     [checkedSMA, setCheckedSMA] = useState([]),
-    [addSMA, setAddSMA] = useState();
+    [addSMA, setAddSMA] = useState([]),
+    [mainPageSMA, setMainPageSMA] = useState([]);
 
   return (
     <>
@@ -57,6 +58,7 @@ const Maintabs = ({ mainPageSMA, Shares, Funds }) => {
         <TabPanel>
           <Main
             mainPageSMA={mainPageSMA}
+            setMainPageSMA={setMainPageSMA}
             Shares={Shares}
             Funds={Funds}
             selectSMA={selectSMA}
@@ -75,6 +77,7 @@ const Maintabs = ({ mainPageSMA, Shares, Funds }) => {
             addSMA={addSMA}
             setAddSMA={setAddSMA}
             mainPageSMA={mainPageSMA}
+            setMainPageSMA={setMainPageSMA}
           />
         </TabPanel>
         <TabPanel>

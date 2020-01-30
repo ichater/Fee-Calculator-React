@@ -9,6 +9,7 @@ const Main = props => {
   const [balance, setBalance] = useState(0);
   const {
     mainPageSMA,
+    setMainPageSMA,
     Shares,
     Funds,
     selectSMA,
@@ -30,6 +31,7 @@ const Main = props => {
             checkedSMA={checkedSMA}
             addSMA={addSMA}
             setAddSMA={setAddSMA}
+            setMainPageSMA={setMainPageSMA}
           />
           <MainFundDisplay Funds={Funds} />
           <MainShareDisplay Shares={Shares} />
