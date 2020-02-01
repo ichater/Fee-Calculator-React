@@ -23,7 +23,10 @@ const Maintabs = ({ Shares, Funds }) => {
     [selectSMA, setSelectSMA] = useState(false),
     [checkedSMA, setCheckedSMA] = useState([]),
     [addSMA, setAddSMA] = useState([]),
-    [mainPageSMA, setMainPageSMA] = useState([]);
+    [mainPageSMA, setMainPageSMA] = useState([]),
+    [showText1, setShowText1] = useState(false),
+    [showText2, setShowText2] = useState(false),
+    [showText3, setShowText3] = useState(false);
 
   return (
     <>
@@ -40,6 +43,12 @@ const Maintabs = ({ Shares, Funds }) => {
         </TabPanel> */}
         <TabPanel>
           <AccountDetails
+            showText1={showText1}
+            setShowText1={setShowText1}
+            showText2={showText2}
+            setShowText2={setShowText2}
+            showText3={showText3}
+            setShowText3={setShowText3}
             setName={setName}
             name={name}
             setSurname={setSurname}
@@ -54,6 +63,19 @@ const Maintabs = ({ Shares, Funds }) => {
             setAdviserName={setAdviserName}
             setAdviserCode={setAdviserCode}
             setDealerGroup={setDealerGroup}
+            name={name}
+            surname={surname}
+            dob={dob}
+            accountType={accountType}
+            adviserInitialFee$={adviserInitialFee$}
+            adviserInitialFeeP={adviserInitialFeeP}
+            adviserOngoingFee$={adviserOngoingFee$}
+            adviserOngoingFeeP={adviserOngoingFeeP}
+            adviserOngoingFeeIncrease={adviserOngoingFeeIncrease}
+            cpi={cpi}
+            adviserName={adviserName}
+            adviserCode={adviserCode}
+            dealerGroup={dealerGroup}
           />
         </TabPanel>
         <TabPanel>

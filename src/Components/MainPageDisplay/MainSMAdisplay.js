@@ -6,24 +6,27 @@ const MainSMAdisplay = props => {
 
   return (
     <>
-      {checkedSMA.length && <div>HELLO WORLD!</div>}
-      <table className="investment-table__default">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>APIR</th>
-            <th>Nab</th>
-            <th>MER</th>
-            <th>% value</th>
-            <th>$ value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {checkedSMA.map(checkedSMA => {
-            return <MainSMAdisplay1 key={checkedSMA.id} {...checkedSMA} />;
-          })}
-        </tbody>
-      </table>
+      {checkedSMA.length && (
+        <>
+          <table className="investment-table__default">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>APIR</th>
+                <th>Nab</th>
+                <th>MER</th>
+                <th>% value</th>
+                <th>$ value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {checkedSMA.map(checkedSMA => {
+                return <MainSMAdisplay1 key={checkedSMA.id} {...checkedSMA} />;
+              })}
+            </tbody>
+          </table>
+        </>
+      )}
     </>
   );
 };

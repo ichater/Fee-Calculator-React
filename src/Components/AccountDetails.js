@@ -10,17 +10,35 @@ const AccountDetails = props => {
     setName,
     name,
     setSurname,
+    surname,
     setDob,
+    dob,
+    accountType,
     setAccountType,
     setAdviserInitialFee$,
+    adviserInitialFee$,
+    adviserInitialFeeP,
     setAdviserInitialFeeP,
     setAdviserOngoingFee$,
     setAdviserOngoingFeeP,
+    adviserOngoingFee$,
+    adviserOngoingFeeP,
     setadviserOngoingFeeIncrease,
+    adviserOngoingFeeIncrease,
     setCpi,
+    cpi,
     setAdviserName,
+    adviserName,
+    adviserCode,
+    dealerGroup,
     setAdviserCode,
-    setDealerGroup
+    setDealerGroup,
+    setShowText1,
+    showText1,
+    showText2,
+    setShowText2,
+    showText3,
+    setShowText3
   } = props;
   return (
     <>
@@ -33,27 +51,47 @@ const AccountDetails = props => {
           setName={setName}
           name={name}
           setSurname={setSurname}
+          surname={surname}
           setDob={setDob}
+          dob={dob}
         />
         <h2>Account Type</h2>
-        <AccountType setAccountType={setAccountType} />
+        <AccountType
+          setAccountType={setAccountType}
+          accountType={accountType}
+        />
         <h2>Adviser Initial Service Fee</h2>
         <AdviserDetails1
           setAdviserInitialFee$={setAdviserInitialFee$}
           setAdviserInitialFeeP={setAdviserInitialFeeP}
+          adviserInitialFee$={adviserInitialFee$}
+          adviserInitialFeeP={adviserInitialFeeP}
+          showText1={showText1}
+          setShowText1={setShowText1}
+          showText2={showText2}
+          setShowText2={setShowText2}
+          showText3={showText3}
+          setShowText3={setShowText3}
         />
         <h2>Adviser Ongoing Service Fee</h2>
         <AdviserDetails2
           setAdviserOngoingFee$={setAdviserOngoingFee$}
           setAdviserOngoingFeeP={setAdviserOngoingFeeP}
+          adviserOngoingFee$={adviserOngoingFee$}
+          adviserOngoingFeeP={adviserOngoingFeeP}
           setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+          adviserOngoingFeeIncrease={adviserOngoingFeeIncrease}
           setCpi={setCpi}
+          cpi={cpi}
         />
         <h2>Adviser Details</h2>
         <AdviserDetails3
           setAdviserName={setAdviserName}
           setAdviserCode={setAdviserCode}
           setDealerGroup={setDealerGroup}
+          adviserName={adviserName}
+          adviserCode={adviserCode}
+          dealerGroup={dealerGroup}
         />
       </div>
     </>

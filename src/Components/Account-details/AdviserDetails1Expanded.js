@@ -2,10 +2,14 @@ import React, { useState } from "react";
 
 const AdviserDetails1Expanded = ({
   setAdviserInitialFee$,
-  setAdviserInitialFeeP
+  setAdviserInitialFeeP,
+  adviserInitialFee$,
+  adviserInitialFeeP,
+  showText2,
+  setShowText2,
+  showText3,
+  setShowText3
 }) => {
-  const [showText, setShowText] = useState(false);
-  const [showText1, setShowText1] = useState(false);
   return (
     <div className="AdviserDetails1Expanded__grid">
       <div>
@@ -13,20 +17,21 @@ const AdviserDetails1Expanded = ({
           type="checkbox"
           onChange={e => {
             if (e.target.checked === true) {
-              setShowText(true);
+              setShowText2(true);
             } else {
-              setShowText(false);
+              setShowText2(false);
             }
           }}
         ></input>
         <labal>Dollar based Fee</labal>
       </div>
-      {showText && (
+      {showText2 && (
         <div>
           <span>$</span>
           <input
             type="number"
             onChange={e => setAdviserInitialFee$("$" + e.target.value)}
+            value={adviserInitialFee$}
           ></input>
         </div>
       )}
@@ -36,20 +41,21 @@ const AdviserDetails1Expanded = ({
           type="checkbox"
           onChange={e => {
             if (e.target.checked === true) {
-              setShowText1(true);
+              setShowText3(true);
             } else {
-              setShowText1(false);
+              setShowText3(false);
             }
           }}
         ></input>
         <labal>Persentage based Fee</labal>
       </div>
-      {showText1 && (
+      {showText3 && (
         <div>
           <span>%</span>
           <input
             type="number"
             onChange={e => setAdviserInitialFeeP(e.target.value + "%")}
+            value={adviserInitialFeeP}
           ></input>
         </div>
       )}
