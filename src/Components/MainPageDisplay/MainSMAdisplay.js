@@ -13,13 +13,27 @@ const MainSMAdisplay = props => {
     setAddSMA
   } = props;
 
-  //final SMAs appended
+  // let test = [];
 
-  for (let i = 0; i < SMA.length; i++) {
-    if (SMA[i].id !== mainPageSMA[i]) {
-      mainPageSMA.push(SMA[i]);
-    }
-  }
+  // for (let i = 0; i < SMA.length; i++) {
+  //   if (SMA[i].id !== checkedSMA[i]) {
+  //     setMainPageSMA([...mainPageSMA, SMA]);
+  //   }
+  // }
+
+  // setMainPageSMA([...mainPageSMA, test]);
+
+  // SMA.map(id => {
+  //   if (SMA.id === checkedSMA) {
+  //     setMainPageSMA([...mainPageSMA, SMA.filter()]);
+  //   }
+  // });
+
+  // setMainPageSMA([...mainPageSMA, SMA.filter(i => checkedSMA.includes(i.id))]);
+  setMainPageSMA([...mainPageSMA, SMA]);
+
+  console.log(mainPageSMA);
+
   return (
     <>
       {selectSMA && <div>HELLO WORLD!</div>}
@@ -40,11 +54,11 @@ const MainSMAdisplay = props => {
               <MainSMAdisplay1
                 key={mainPageSMA.id}
                 {...mainPageSMA}
-                setCheckedSMA={setCheckedSMA}
-                checkedSMA={checkedSMA}
-                addSMA={addSMA}
-                setAddSMA={setAddSMA}
-                mainPageSMA={mainPageSMA}
+                // setCheckedSMA={setCheckedSMA}
+                // checkedSMA={checkedSMA}
+                // addSMA={addSMA}
+                // setAddSMA={setAddSMA}
+                // mainPageSMA={mainPageSMA}
               />
             );
           })}

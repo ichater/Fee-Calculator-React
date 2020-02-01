@@ -41,14 +41,14 @@ const SMAdisplay = props => {
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
-        <button
+        {/* <button
           onClick={function setMainPageSMA() {
             Array.prototype.push.apply(mainPageSMA, checkedSMA);
           }}
         >
           {" "}
           Select investment
-        </button>
+        </button> */}
       </div>
       <table>
         <thead>
