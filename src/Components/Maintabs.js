@@ -41,6 +41,7 @@ const Maintabs = ({ Shares, Funds }) => {
         <TabPanel>
           <AccountDetails
             setName={setName}
+            name={name}
             setSurname={setSurname}
             setDob={setDob}
             setAccountType={setAccountType}

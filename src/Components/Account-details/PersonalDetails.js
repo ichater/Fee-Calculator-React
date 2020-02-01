@@ -1,13 +1,17 @@
 import React from "react";
 
 const PersonalDetails = props => {
-  const { setName, setSurname, setDob } = props;
+  const { setName, setSurname, setDob, name } = props;
   return (
     <>
       <h2> Personal details</h2>
       <div className="personal-details__self">
         <label>Name:</label>
-        <input type="text" onChange={e => setName(e.target.value)}></input>
+        <input
+          type="text"
+          value={name}
+          onChange={e => setName(e.target.value)}
+        ></input>
         <label>Surname:</label>
         <input type="text" onChange={e => setSurname(e.target.value)}></input>
         <label>DOB:</label>

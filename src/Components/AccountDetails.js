@@ -8,6 +8,7 @@ import AdviserDetails3 from "./Account-details/AdviserDetails3";
 const AccountDetails = props => {
   const {
     setName,
+    name,
     setSurname,
     setDob,
     setAccountType,
@@ -30,6 +31,7 @@ const AccountDetails = props => {
       <div className="personal-details-total">
         <PersonalDetails
           setName={setName}
+          name={name}
           setSurname={setSurname}
           setDob={setDob}
         />

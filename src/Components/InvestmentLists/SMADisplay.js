@@ -31,7 +31,7 @@ const SMAdisplay = props => {
   // const foooBar = () => {
   //   Array.prototype.push.apply(mainPageSMA, checkedSMA);
   // };
-
+  console.log(checkedSMA);
   return (
     <>
       <div className="investment-searchdiv">
@@ -41,14 +41,6 @@ const SMAdisplay = props => {
           value={searchSMA}
           onChange={handleSearchInputChanges}
         />
-        {/* <button
-          onClick={function setMainPageSMA() {
-            Array.prototype.push.apply(mainPageSMA, checkedSMA);
-          }}
-        >
-          {" "}
-          Select investment
-        </button> */}
       </div>
       <table>
         <thead>
@@ -61,7 +53,7 @@ const SMAdisplay = props => {
           </tr>
         </thead>
         <tbody>
-          {searchResults.map((investment, index) => {
+          {searchResults.map(investment => {
             return (
               <tr key={investment.id}>
                 <td>
@@ -71,17 +63,21 @@ const SMAdisplay = props => {
                       onChange={e => {
                         let checked = e.target.checked;
                         if (checked) {
-                          setCheckedSMA([...checkedSMA, investment.id]);
+                          setCheckedSMA([...checkedSMA, investment]);
                         } else {
                           setCheckedSMA(
-                            //checkedSMA stats just
-                            checkedSMA.filter(id => id !== investment.id)
+                            checkedSMA.filter(
+                              checkedInvestment =>
+                                checkedInvestment.id !== investment.id
+                            )
                           );
                         }
                       }}
                       type="checkbox"
                       //the .includes() implicitly contains the boolean "true"
-                      checked={checkedSMA.includes(investment.id)}
+                      checked={checkedSMA
+                        .map(checkedInvestment => checkedInvestment.id)
+                        .includes(investment.id)}
                     />
                   </label>
                 </td>
