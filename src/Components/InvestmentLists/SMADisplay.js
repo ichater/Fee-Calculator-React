@@ -3,14 +3,7 @@ import SMA from "./Data/SMA";
 // import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
 
 const SMAdisplay = props => {
-  const {
-    checkedSMA,
-    setCheckedSMA,
-    setAddSMA,
-    addSMA,
-    mainPageSMA,
-    setMainPageSMA
-  } = props;
+  const { checkedSMA, setCheckedSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
   // const [checkedSMA, setCheckedSMA] = useState([]);

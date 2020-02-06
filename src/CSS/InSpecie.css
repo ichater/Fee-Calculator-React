@@ -1,0 +1,19 @@
+.In-Specie-Page-Wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.In-specie-Display-Wrapper {
+  border-right: 1px solid black;
+}
+
+.MF-input-Wrapper {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 30%;
+}
+
+.MF-input-Wrapper select {
+  grid-column: span 2;
+  width: 30%;
+}

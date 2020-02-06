@@ -22,8 +22,6 @@ const Maintabs = ({ Shares, Funds }) => {
     [dealerGroup, setDealerGroup] = useState("Borkuf enterprises"),
     [selectSMA, setSelectSMA] = useState(false),
     [checkedSMA, setCheckedSMA] = useState([]),
-    [addSMA, setAddSMA] = useState([]),
-    [mainPageSMA, setMainPageSMA] = useState([]),
     [showText1, setShowText1] = useState(false),
     [showText2, setShowText2] = useState(false),
     [showText3, setShowText3] = useState(false);
@@ -38,9 +36,10 @@ const Maintabs = ({ Shares, Funds }) => {
           <Tab className="Tab">Investments</Tab>
           <Tab className="Tab">Summary Page</Tab>
         </TabList>
-        {/* <TabPanel>
+        <TabPanel>
           <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
-        </TabPanel> */}
+        </TabPanel>
+
         <TabPanel>
           <AccountDetails
             showText1={showText1}
@@ -80,28 +79,15 @@ const Maintabs = ({ Shares, Funds }) => {
         </TabPanel>
         <TabPanel>
           <Main
-            mainPageSMA={mainPageSMA}
-            setMainPageSMA={setMainPageSMA}
             Shares={Shares}
             Funds={Funds}
             selectSMA={selectSMA}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}
-            addSMA={addSMA}
-            setAddSMA={setAddSMA}
           />
         </TabPanel>
         <TabPanel>
-          <Investments
-            setSelectSMA={setSelectSMA}
-            selectSMA={selectSMA}
-            setCheckedSMA={setCheckedSMA}
-            checkedSMA={checkedSMA}
-            addSMA={addSMA}
-            setAddSMA={setAddSMA}
-            mainPageSMA={mainPageSMA}
-            setMainPageSMA={setMainPageSMA}
-          />
+          <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
         </TabPanel>
         <TabPanel>
           <SummaryMain
