@@ -7,10 +7,16 @@
 }
 
 .MF-input-Wrapper {
+  margin: auto;
   margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 30%;
+  width: 50%;
+}
+
+.MF-input-Wrapper input {
+  padding-right: 0;
+  width: 60%;
 }
 
 .MF-input-Wrapper select {

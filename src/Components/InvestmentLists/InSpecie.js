@@ -33,11 +33,11 @@ const InSpecie = () => {
           <option>Managed Funds</option>
           <option>Shares</option>
         </select>
-        {/* {showMFs && ( */}
-        <div className="investment-edit-wrapper">
-          <InSpecieMF />
-        </div>
-        {/* )} */}
+        {showMFs && (
+          <div className="investment-edit-wrapper">
+            <InSpecieMF />
+          </div>
+        )}
 
         {showShares && (
           <div className="investment-edit-wrapper">

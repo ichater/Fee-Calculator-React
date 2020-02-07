@@ -14,7 +14,8 @@ const InSpecieMFInput = () => {
           <option>No</option>
         </select>
         <label>MER</label>
-        <input type="number"></input>
+        <input type="number" />
+        <input type="submit" value="Add a Fund"></input>
       </form>
     </>
   );

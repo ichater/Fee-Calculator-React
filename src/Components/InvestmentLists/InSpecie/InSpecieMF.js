@@ -4,7 +4,8 @@ import InSpecieMFInput from "./InSpecieMFInput";
 const InSpecieMF = () => {
   return (
     <>
-      <table>
+      <h2>Add a Fund</h2>
+      {/* <table>
         <thead>
           <tr>
             <th>Select</th>
@@ -23,7 +24,7 @@ const InSpecieMF = () => {
             <td>1.0</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
       <InSpecieMFInput />
     </>
   );
