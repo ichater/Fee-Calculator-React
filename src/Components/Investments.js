@@ -25,9 +25,9 @@ const Investments = props => {
           <Tab className="Tab1">Shares</Tab>
           <Tab className="Tab1">In specie option</Tab>
         </TabList>
-        <TabPanel>
+        {/* <TabPanel>
           <InSpecie />
-        </TabPanel>
+        </TabPanel> */}
         <TabPanel>
           <SMADisplay
             setCheckedSMA={setCheckedSMA}

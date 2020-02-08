@@ -4,6 +4,7 @@
 }
 .In-specie-Display-Wrapper {
   border-right: 1px solid black;
+  min-height: 80vh;
 }
 
 .MF-input-Wrapper {
@@ -22,4 +23,14 @@
 .MF-input-Wrapper select {
   grid-column: span 2;
   width: 30%;
+}
+
+.In-Specie-header-Wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.investment-edit-wrapper h2 {
+  display: flex;
+  justify-content: center;
 }
