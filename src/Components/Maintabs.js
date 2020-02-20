@@ -24,17 +24,39 @@ const Maintabs = ({ Shares, Funds }) => {
     [checkedSMA, setCheckedSMA] = useState([]),
     [showText1, setShowText1] = useState(false),
     [showText2, setShowText2] = useState(false),
-    [showText3, setShowText3] = useState(false);
+    [showText3, setShowText3] = useState(false),
+    [menuActive, setMenuState] = useState(null);
+
+  const mainTabs = [
+    { id: 1, name: "Personal Details", className: "Tab" },
+    { id: 2, name: "Main", className: "Tab" },
+    { id: 3, name: "Investments", className: "Tab" },
+    { id: 4, name: "Summary Page", className: "Tab" }
+  ];
 
   return (
     <>
       {" "}
       <Tabs className="MainTabs-border">
         <TabList className="MainTabs">
-          <Tab className="Tab">Personal Details</Tab>
+          {mainTabs.map(tab => {
+            return (
+              <Tab
+                key={tab.id}
+                className={tab.id === menuActive && "selectedTab"}
+                className="selectedTab"
+                onClick={() => {
+                  setMenuState(tab.id);
+                }}
+              >
+                {tab.name}
+              </Tab>
+            );
+          })}
+          {/* <Tab className="Tab">Personal Details</Tab>
           <Tab className="Tab">Main</Tab>
           <Tab className="Tab">Investments</Tab>
-          <Tab className="Tab">Summary Page</Tab>
+          <Tab className="Tab">Summary Page</Tab> */}
         </TabList>
         {/* <TabPanel>
           <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
