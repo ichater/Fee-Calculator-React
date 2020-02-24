@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import InspecieDisplay from "./InSpecie/InspecieDisplay";
 import InSpecieMF from "./InSpecie/InSpecieMF";
 import InSpecieShares from "./InSpecie/InSpecieShares";
 import InSpecieHeader from "./InSpecie/InSpecieHeader";
 import uuid from "uuid/v4";
+import InSpecieContext from "./../../Context/InSpecieContext";
 
 const InSpecie = () => {
   const [showShares, setShowShares] = useState(false);
   const [showMFs, setShowMFs] = useState(false);
   const [inSpecieMFs, setInSpecieMFs] = useState([]);
-  const [inSpecieShares, setInSpecieShares] = useState([]);
+  // const [inSpecieShares, setInSpecieShares] = useState([]);
+  const { inSpecieShares, setInSpecieShares, addShareSubmit } = useContext(
+    InSpecieContext
+  );
 
   const addFundSubmit = (mfName, mfAPIR, nabOwned, mfMER) => {
     setInSpecieMFs([
@@ -18,13 +22,13 @@ const InSpecie = () => {
     ]);
     console.log(inSpecieMFs);
   };
-  const addShareSubmit = (shareName, ASX, category) => {
-    setInSpecieShares([
-      ...inSpecieShares,
-      { shareName, ASX, category, id: uuid() }
-    ]);
-    console.log(inSpecieShares);
-  };
+  // const addShareSubmit = (shareName, ASX, category) => {
+  //   setInSpecieShares([
+  //     ...inSpecieShares,
+  //     { shareName, ASX, category, id: uuid() }
+  //   ]);
+  //   console.log(inSpecieShares);
+  // };
   return (
     <>
       <InSpecieHeader />

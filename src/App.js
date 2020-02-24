@@ -3,17 +3,14 @@ import "./CSS/App.css";
 import "react-tabs/style/react-tabs.css";
 import Maintabs from "./Components/Maintabs";
 import ThemeContextProvider from "./Context/ThemeContext";
+import InSpecieContextProvider from "./Context/InSpecieContext";
 
 function App() {
   return (
     <>
-      <ThemeContextProvider>
-        <Maintabs
-          // mainPageSMA={mainPageSMA}
-          Shares={sampleShares}
-          Funds={sampleMFs}
-        />
-      </ThemeContextProvider>
+      <InSpecieContextProvider>
+        <Maintabs Shares={sampleShares} Funds={sampleMFs} />
+      </InSpecieContextProvider>
     </>
   );
 }

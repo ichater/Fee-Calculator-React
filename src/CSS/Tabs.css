@@ -9,7 +9,7 @@
   background-color: #f0eeea;
 }
 
-/* .MainTabs :nth-child(n) {
+.MainTabs :nth-child(n) {
   cursor: pointer;
 
   font-weight: 400;
@@ -26,7 +26,7 @@
   text-decoration: none;
   padding: 11px 21px;
   color: white;
-} */
+}
 
 .react-tabs__tab--selected {
   background: green;
