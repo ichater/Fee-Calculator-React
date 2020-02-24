@@ -4,7 +4,7 @@ import InSpecieMF from "./InSpecie/InSpecieMF";
 import InSpecieShares from "./InSpecie/InSpecieShares";
 import InSpecieHeader from "./InSpecie/InSpecieHeader";
 import uuid from "uuid/v4";
-import InSpecieContext from "./../../Context/InSpecieContext";
+import { InSpecieContext } from "./../../Context/InSpecieContext";
 
 const InSpecie = () => {
   const [showShares, setShowShares] = useState(false);

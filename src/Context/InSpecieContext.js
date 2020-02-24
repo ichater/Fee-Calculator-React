@@ -4,26 +4,7 @@ import uuid from "uuid/v4";
 export const InSpecieContext = createContext();
 
 const InSpecieContextProvider = props => {
-  const [inSpecieShares, setInSpecieShares] = useState([
-    {
-      id: uuid(),
-      ASX: "SFC",
-      shareName: "SCHAFFER CORPORATION LIMITED",
-      category: "Automobiles & Components"
-    },
-    {
-      id: uuid(),
-      ASX: "ANZ",
-      shareName: "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
-      category: "Banks"
-    },
-    {
-      id: uuid(),
-      ASX: "CBA",
-      shareName: "COMMONWEALTH BANK OF AUSTRALIA.",
-      category: "Banks"
-    }
-  ]);
+  const [inSpecieShares, setInSpecieShares] = useState([]);
   const addShareSubmit = (shareName, ASX, category) => {
     setInSpecieShares([
       ...inSpecieShares,
