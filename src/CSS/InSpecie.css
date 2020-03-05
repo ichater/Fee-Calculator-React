@@ -34,3 +34,43 @@
   display: flex;
   justify-content: center;
 }
+
+.investment-table__MFs {
+  border: 1px solid black;
+  margin-top: 25px;
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.InSpecie-Table_wrapper table {
+  border: 1px solid black;
+  margin-top: 25px;
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+
+.InSpecie-Table_wrapper table th {
+  padding: 10px;
+}
+
+.InSpecie-Table_wrapper table tbody tr td:nth-child(1) {
+  width: 15px;
+}
+
+.InSpecie-Table_wrapper table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.InSpecie-Shares_table tbody tr td:nth-child(2) {
+  width: 12%;
+}
+.InSpecie-Shares_table tbody tr td:nth-child(3) {
+  width: 43%;
+}
+
+.InSpecie-MF_table tbody tr td:nth-child(2) {
+  width: 55%;
+}

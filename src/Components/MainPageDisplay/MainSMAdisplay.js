@@ -2,8 +2,8 @@ import React from "react";
 import MainSMAdisplay1 from "./MainSMAdisplay1";
 
 const MainSMAdisplay = props => {
-  const { checkedSMA } = props;
-
+  const { checkedSMA, checkedMF } = props;
+  // console.log(checkedMF);
   return (
     <>
       {checkedSMA.length && (

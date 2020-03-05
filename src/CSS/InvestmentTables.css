@@ -21,11 +21,8 @@
 }
 
 .investment-table__default td {
-  padding: 5px;
-}
-
-.investment-table__default td {
   border: 1px solid black;
+  padding: 5px;
 }
 
 .investment-table__default tr td:nth-child(1) {

@@ -6,16 +6,20 @@ const MainShareDisplay = ({ Shares }) => {
     <>
       {" "}
       <table className="investment-table__default">
-        <tr>
-          <th>Name</th>
-          <th>ASX</th>
-          <th>Category</th>
-          <th>% value</th>
-          <th>$ value</th>
-        </tr>
-        {Shares.map(Shares => {
-          return <MainShareDisplay1 key={Shares.id} {...Shares} />;
-        })}
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ASX</th>
+            <th>Category</th>
+            <th>% value</th>
+            <th>$ value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Shares.map(Shares => {
+            return <MainShareDisplay1 key={Shares.id} {...Shares} />;
+          })}
+        </tbody>
       </table>
     </>
   );

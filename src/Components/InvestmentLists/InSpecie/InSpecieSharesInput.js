@@ -2,15 +2,15 @@ import React, { useState } from "react";
 
 const InSpecieSharesInput = props => {
   const { addShareSubmit } = props,
-    [shareName, setShareName] = useState(""),
-    [ASX, setASX] = useState(""),
-    [category, setCategory] = useState(""),
+    [ListedInvestmentName, setListedInvestmentName] = useState(""),
+    [ASXcode, setASXCode] = useState(""),
+    [Category, setCategory] = useState(""),
     addShare = e => {
       e.preventDefault();
-      setShareName("");
-      setASX("");
+      setListedInvestmentName("");
+      setASXCode("");
       setCategory("");
-      addShareSubmit(shareName, ASX, category);
+      addShareSubmit(ListedInvestmentName, ASXcode, Category);
     };
   return (
     <>
@@ -19,21 +19,21 @@ const InSpecieSharesInput = props => {
         <input
           type="text"
           required
-          value={ASX}
-          onChange={e => setASX(e.target.value)}
+          value={ASXcode}
+          onChange={e => setASXCode(e.target.value)}
         ></input>
         <label>Name</label>
         <input
           type="text"
           required
-          value={shareName}
-          onChange={e => setShareName(e.target.value)}
+          value={ListedInvestmentName}
+          onChange={e => setListedInvestmentName(e.target.value)}
         ></input>
         <label>Category</label>
         <input
           type="text"
           required
-          value={category}
+          value={Category}
           onChange={e => setCategory(e.target.value)}
         ></input>
 

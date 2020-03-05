@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import NAVMFs from "./Data/NAVMFs";
 
-const FundDisplay = () => {
+const FundDisplay = ({ checkedMf, setCheckedMF }) => {
   const [searchFunds, setSearchFunds] = useState("");
-
   const [searchResults1, setSearchResults1] = React.useState([]);
 
   const handleSearchInputChanges = e => {
@@ -21,6 +20,8 @@ const FundDisplay = () => {
     );
     setSearchResults1(results);
   }, [searchFunds]);
+
+  console.log(checkedMf);
   return (
     <>
       <div className="investment-searchdiv">
@@ -42,16 +43,44 @@ const FundDisplay = () => {
           </tr>
         </thead>
         <tbody>
-          {searchResults1.map(funds => {
+          {searchResults1.map(fund => {
             return (
-              <tr>
+              <tr key={fund.id}>
                 <td>
-                  <input type="checkbox" />
+                  <label>
+                    <input
+                      onChange={e => {
+                        let checked = e.target.checked;
+                        if (checked) {
+                          setCheckedMF([...checkedMf, fund]);
+                        } else {
+                          setCheckedMF(
+                            checkedMf.filter(
+                              checkedFund => checkedFund.id !== fund.id
+                            )
+                          );
+                        }
+                      }}
+                      type="checkbox"
+                      // checked={checkedMf
+                      //   .map(checkedFund => checkedFund.id)
+                      //   .includes(fund.id)}
+                    />
+                  </label>
                 </td>
-                <td>{funds.FundName}</td>
-                <td>{funds.APIR}</td>
-                <td>{funds.NabOwned}</td>
-                <td>{funds.MER}</td>
+                <td>
+                  {fund.FundName}{" "}
+                  <button
+                    onClick={e => {
+                      console.log(checkedMf);
+                    }}
+                  >
+                    Hello
+                  </button>
+                </td>
+                <td>{fund.APIR}</td>
+                <td>{fund.NabOwned}</td>
+                <td>{fund.MER}</td>
               </tr>
             );
           })}

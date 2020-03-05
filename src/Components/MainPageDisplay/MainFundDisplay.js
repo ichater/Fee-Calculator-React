@@ -1,27 +1,32 @@
 import React from "react";
 import MainFundDisplay1 from "./MainFundDisplay1";
-import ThemeContext from "../../Context/ThemeContext";
 
-const MainFundDisplay = ({ Funds }) => {
+const MainFundDisplay = props => {
+  const { checkedMf } = props;
+  console.log(checkedMf);
   return (
     <>
-      <table className="investment-table__default">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>APIR</th>
-            <th>Nab</th>
-            <th>MER</th>
-            <th>% value</th>
-            <th>$ value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Funds.map(Funds => {
-            return <MainFundDisplay1 key={Funds.id} {...Funds} />;
-          })}
-        </tbody>
-      </table>
+      {/* {checkedMf.length && ( */}
+      <>
+        <table className="investment-table__default">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>APIR</th>
+              <th>Nab</th>
+              <th>MER</th>
+              <th>% value</th>
+              <th>$ value</th>
+            </tr>
+          </thead>
+          {/* <tbody>
+            {checkedMf.map(checkedMf => {
+              return <MainFundDisplay1 key={checkedMf.id} {...checkedMf} />;
+            })}
+          </tbody> */}
+        </table>
+      </>
+      {/* )} */}
     </>
   );
 };

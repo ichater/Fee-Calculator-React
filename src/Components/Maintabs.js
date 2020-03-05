@@ -20,12 +20,12 @@ const Maintabs = ({ Shares, Funds }) => {
     [adviserName, setAdviserName] = useState("Jane Doe Inc"),
     [adviserCode, setAdviserCode] = useState("133766"),
     [dealerGroup, setDealerGroup] = useState("Borkuf enterprises"),
-    [selectSMA, setSelectSMA] = useState(false),
-    [checkedSMA, setCheckedSMA] = useState([]),
     [showText1, setShowText1] = useState(false),
     [showText2, setShowText2] = useState(false),
     [showText3, setShowText3] = useState(false),
-    [menuActive, setMenuState] = useState(null);
+    [menuActive, setMenuState] = useState(null),
+    [checkedSMA, setCheckedSMA] = useState([]),
+    [checkedMF, setCheckedMF] = useState([]);
 
   const mainTabs = [
     { id: 1, name: "Personal Details", className: "Tab" },
@@ -53,10 +53,6 @@ const Maintabs = ({ Shares, Funds }) => {
               </Tab>
             );
           })}
-          {/* <Tab className="Tab">Personal Details</Tab>
-          <Tab className="Tab">Main</Tab>
-          <Tab className="Tab">Investments</Tab>
-          <Tab className="Tab">Summary Page</Tab> */}
         </TabList>
         {/* <TabPanel>
           <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
@@ -100,16 +96,15 @@ const Maintabs = ({ Shares, Funds }) => {
           />
         </TabPanel>
         <TabPanel>
-          <Main
-            Shares={Shares}
-            Funds={Funds}
-            selectSMA={selectSMA}
+          <Main Shares={Shares} checkedMF={checkedMF} checkedSMA={checkedSMA} />
+        </TabPanel>
+        <TabPanel>
+          <Investments
+            checkedMf={checkedMF}
+            setCheckedMF={setCheckedMF}
             setCheckedSMA={setCheckedSMA}
             checkedSMA={checkedSMA}
           />
-        </TabPanel>
-        <TabPanel>
-          <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
         </TabPanel>
         <TabPanel>
           <SummaryMain

@@ -2,18 +2,7 @@ import React from "react";
 import SMA from "./../InvestmentLists/Data/SMA";
 
 const SMAdisplay = props => {
-  const {
-    Name,
-    APIR,
-    Nab,
-    MER,
-    id,
-    checkedSMA,
-    setCheckedSMA,
-    addSMA,
-    setAddSMA,
-    mainPageSMA
-  } = props;
+  const { Name, APIR, Nab, MER } = props;
 
   return (
     <>

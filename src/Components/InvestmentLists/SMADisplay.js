@@ -6,7 +6,6 @@ const SMAdisplay = props => {
   const { checkedSMA, setCheckedSMA } = props;
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
-  // const [checkedSMA, setCheckedSMA] = useState([]);
 
   const handleSearchInputChanges = e => {
     setSearchSMA(e.target.value);
@@ -21,10 +20,6 @@ const SMAdisplay = props => {
     setSearchResults(results);
   }, [searchSMA]);
 
-  // const foooBar = () => {
-  //   Array.prototype.push.apply(mainPageSMA, checkedSMA);
-  // };
-  console.log(checkedSMA);
   return (
     <>
       <div className="investment-searchdiv">
@@ -51,7 +46,6 @@ const SMAdisplay = props => {
               <tr key={investment.id}>
                 <td>
                   <label>
-                    {/* <CheckboxStyled /> */}
                     <input
                       onChange={e => {
                         let checked = e.target.checked;
