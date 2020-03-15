@@ -1,32 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import MainFundDisplay1 from "./MainFundDisplay1";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const MainFundDisplay = props => {
-  const { checkedMf } = props;
-  console.log(checkedMf);
+  const { checkedMF } = useContext(InvestmentContext);
+
   return (
     <>
-      {/* {checkedMf.length && ( */}
-      <>
-        <table className="investment-table__default">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>APIR</th>
-              <th>Nab</th>
-              <th>MER</th>
-              <th>% value</th>
-              <th>$ value</th>
-            </tr>
-          </thead>
-          {/* <tbody>
-            {checkedMf.map(checkedMf => {
-              return <MainFundDisplay1 key={checkedMf.id} {...checkedMf} />;
-            })}
-          </tbody> */}
-        </table>
-      </>
-      {/* )} */}
+      {checkedMF.length && (
+        <>
+          <table className="investment-table__default">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>APIR</th>
+                <th>Nab</th>
+                <th>MER</th>
+                <th>% value</th>
+                <th>$ value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {checkedMF.map(checkedMF => {
+                return <MainFundDisplay1 key={checkedMF.id} {...checkedMF} />;
+              })}
+            </tbody>
+          </table>
+        </>
+      )}
     </>
   );
 };

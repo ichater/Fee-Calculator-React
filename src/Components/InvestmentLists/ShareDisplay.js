@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import NavShares1 from "./Data/NavShares1";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const ShareDisplay = () => {
   const [searchShares, setSearchShares] = useState("");
-
+  const { checkedShares, setCheckedShates } = useContext(InvestmentContext);
   const [searchResults, setSearchResults] = React.useState([]);
 
   const handleSearchInputChanges = e => {
@@ -11,7 +12,10 @@ const ShareDisplay = () => {
   };
 
   React.useEffect(() => {
-    const results = NavShares1.filter(
+    const results = NavShares1.map((share, index) => ({
+      ...share,
+      id: index
+    })).filter(
       NavShares1 => NavShares1.ASXcode.toLowerCase().includes(searchShares),
       NavShares1 =>
         NavShares1.ListedInvestmentName.toLowerCase().includes(searchShares),
@@ -37,15 +41,33 @@ const ShareDisplay = () => {
           <th>Name</th>
           <th>Category</th>
         </tr>
-        {searchResults.map(investment => {
+        {searchResults.map(investment1 => {
           return (
             <tr>
               <td>
-                <input type="checkbox"></input>
+                <input
+                  onChange={e => {
+                    let checked = e.target.checked;
+                    if (checked) {
+                      setCheckedShates([...checkedShares, investment1]);
+                    } else {
+                      setCheckedShates(
+                        checkedShares.filter(
+                          checkedInvestment1 =>
+                            checkedInvestment1.id !== investment1.id
+                        )
+                      );
+                    }
+                  }}
+                  type="checkbox"
+                  checked={checkedShares
+                    .map(i => i.id)
+                    .includes(investment1.id)}
+                />
               </td>
-              <td>{investment.ASXcode}</td>
-              <td>{investment.ListedInvestmentName}</td>
-              <td>{investment.Category}</td>
+              <td>{investment1.ASXcode}</td>
+              <td>{investment1.ListedInvestmentName}</td>
+              <td>{investment1.Category}</td>
             </tr>
           );
         })}

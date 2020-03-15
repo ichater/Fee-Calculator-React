@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import uuid from "uuid/v4";
 
 const InSpecieSharesInput = props => {
   const { addShareSubmit } = props,
     [ListedInvestmentName, setListedInvestmentName] = useState(""),
     [ASXcode, setASXCode] = useState(""),
     [Category, setCategory] = useState(""),
+    [id, setId] = useState(),
     addShare = e => {
       e.preventDefault();
       setListedInvestmentName("");
       setASXCode("");
       setCategory("");
-      addShareSubmit(ListedInvestmentName, ASXcode, Category);
+      setId(uuid());
+      addShareSubmit(ListedInvestmentName, ASXcode, Category, id);
     };
   return (
     <>

@@ -4,13 +4,9 @@ import InSpecieMF from "./InSpecie/InSpecieMF";
 import InSpecieShares from "./InSpecie/InSpecieShares";
 import InSpecieHeader from "./InSpecie/InSpecieHeader";
 
-import { InSpecieContext } from "./../../Context/InSpecieContext";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const InSpecie = () => {
-  // const [showShares, setShowShares] = useState(false);
-  // const [showMFs, setShowMFs] = useState(false);
-  // const [inSpecieMFs, setInSpecieMFs] = useState([]);
-  // const [inSpecieShares, setInSpecieShares] = useState([]);
   const {
     inSpecieShares,
     setInSpecieShares,
@@ -23,7 +19,7 @@ const InSpecie = () => {
     addFundSubmit,
     inSpecieMFs,
     setInSpecieMFs
-  } = useContext(InSpecieContext);
+  } = useContext(InvestmentContext);
 
   return (
     <>

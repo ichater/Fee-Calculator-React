@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import NAVMFs from "./Data/NAVMFs";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
-const FundDisplay = ({ checkedMf, setCheckedMF }) => {
+const FundDisplay = () => {
   const [searchFunds, setSearchFunds] = useState("");
   const [searchResults1, setSearchResults1] = React.useState([]);
+  const { checkedMF, setCheckedMF } = useContext(InvestmentContext);
 
   const handleSearchInputChanges = e => {
     setSearchFunds(e.target.value);
   };
 
   React.useEffect(() => {
-    const results = NAVMFs.filter(
+    const results = NAVMFs.map((fund, index) => ({
+      ...fund,
+      id: index
+    })).filter(
       NAVMFs => NAVMFs.FundName.toLowerCase().includes(searchFunds),
       NAVMFs =>
         NAVMFs.APIR.toString()
@@ -21,7 +26,7 @@ const FundDisplay = ({ checkedMf, setCheckedMF }) => {
     setSearchResults1(results);
   }, [searchFunds]);
 
-  console.log(checkedMf);
+  console.log(checkedMF);
   return (
     <>
       <div className="investment-searchdiv">
@@ -52,32 +57,23 @@ const FundDisplay = ({ checkedMf, setCheckedMF }) => {
                       onChange={e => {
                         let checked = e.target.checked;
                         if (checked) {
-                          setCheckedMF([...checkedMf, fund]);
+                          setCheckedMF([...checkedMF, fund]);
                         } else {
                           setCheckedMF(
-                            checkedMf.filter(
+                            checkedMF.filter(
                               checkedFund => checkedFund.id !== fund.id
                             )
                           );
                         }
                       }}
                       type="checkbox"
-                      // checked={checkedMf
-                      //   .map(checkedFund => checkedFund.id)
-                      //   .includes(fund.id)}
+                      checked={checkedMF
+                        .map(checkedFund => checkedFund.id)
+                        .includes(fund.id)}
                     />
                   </label>
                 </td>
-                <td>
-                  {fund.FundName}{" "}
-                  <button
-                    onClick={e => {
-                      console.log(checkedMf);
-                    }}
-                  >
-                    Hello
-                  </button>
-                </td>
+                <td>{fund.FundName} </td>
                 <td>{fund.APIR}</td>
                 <td>{fund.NabOwned}</td>
                 <td>{fund.MER}</td>

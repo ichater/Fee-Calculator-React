@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import MainShareDisplay1 from "./MainShareDisplay1";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
-const MainShareDisplay = ({ Shares }) => {
+const MainShareDisplay = () => {
+  const { checkedShares } = useContext(InvestmentContext);
   return (
     <>
       {" "}
@@ -16,8 +18,10 @@ const MainShareDisplay = ({ Shares }) => {
           </tr>
         </thead>
         <tbody>
-          {Shares.map(Shares => {
-            return <MainShareDisplay1 key={Shares.id} {...Shares} />;
+          {checkedShares.map(checkedShares => {
+            return (
+              <MainShareDisplay1 key={checkedShares.id} {...checkedShares} />
+            );
           })}
         </tbody>
       </table>

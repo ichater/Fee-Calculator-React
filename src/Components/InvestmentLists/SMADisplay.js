@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SMA from "./Data/SMA";
-// import CheckboxStyled from "./../Styled-Components/CheckboxStyled";
+import InvestmentContext from "./../../Context/InvestmentContext";
 
-const SMAdisplay = props => {
-  const { checkedSMA, setCheckedSMA } = props;
+const SMAdisplay = () => {
+  const { checkedSMA, setCheckedSMA } = useContext(InvestmentContext);
   const [searchSMA, setSearchSMA] = useState("");
   const [searchResults, setSearchResults] = React.useState([]);
 

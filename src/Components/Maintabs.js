@@ -6,7 +6,7 @@ import Investments from "./Investments";
 import Main from "./Main";
 import SummaryMain from "./SummaryMain";
 
-const Maintabs = ({ Shares, Funds }) => {
+const Maintabs = () => {
   const [name, setName] = useState("John"),
     [surname, setSurname] = useState("Doe"),
     [dob, setDob] = useState("01/01/1900"),
@@ -23,9 +23,8 @@ const Maintabs = ({ Shares, Funds }) => {
     [showText1, setShowText1] = useState(false),
     [showText2, setShowText2] = useState(false),
     [showText3, setShowText3] = useState(false),
-    [menuActive, setMenuState] = useState(null),
-    [checkedSMA, setCheckedSMA] = useState([]),
-    [checkedMF, setCheckedMF] = useState([]);
+    [menuActive, setMenuState] = useState(null);
+  // [checkedSMA, setCheckedSMA] = useState([]);
 
   const mainTabs = [
     { id: 1, name: "Personal Details", className: "Tab" },
@@ -54,9 +53,9 @@ const Maintabs = ({ Shares, Funds }) => {
             );
           })}
         </TabList>
-        {/* <TabPanel>
-          <Investments setCheckedSMA={setCheckedSMA} checkedSMA={checkedSMA} />
-        </TabPanel> */}
+        <TabPanel>
+          <Investments />
+        </TabPanel>
 
         <TabPanel>
           <AccountDetails
@@ -96,15 +95,7 @@ const Maintabs = ({ Shares, Funds }) => {
           />
         </TabPanel>
         <TabPanel>
-          <Main Shares={Shares} checkedMF={checkedMF} checkedSMA={checkedSMA} />
-        </TabPanel>
-        <TabPanel>
-          <Investments
-            checkedMf={checkedMF}
-            setCheckedMF={setCheckedMF}
-            setCheckedSMA={setCheckedSMA}
-            checkedSMA={checkedSMA}
-          />
+          <Main />
         </TabPanel>
         <TabPanel>
           <SummaryMain

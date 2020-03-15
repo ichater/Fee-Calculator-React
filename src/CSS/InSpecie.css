@@ -53,6 +53,7 @@
 
 .InSpecie-Table_wrapper table th {
   padding: 10px;
+  border-right: 1px solid black;
 }
 
 .InSpecie-Table_wrapper table tbody tr td:nth-child(1) {
@@ -73,4 +74,11 @@
 
 .InSpecie-MF_table tbody tr td:nth-child(2) {
   width: 55%;
+}
+.InSpecie-Delete {
+}
+.InSpecie-Delete:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
 }
