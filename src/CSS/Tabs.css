@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   list-style-type: none;
   text-align: center;
-
   justify-content: space-evenly;
   position: relative;
   background-color: #f0eeea;
@@ -22,9 +21,14 @@
   margin-bottom: 22px;
   margin-top: 20px;
   min-width: 155px;
-  border: 3px solid #bc4401;
+
   text-decoration: none;
   padding: 11px 21px;
+  color: yellow;
+}
+
+.MainTabs :nth-child(n):hover {
+  background-color: #017780;
   color: white;
 }
 
@@ -35,31 +39,23 @@
   border-radius: 5px 5px 0 0;
 }
 
-.Tab {
+.MainTabs .selectedTab1 {
   cursor: pointer;
-
   font-weight: 400;
   font-family: Charlie-Std-SemiBold;
   text-shadow: none;
-  background-color: #bc4401;
-  font-size: 20px;
+  background-color: #017780;
+
   height: 43px !important;
   width: 50px;
   margin-bottom: 22px;
   margin-top: 20px;
   min-width: 155px;
-  border: 3px solid #bc4401;
   text-decoration: none;
   padding: 11px 21px;
-  color: white;
+  color: yellow;
 }
 
-.selectedTab:hover {
-  background-color: #017780;
-  border: 1px solid white;
+.MainTabs .selectedTab1:hover {
+  cursor: auto;
 }
-
-/* .MainTabs-border {
-
-  height: 500px;
-} */

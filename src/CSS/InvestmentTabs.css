@@ -1,0 +1,26 @@
+.investmentList-tabs {
+  display: grid;
+  grid-template-columns: 4 (1fr);
+  grid-gap: 10px;
+}
+
+.investmentList-tabs :nth-child(n) {
+  list-style-type: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #bc4401;
+  color: yellow;
+}
+
+.investmentList-tabs :nth-child(n):hover {
+  cursor: pointer;
+}
+
+.investmentList-tabs .selectedTab2 {
+  background: #017780;
+  color: yellow;
+  border: 1px solid yellow;
+}

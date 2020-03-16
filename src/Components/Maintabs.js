@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import AccountDetails from "./AccountDetails";
@@ -23,14 +23,13 @@ const Maintabs = () => {
     [showText1, setShowText1] = useState(false),
     [showText2, setShowText2] = useState(false),
     [showText3, setShowText3] = useState(false),
-    [menuActive, setMenuState] = useState(null);
-  // [checkedSMA, setCheckedSMA] = useState([]);
+    [menuActive, setMenuState] = useState(1);
 
   const mainTabs = [
-    { id: 1, name: "Personal Details", className: "Tab" },
-    { id: 2, name: "Main", className: "Tab" },
-    { id: 3, name: "Investments", className: "Tab" },
-    { id: 4, name: "Summary Page", className: "Tab" }
+    { id: 1, name: "Personal Details" },
+    { id: 2, name: "Main" },
+    { id: 3, name: "Investments" },
+    { id: 4, name: "Summary Page" }
   ];
 
   return (
@@ -42,8 +41,7 @@ const Maintabs = () => {
             return (
               <Tab
                 key={tab.id}
-                className={tab.id === menuActive && "selectedTab"}
-                className="selectedTab"
+                className={tab.id === menuActive && "selectedTab1"}
                 onClick={() => {
                   setMenuState(tab.id);
                 }}
