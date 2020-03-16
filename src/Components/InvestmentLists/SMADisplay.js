@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import SMA from "./Data/SMA";
-import InvestmentContext from "./../../Context/InvestmentContext";
+import { InvestmentContext } from "./../../Context/InvestmentContext";
 
 const SMAdisplay = () => {
   const { checkedSMA, setCheckedSMA } = useContext(InvestmentContext);

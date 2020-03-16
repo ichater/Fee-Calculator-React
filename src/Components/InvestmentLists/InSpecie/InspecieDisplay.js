@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { InvestmentContext } from "../../../Context/InvestmentContext";
+import InSpecieExplained from "./InSpecieExplained";
 
 const InspecieDisplay = ({ inSpecieMFs, inSpecieShares }) => {
   const {
@@ -12,7 +13,7 @@ const InspecieDisplay = ({ inSpecieMFs, inSpecieShares }) => {
   } = useContext(InvestmentContext);
   return (
     <div className="InSpecie-Table_wrapper">
-      {!inSpecieShares.length && !inSpecieMFs.length && <h1>Hello World!</h1>}
+      {!inSpecieShares.length && !inSpecieMFs.length && <InSpecieExplained />}
       {inSpecieMFs.length && (
         <table className="InSpecie-MF_table">
           <thead>

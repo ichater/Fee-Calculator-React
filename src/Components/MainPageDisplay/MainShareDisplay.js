@@ -6,25 +6,32 @@ const MainShareDisplay = () => {
   const { checkedShares } = useContext(InvestmentContext);
   return (
     <>
-      {" "}
-      <table className="investment-table__default">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>ASX</th>
-            <th>Category</th>
-            <th>% value</th>
-            <th>$ value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {checkedShares.map(checkedShares => {
-            return (
-              <MainShareDisplay1 key={checkedShares.id} {...checkedShares} />
-            );
-          })}
-        </tbody>
-      </table>
+      {checkedShares.length && (
+        <>
+          {" "}
+          <table className="investment-table__default">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ASX</th>
+                <th>Category</th>
+                <th>% value</th>
+                <th>$ value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {checkedShares.map(checkedShares => {
+                return (
+                  <MainShareDisplay1
+                    key={checkedShares.id}
+                    {...checkedShares}
+                  />
+                );
+              })}
+            </tbody>
+          </table>{" "}
+        </>
+      )}
     </>
   );
 };

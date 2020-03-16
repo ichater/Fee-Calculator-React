@@ -7,7 +7,7 @@ const InSpecieMFInput = props => {
     [FundName, setMfName] = useState(""),
     [APIR, setMfAPIR] = useState(""),
     [MER, setmfMer] = useState(""),
-    [NabOwned, setNabOwned] = useState(false),
+    [NabOwned] = useState(false),
     [id, setId] = useState(),
     addMF = e => {
       e.preventDefault();
@@ -34,20 +34,6 @@ const InSpecieMFInput = props => {
           value={APIR}
           onChange={e => setMfAPIR(e.target.value)}
         ></input>
-        <select
-          name="NabOwned"
-          onChange={e => {
-            if (e.target.value == "no") {
-              setNabOwned(false);
-            }
-            if (e.target.value == "yes") {
-              setNabOwned(true);
-            }
-          }}
-        >
-          <option value={NabOwned}>No</option>
-          <option value={NabOwned}>Yes</option>
-        </select>
         <label>MER</label>
         <input
           type="number"

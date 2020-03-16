@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import MainSMAdisplay1 from "./MainSMAdisplay1";
+import { InvestmentContext } from "./../../Context/InvestmentContext";
 
-const MainSMAdisplay = props => {
-  const { checkedSMA, checkedMF } = props;
-  // console.log(checkedMF);
+const MainSMAdisplay = () => {
+  const { checkedSMA } = useContext(InvestmentContext);
+
   return (
     <>
       {checkedSMA.length && (

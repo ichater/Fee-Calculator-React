@@ -3,6 +3,7 @@ import InspecieDisplay from "./InSpecie/InspecieDisplay";
 import InSpecieMF from "./InSpecie/InSpecieMF";
 import InSpecieShares from "./InSpecie/InSpecieShares";
 import InSpecieHeader from "./InSpecie/InSpecieHeader";
+import InSpecieDropDownExplained from "./InSpecie/InSpecieDropDownExplained";
 
 import { InvestmentContext } from "../../Context/InvestmentContext";
 
@@ -51,6 +52,8 @@ const InSpecie = () => {
             <option>Managed Funds</option>
             <option>Shares</option>
           </select>
+
+          {!showMFs && !showShares && <InSpecieDropDownExplained />}
           {showMFs && (
             <div className="investment-edit-wrapper">
               <InSpecieMF
