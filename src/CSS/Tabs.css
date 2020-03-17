@@ -1,6 +1,6 @@
 .MainTabs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   list-style-type: none;
   text-align: center;
   justify-content: space-evenly;
@@ -10,7 +10,7 @@
 
 .MainTabs :nth-child(n) {
   cursor: pointer;
-
+  margin-left: 15%;
   font-weight: 400;
   font-family: Charlie-Std-SemiBold;
   text-shadow: none;

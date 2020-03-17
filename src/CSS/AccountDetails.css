@@ -43,7 +43,7 @@
 
 .IntroHeader-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   background-color: #c95109;
   color: white;
   padding-top: 10px;
@@ -56,12 +56,17 @@
 .IntroHeader-container p {
   margin-left: 16%;
   margin-bottom: 0px;
+  grid-column-start: 1;
+  grid-column-end: span col2-start;
+  margin-left: 20%;
 }
 
 .IntroHeader-container h1 {
   margin-top: 10px;
   margin-left: 16%;
   font-size: 34px;
+
+  margin-left: 40%;
 }
 
 .personal-details-total input {
@@ -69,4 +74,12 @@
 }
 .personal-details-total input:focus {
   border: 1px solid #c95109;
+}
+
+.IntroHeader-container .Account-Details_MLC-logo {
+  height: 60px;
+  align-items: end;
+
+  margin-left: auto;
+  margin-right: 20%;
 }

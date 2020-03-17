@@ -4,7 +4,7 @@ import "react-tabs/style/react-tabs.css";
 import Maintabs from "./Components/Maintabs";
 
 import InvestmentContextProvider from "./Context/InvestmentContext";
-import MainPageContextProvider from "./Context/InvestmentContext";
+import MainPageContextProvider from "./Context/MainPageContext";
 
 function App() {
   return (

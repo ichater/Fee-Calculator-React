@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
 
-const AccountDetailsandSearch = props => {
-  const { balance, setBalance } = useContext(MainPageContext);
+const AccountDetailsandSearch = () => {
+  const { balance, setBalance, feetable } = useContext(MainPageContext);
 
   return (
     <>
@@ -13,7 +13,10 @@ const AccountDetailsandSearch = props => {
         id="balance"
         defaultValue="0"
         value={balance}
-        onChange={e => setBalance(e.target.value)}
+        onChange={e => {
+          setBalance(e.target.value);
+          feetable(e.target.value);
+        }}
       />
     </>
   );
