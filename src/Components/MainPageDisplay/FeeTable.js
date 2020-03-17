@@ -8,7 +8,7 @@ const FeeTable = () => {
   });
   return (
     <>
-      <table>
+      <table className="Fee-Table">
         <thead>
           <tr>
             <th>Account Balance</th>
@@ -33,7 +33,17 @@ const FeeTable = () => {
             <td>{t3}</td>
           </tr>
           <tr>
-            <td colSpan="2">Total:</td>
+            <td>Non-Nab group investments</td>
+            <td>0.10</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>listed Investments</td>
+            <td>0.15</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td colSpan="2">Total Fee:</td>
             <td>{totalFee}</td>
           </tr>
         </tbody>

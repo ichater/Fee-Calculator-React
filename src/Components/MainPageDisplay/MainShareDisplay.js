@@ -9,7 +9,7 @@ const MainShareDisplay = () => {
       {checkedShares.length && (
         <>
           {" "}
-          <table className="investment-table__default">
+          <table className="investment-table__default-asx-table">
             <thead>
               <tr>
                 <th>Name</th>

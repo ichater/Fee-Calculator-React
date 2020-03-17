@@ -1,0 +1,15 @@
+.Fee-Table {
+  border: 1px solid black;
+  width: 80%;
+  margin-left: 5%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.Fee-Table td {
+  height: 15px;
+  margin: 0px 0px;
+  border: 1px solid black;
+  padding: 5px;
+  width: 33%;
+}

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const ShareDisplay = props => {
-  const { ASXcode, ListedInvestmentName, Category } = props;
+  const { mainRemoveShareSumbit } = useContext(InvestmentContext);
+  const { ASXcode, ListedInvestmentName, Category, id } = props;
   return (
     <>
       <tr>
@@ -13,6 +15,12 @@ const ShareDisplay = props => {
         </td>
         <td>
           $<input type="number"></input>
+        </td>
+        <td
+          className="Main-Table-Delete"
+          onClick={() => mainRemoveShareSumbit(id)}
+        >
+          &times;
         </td>
       </tr>
     </>

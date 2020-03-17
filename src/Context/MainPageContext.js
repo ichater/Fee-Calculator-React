@@ -20,19 +20,19 @@ const MainPageContextProvider = props => {
       setT3(0);
     }
     if (balance < 200000 && balance > 93750) {
-      setT1(balance * 0.004);
+      setT1((balance * 0.004).toFixed(2));
       setT2(0);
       setT3(0);
     }
     if (balance > 200000 && balance < 500000) {
       setT1(800);
-      setT2((balance - 200000) * 0.0015);
+      setT2(((balance - 200000) * 0.0015).toFixed(2));
       setT3(0);
     }
     if (balance > 500000) {
       setT1(800);
       setT2(600);
-      setT3((balance - 500000) * 0.0003);
+      setT3(((balance - 500000) * 0.0003).toFixed(2));
     }
   }
 

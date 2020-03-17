@@ -1,7 +1,8 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 const SMAdisplay = props => {
-  const { Name, APIR, Nab, MER } = props;
+  const { mainRemoveSMASumbit } = useContext(InvestmentContext);
+  const { Name, APIR, Nab, MER, id } = props;
 
   return (
     <>
@@ -15,6 +16,12 @@ const SMAdisplay = props => {
         </td>
         <td>
           $<input type="number"></input>
+        </td>
+        <td
+          className="Main-Table-Delete"
+          onClick={() => mainRemoveSMASumbit(id)}
+        >
+          &times;
         </td>
       </tr>
     </>

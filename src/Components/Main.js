@@ -11,9 +11,11 @@ const Main = () => {
       <AccountDetailsandSearch />
       <div className="main-page_grid">
         <div className="Main-table-Left">
-          <MainSMAdisplay />
-          <MainFundDisplay />
-          <MainShareDisplay />
+          <div className="Main-Tables-Wrapper">
+            <MainSMAdisplay />
+            <MainFundDisplay />
+            <MainShareDisplay />
+          </div>
         </div>
         <div className="investment-info_right">
           <FeeTable />

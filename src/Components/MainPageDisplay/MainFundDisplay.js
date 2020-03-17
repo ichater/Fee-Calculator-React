@@ -10,16 +10,6 @@ const MainFundDisplay = props => {
       {checkedMF.length && (
         <>
           <table className="investment-table__default">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>APIR</th>
-                <th>Nab</th>
-                <th>MER</th>
-                <th>% value</th>
-                <th>$ value</th>
-              </tr>
-            </thead>
             <tbody>
               {checkedMF.map(checkedMF => {
                 return <MainFundDisplay1 key={checkedMF.id} {...checkedMF} />;

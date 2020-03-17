@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const FundDisplay = props => {
-  const { FundName, APIR, NabOwned, MER } = props;
+  const { mainRemoveFundSumbit } = useContext(InvestmentContext);
+  const { FundName, APIR, NabOwned, MER, id } = props;
   return (
     <>
       <tr>
@@ -14,6 +16,12 @@ const FundDisplay = props => {
         </td>
         <td>
           $<input type="number"></input>
+        </td>
+        <td
+          className="Main-Table-Delete"
+          onClick={() => mainRemoveFundSumbit(id)}
+        >
+          &times;
         </td>
       </tr>
     </>

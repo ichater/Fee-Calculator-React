@@ -1,10 +1,31 @@
+.Margin-Top_20px {
+  margin-top: 20px;
+}
+.Main-table-Left {
+  border: 1px solid black;
+}
+
+.Main-table-Left .Main-Tables-Wrapper {
+  width: 80%;
+  margin: 0px auto;
+}
+
 .investment-table__default {
   border: 1px solid black;
-  margin-top: 25px;
-  width: 80%;
-  margin: 10px auto;
+
+  width: 100%;
+
   border-collapse: collapse;
+  margin-bottom: 0;
+  margin-top: 0;
+  border-bottom: none;
 }
+
+/* .investment-table__default thead tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1f 1;
+} */
 
 .Main-table-Left {
   display: grid;
@@ -20,6 +41,10 @@
   padding: 10px;
 }
 
+.investment-table__default th:nth-last-child(1) {
+  border-right: 1px solid black;
+}
+
 .investment-table__default td {
   border: 1px solid black;
   padding: 5px;
@@ -32,11 +57,79 @@
 .investment-table__default tr td:nth-child(2) {
   width: 12%;
 }
+.investment-table__default tr td:nth-child(4) {
+  width: 15%;
+}
 
-.investment-table__default tr td:nth-last-child(1) {
+.investment-table__default tr td:nth-child(5) {
   width: 10%;
 }
 
-.investment-table__default tr td:nth-last-child(2) {
+.investment-table__default tr td:nth-child(6) {
   width: 10%;
+}
+.investment-table__default tr td:nth-child(7) {
+  width: 5%;
+  border-bottom: 1px solid black;
+}
+
+.investment-table__default tbody tr:nth-last-child(1) td {
+  border-bottom: none;
+}
+
+.investment-table__default-asx-table {
+  margin-top: 0px;
+  border: 1px solid black;
+
+  width: 100%;
+  border-collapse: collapse;
+}
+.investment-table__default-asx-table input {
+  width: 70%;
+}
+
+.investment-table__default-asx-table th {
+  padding: 10px;
+}
+.investment-table__default-asx-table th:nth-last-child(1) {
+  border-right: 1px solid black;
+}
+
+.investment-table__default-asx-table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.investment-table__default-asx-table tr td:nth-child(1) {
+  width: 35%;
+}
+
+.investment-table__default-asx-table tr td:nth-child(2) {
+  width: 15%;
+}
+/* .investment-table__default-asx-table tr td:nth-child(3) {
+  width: 31%;
+} */
+
+.investment-table__default-asx-table tr td:nth-child(4) {
+  width: 10%;
+}
+.investment-table__default-asx-table tr td:nth-child(5) {
+  width: 10%;
+}
+.investment-table__default-asx-table tr td:nth-child(6) {
+  width: 5%;
+}
+
+.investment-table__default-asx-table thead tr {
+  height: 10px;
+}
+
+.investment-table__default tbody tr td:nth-last-child(1) {
+  border-bottom: 1px solid black;
+}
+.Main-Table-Delete:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
 }

@@ -51,9 +51,9 @@ const Maintabs = () => {
             );
           })}
         </TabList>
-        <TabPanel>
+        {/* <TabPanel>
           <Main />
-        </TabPanel>
+        </TabPanel> */}
         <TabPanel>
           <AccountDetails
             showText1={showText1}
