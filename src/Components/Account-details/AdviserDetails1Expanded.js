@@ -30,8 +30,10 @@ const AdviserDetails1Expanded = ({
           <span>$</span>
           <input
             type="number"
-            onChange={e => setAdviserInitialFee$("$" + e.target.value)}
             value={adviserInitialFee$}
+            onChange={e =>
+              setAdviserInitialFee$("Initial Fee: $" + e.target.value)
+            }
           ></input>
         </div>
       )}
@@ -54,7 +56,9 @@ const AdviserDetails1Expanded = ({
           <span>%</span>
           <input
             type="number"
-            onChange={e => setAdviserInitialFeeP(e.target.value + "%")}
+            onChange={e =>
+              setAdviserInitialFeeP("initial fee:" + e.target.value + "%")
+            }
             value={adviserInitialFeeP}
           ></input>
         </div>

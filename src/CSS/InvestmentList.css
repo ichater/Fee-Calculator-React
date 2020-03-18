@@ -19,3 +19,29 @@
   color: red;
   border: 3px solid black;
 }
+
+.Two-fr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.Investment-select-wrapper {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-right: 1px solid black;
+  /* min-height: 100vh; */
+  height: 100vh;
+  overflow: scroll;
+}
+
+.Investment-select-wrapper1 {
+  padding-top: 25px;
+  border-right: 1px solid black;
+}
+
+.Investment-Selected-Wrapper {
+  width: 80%;
+  margin: 25px auto;
+}

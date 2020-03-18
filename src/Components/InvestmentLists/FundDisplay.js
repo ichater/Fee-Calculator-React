@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import NAVMFs from "./Data/NAVMFs";
 import { InvestmentContext } from "../../Context/InvestmentContext";
+import MainFundDisplay from "../MainPageDisplay/MainFundDisplay";
 
 const FundDisplay = () => {
   const [searchFunds, setSearchFunds] = useState("");
@@ -37,51 +38,71 @@ const FundDisplay = () => {
           onChange={handleSearchInputChanges}
         ></input>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Select</th>
-            <th>Name</th>
-            <th>APIR</th>
-            <th>Nab</th>
-            <th>MER</th>
-          </tr>
-        </thead>
-        <tbody>
-          {searchResults1.map(fund => {
-            return (
-              <tr key={fund.id}>
-                <td>
-                  <label>
-                    <input
-                      onChange={e => {
-                        let checked = e.target.checked;
-                        if (checked) {
-                          setCheckedMF([...checkedMF, fund]);
-                        } else {
-                          setCheckedMF(
-                            checkedMF.filter(
-                              checkedFund => checkedFund.id !== fund.id
-                            )
-                          );
-                        }
-                      }}
-                      type="checkbox"
-                      checked={checkedMF
-                        .map(checkedFund => checkedFund.id)
-                        .includes(fund.id)}
-                    />
-                  </label>
-                </td>
-                <td>{fund.FundName} </td>
-                <td>{fund.APIR}</td>
-                <td>{fund.NabOwned}</td>
-                <td>{fund.MER}</td>
+      <div className="Two-fr-grid">
+        <div className="Investment-select-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>APIR</th>
+                <th>Nab</th>
+                <th>MER</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {searchResults1.map(fund => {
+                return (
+                  <tr key={fund.id}>
+                    <td>
+                      <label>
+                        <input
+                          onChange={e => {
+                            let checked = e.target.checked;
+                            if (checked) {
+                              setCheckedMF([...checkedMF, fund]);
+                            } else {
+                              setCheckedMF(
+                                checkedMF.filter(
+                                  checkedFund => checkedFund.id !== fund.id
+                                )
+                              );
+                            }
+                          }}
+                          type="checkbox"
+                          checked={checkedMF
+                            .map(checkedFund => checkedFund.id)
+                            .includes(fund.id)}
+                        />
+                      </label>
+                    </td>
+                    <td>{fund.FundName} </td>
+                    <td>{fund.APIR}</td>
+                    <td>{fund.NabOwned}</td>
+                    <td>{fund.MER}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="Investment-Selected-Wrapper">
+          {!checkedMF.length && (
+            <>
+              <h2>Selected Investments will appear here</h2>
+
+              <p>Investments can be deleted here or in the "main" heading</p>
+            </>
+          )}
+          {checkedMF.length && (
+            <>
+              <h2> Slected Funds:</h2>
+              <MainFundDisplay />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 };

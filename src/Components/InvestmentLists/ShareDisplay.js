@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import NavShares1 from "./Data/NavShares1";
 import { InvestmentContext } from "../../Context/InvestmentContext";
+import MainShareDisplay from "../MainPageDisplay/MainShareDisplay";
 
 const ShareDisplay = () => {
   const [searchShares, setSearchShares] = useState("");
@@ -34,44 +35,63 @@ const ShareDisplay = () => {
           onChange={handleSearchInputChanges}
         ></input>
       </div>
-      <table>
-        <tr>
-          <th>Select</th>
-          <th>ASX</th>
-          <th>Name</th>
-          <th>Category</th>
-        </tr>
-        {searchResults.map(investment1 => {
-          return (
+      <div className="Two-fr-grid">
+        <div className="Investment-select-wrapper">
+          <table>
             <tr>
-              <td>
-                <input
-                  onChange={e => {
-                    let checked = e.target.checked;
-                    if (checked) {
-                      setCheckedShates([...checkedShares, investment1]);
-                    } else {
-                      setCheckedShates(
-                        checkedShares.filter(
-                          checkedInvestment1 =>
-                            checkedInvestment1.id !== investment1.id
-                        )
-                      );
-                    }
-                  }}
-                  type="checkbox"
-                  checked={checkedShares
-                    .map(i => i.id)
-                    .includes(investment1.id)}
-                />
-              </td>
-              <td>{investment1.ASXcode}</td>
-              <td>{investment1.ListedInvestmentName}</td>
-              <td>{investment1.Category}</td>
+              <th>Select</th>
+              <th>ASX</th>
+              <th>Name</th>
+              <th>Category</th>
             </tr>
-          );
-        })}
-      </table>
+            {searchResults.map(investment1 => {
+              return (
+                <tr>
+                  <td>
+                    <input
+                      onChange={e => {
+                        let checked = e.target.checked;
+                        if (checked) {
+                          setCheckedShates([...checkedShares, investment1]);
+                        } else {
+                          setCheckedShates(
+                            checkedShares.filter(
+                              checkedInvestment1 =>
+                                checkedInvestment1.id !== investment1.id
+                            )
+                          );
+                        }
+                      }}
+                      type="checkbox"
+                      checked={checkedShares
+                        .map(i => i.id)
+                        .includes(investment1.id)}
+                    />
+                  </td>
+                  <td>{investment1.ASXcode}</td>
+                  <td>{investment1.ListedInvestmentName}</td>
+                  <td>{investment1.Category}</td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
+        <div className="Investment-Selected-Wrapper">
+          {!checkedShares.length && (
+            <>
+              <h2>Selected Investments will appear here</h2>
+
+              <p>Investments can be deleted here or in the "main" heading</p>
+            </>
+          )}
+          {checkedShares.length && (
+            <>
+              <h2> Slected Shares:</h2>
+              <MainShareDisplay />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 };

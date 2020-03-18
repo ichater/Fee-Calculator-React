@@ -19,7 +19,11 @@ const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
           <>
             <input
               type="number"
-              onChange={e => setadviserOngoingFeeIncrease(e.target.value + "%")}
+              onChange={e =>
+                setadviserOngoingFeeIncrease(
+                  "Ongoing Fee increased by: " + e.target.value + "% PA"
+                )
+              }
             />
           </>
         )}

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import SMA from "./Data/SMA";
 import { InvestmentContext } from "./../../Context/InvestmentContext";
+import MainSMAdisplay from "../MainPageDisplay/MainSMAdisplay";
 
 const SMAdisplay = () => {
   const { checkedSMA, setCheckedSMA } = useContext(InvestmentContext);
@@ -30,53 +31,72 @@ const SMAdisplay = () => {
           onChange={handleSearchInputChanges}
         />
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Select</th>
-            <th>Name</th>
-            <th>APIR</th>
-            <th>Nab</th>
-            <th>MER</th>
-          </tr>
-        </thead>
-        <tbody>
-          {searchResults.map(investment => {
-            return (
-              <tr key={investment.id}>
-                <td>
-                  <label>
-                    <input
-                      onChange={e => {
-                        let checked = e.target.checked;
-                        if (checked) {
-                          setCheckedSMA([...checkedSMA, investment]);
-                        } else {
-                          setCheckedSMA(
-                            checkedSMA.filter(
-                              checkedInvestment =>
-                                checkedInvestment.id !== investment.id
-                            )
-                          );
-                        }
-                      }}
-                      type="checkbox"
-                      //the .includes() implicitly contains the boolean "true"
-                      checked={checkedSMA
-                        .map(checkedInvestment => checkedInvestment.id)
-                        .includes(investment.id)}
-                    />
-                  </label>
-                </td>
-                <td>{investment.Name}</td>
-                <td>{investment.APIR}</td>
-                <td>{investment.Nab}</td>
-                <td>{investment.MER}</td>
+      <div className="Two-fr-grid">
+        <div className="Investment-select-wrapper1">
+          <table>
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>APIR</th>
+                <th>Nab</th>
+                <th>MER</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {searchResults.map(investment => {
+                return (
+                  <tr key={investment.id}>
+                    <td>
+                      <label>
+                        <input
+                          onChange={e => {
+                            let checked = e.target.checked;
+                            if (checked) {
+                              setCheckedSMA([...checkedSMA, investment]);
+                            } else {
+                              setCheckedSMA(
+                                checkedSMA.filter(
+                                  checkedInvestment =>
+                                    checkedInvestment.id !== investment.id
+                                )
+                              );
+                            }
+                          }}
+                          type="checkbox"
+                          //the .includes() implicitly contains the boolean "true"
+                          checked={checkedSMA
+                            .map(checkedInvestment => checkedInvestment.id)
+                            .includes(investment.id)}
+                        />
+                      </label>
+                    </td>
+                    <td>{investment.Name}</td>
+                    <td>{investment.APIR}</td>
+                    <td>{investment.Nab}</td>
+                    <td>{investment.MER}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div className="Investment-Selected-Wrapper">
+          {!checkedSMA.length && (
+            <>
+              <h2>Selected Investments will appear here</h2>
+
+              <p>Investments can be deleted here or in the "main" heading</p>
+            </>
+          )}
+          {checkedSMA.length && (
+            <>
+              <h2> Slected SMAs:</h2>
+              <MainSMAdisplay />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 };
