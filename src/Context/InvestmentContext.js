@@ -67,6 +67,15 @@ const InvestmentContextProvider = props => {
       MER: 0.92
     }
   ]);
+
+  const [investmentValue, setInvestmentValue] = useState(0);
+
+  function handleFundValueChange(id, value, investmentType) {
+    const newvalue = [...investmentType];
+    const index = investmentType.findIndex(f => f.id === id);
+    investmentType[index].value = value;
+    setInvestmentValue(newvalue);
+  }
   const addShareSubmit = (ListedInvestmentName, ASXcode, Category) => {
     setInSpecieShares([
       ...inSpecieShares,
@@ -125,7 +134,9 @@ const InvestmentContextProvider = props => {
         setCheckedSMA,
         mainRemoveFundSumbit,
         mainRemoveShareSumbit,
-        mainRemoveSMASumbit
+        mainRemoveSMASumbit,
+        investmentValue,
+        setInvestmentValue
       }}
     >
       {props.children}

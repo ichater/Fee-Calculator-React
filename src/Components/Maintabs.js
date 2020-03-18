@@ -52,7 +52,7 @@ const Maintabs = () => {
           })}
         </TabList>
         <TabPanel>
-          <Investments />
+          <Main />
         </TabPanel>
         <TabPanel>
           <AccountDetails
