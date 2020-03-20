@@ -92,7 +92,11 @@ const SMAdisplay = () => {
           {checkedSMA.length && (
             <>
               <h2> Slected SMAs:</h2>
-              <MainSMAdisplay />
+              <div className="Margin-Top_20px">
+                <table className="investment-table__default">
+                  <MainSMAdisplay />
+                </table>
+              </div>
             </>
           )}
         </div>

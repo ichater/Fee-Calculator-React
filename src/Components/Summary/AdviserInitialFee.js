@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const AdviserInitialFee = ({ adviserInitialFee$, adviserInitialFeeP }) => {
+const AdviserInitialFee = () => {
+  const { adviserInitialFee$, adviserInitialFeeP } = useContext(
+    SummaryDetailsContext
+  );
   return (
     <div className="AdviserInitialFee-summary">
-      <div>{adviserInitialFee$}</div>
-      <div>{adviserInitialFeeP}</div>
+      <div>
+        {false && adviserInitialFee$ && (
+          <span> Adviser Initial Service Fee: ${adviserInitialFee$}</span>
+        )}
+      </div>
+
+      <div>
+        {!!adviserInitialFeeP && (
+          <span> Adviser Initial Service Fee: {adviserInitialFeeP}%</span>
+        )}
+      </div>
     </div>
   );
 };

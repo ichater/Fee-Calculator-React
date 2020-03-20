@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AccountDetailsandSearch from "./MainPageDisplay/AccountDetailsandSearch";
-import MainSMAdisplay from "./MainPageDisplay/MainSMAdisplay";
+import MainSMAdisplayHeader from "./MainPageDisplay/MainSMADisplayHeader";
 import MainFundDisplay from "./MainPageDisplay/MainFundDisplay";
 import MainShareDisplay from "./MainPageDisplay/MainShareDisplay";
 import FeeTable from "./MainPageDisplay/FeeTable";
@@ -12,7 +12,7 @@ const Main = () => {
       <div className="main-page_grid">
         <div className="Main-table-Left">
           <div className="Main-Tables-Wrapper">
-            <MainSMAdisplay />
+            <MainSMAdisplayHeader />
             <MainFundDisplay />
             <MainShareDisplay />
           </div>

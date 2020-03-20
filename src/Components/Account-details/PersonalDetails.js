@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const PersonalDetails = props => {
-  const { setName, setSurname, setDob, name, surname, dob } = props;
+const PersonalDetails = () => {
+  const { setName, setSurname, setDob, name, surname, dob } = useContext(
+    SummaryDetailsContext
+  );
+
   return (
     <>
       <h2> Personal details</h2>

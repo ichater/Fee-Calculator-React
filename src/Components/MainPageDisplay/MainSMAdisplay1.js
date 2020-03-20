@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { InvestmentContext } from "../../Context/InvestmentContext";
+import { MainPageContext } from "../../Context/MainPageContext";
 const SMAdisplay = props => {
-  const {
-    mainRemoveSMASumbit,
-    investmentValue,
-    setInvestmentValue
-  } = useContext(InvestmentContext);
-  const { checkedSMA, Name, APIR, Nab, MER, id, value } = props;
+  const { mainRemoveSMASumbit } = useContext(InvestmentContext);
+  const { balance } = useContext(MainPageContext);
+  const { Name, APIR, Nab, MER, id, value } = props;
 
   return (
     <>
@@ -14,22 +12,11 @@ const SMAdisplay = props => {
         <td>{Name}</td>
         <td>{APIR}</td>
         <td>{Nab}</td>
-        <td>
-          {MER}({investmentValue})
-        </td>
-        <td>
-          %<input type="number"></input>
-        </td>
+        <td>{MER}</td>
+        <td>{(balance / 100) * value} %</td>
         <td>
           $
-          <input
-            type="number"
-            onChange={e => {
-              if (e.id === id) {
-                setInvestmentValue(e.target.value);
-              }
-            }}
-          ></input>
+          <input type="number" onChange={e => (value = e.target.value)}></input>
         </td>
         <td
           className="Main-Table-Delete"

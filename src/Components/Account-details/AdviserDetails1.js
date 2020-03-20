@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 import AdviserDetails1Expanded from "./AdviserDetails1Expanded";
 
 const AdviserDetails1 = props => {
@@ -7,14 +8,12 @@ const AdviserDetails1 = props => {
     setAdviserInitialFeeP,
     adviserInitialFee$,
     adviserInitialFeeP,
-    setShowText1,
-    showText1,
     showText2,
     setShowText2,
     showText3,
     setShowText3
   } = props;
-  // const [showText1, setShowText1] = useState(false);
+  const { showText1, setShowText1 } = useContext(SummaryDetailsContext);
   return (
     <div className="DetailsPage-positioning">
       <form>

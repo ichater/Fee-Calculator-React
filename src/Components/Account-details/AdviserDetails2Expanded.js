@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 import AdviserDetails2Expanded2 from "./AdviserDetails2Expanded2";
 
 const AdviserDetails2Expanded = props => {
@@ -8,9 +9,15 @@ const AdviserDetails2Expanded = props => {
     setadviserOngoingFeeIncrease,
     setCpi
   } = props;
-  const [showTexti, setShowTexti] = useState(false);
-  const [showText1, setShowText1] = useState(false);
-  const [showText2, setShowText2] = useState(false);
+
+  const {
+    showTexti,
+    setShowTexti,
+    showText4,
+    setShowText4,
+    showText5,
+    setShowText5
+  } = useContext(SummaryDetailsContext);
 
   return (
     <>
@@ -20,15 +27,15 @@ const AdviserDetails2Expanded = props => {
             type="checkbox"
             onChange={e => {
               if (e.target.checked === true) {
-                setShowText1(true);
+                setShowText4(true);
               } else {
-                setShowText1(false);
+                setShowText4(false);
               }
             }}
           />
           <labal>Dollar based Fee</labal>
         </div>
-        {showText1 && (
+        {showText4 && (
           <>
             <div>
               <span>$</span>
@@ -74,15 +81,15 @@ const AdviserDetails2Expanded = props => {
             type="checkbox"
             onChange={e => {
               if (e.target.checked === true) {
-                setShowText2(true);
+                setShowText5(true);
               } else {
-                setShowText2(false);
+                setShowText5(false);
               }
             }}
           ></input>
           <labal>Percentage based Fee</labal>
         </div>
-        {showText2 && (
+        {showText5 && (
           <div>
             <span>%</span>
             <input

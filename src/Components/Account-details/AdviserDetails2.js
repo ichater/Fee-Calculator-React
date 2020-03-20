@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 import AdviserDetails2Expanded from "./AdviserDetails2Expanded";
-
-const AdviserDetails2 = props => {
+const AdviserDetails2 = () => {
   const {
+    showText,
+    setShowText,
     setAdviserOngoingFee$,
     setAdviserOngoingFeeP,
     setadviserOngoingFeeIncrease,
     setCpi
-  } = props;
-  const [showText, setShowText] = useState(false);
+  } = useContext(SummaryDetailsContext);
+
   return (
     <div className="DetailsPage-positioning">
       <form>
@@ -18,6 +20,7 @@ const AdviserDetails2 = props => {
           name="fee2"
           id="yes-fee2"
           onClick={() => setShowText(true)}
+          checked={setShowText(true)}
         ></input>
         <label for="no-fee2">No</label>
         <input
@@ -25,6 +28,7 @@ const AdviserDetails2 = props => {
           name="fee2"
           id="no-fee2"
           onClick={() => setShowText(false)}
+          checked={setShowText}
         ></input>
       </form>
       {showText && (

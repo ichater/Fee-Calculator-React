@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const AdviserDetails1Expanded = ({
-  setAdviserInitialFee$,
-  setAdviserInitialFeeP,
-  adviserInitialFee$,
-  adviserInitialFeeP,
-  showText2,
-  setShowText2,
-  showText3,
-  setShowText3
-}) => {
+const AdviserDetails1Expanded = () => {
+  const {
+    setAdviserInitialFee$,
+    setAdviserInitialFeeP,
+    adviserInitialFee$,
+    adviserInitialFeeP,
+    showText2,
+    setShowText2,
+    showText3,
+    setShowText3
+  } = useContext(SummaryDetailsContext);
   return (
     <div className="AdviserDetails1Expanded__grid">
       <div>
@@ -31,9 +33,7 @@ const AdviserDetails1Expanded = ({
           <input
             type="number"
             value={adviserInitialFee$}
-            onChange={e =>
-              setAdviserInitialFee$("Initial Fee: $" + e.target.value)
-            }
+            onChange={e => setAdviserInitialFee$(e.target.value)}
           ></input>
         </div>
       )}
@@ -56,9 +56,7 @@ const AdviserDetails1Expanded = ({
           <span>%</span>
           <input
             type="number"
-            onChange={e =>
-              setAdviserInitialFeeP("initial fee:" + e.target.value + "%")
-            }
+            onChange={e => setAdviserInitialFeeP(e.target.value)}
             value={adviserInitialFeeP}
           ></input>
         </div>

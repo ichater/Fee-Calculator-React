@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const AdviserDetails = props => {
-  const { adviserName, adviserCode, dealerGroup } = props;
+const AdviserDetails = () => {
+  const { adviserName, adviserCode, dealerGroup } = useContext(
+    SummaryDetailsContext
+  );
   return (
     <div className="Details-grid">
       {" "}

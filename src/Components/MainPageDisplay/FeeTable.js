@@ -4,7 +4,7 @@ import { MainPageContext } from "./../../Context/MainPageContext";
 const FeeTable = () => {
   const { t1, t2, t3, totalFee, setTotalFee } = useContext(MainPageContext);
   useEffect(() => {
-    setTotalFee(t1 + t2 + t3);
+    setTotalFee(parseFloat(t1) + parseFloat(t2) + parseFloat(t3));
   });
   return (
     <>

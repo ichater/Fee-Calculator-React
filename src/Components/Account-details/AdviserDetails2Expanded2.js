@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
 const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
-  const [showPIncrease, setshowPIncrease] = useState(false);
+  const { showPIncrease, setshowPIncrease } = useContext(SummaryDetailsContext);
 
   return (
     <>

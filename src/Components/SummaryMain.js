@@ -5,51 +5,24 @@ import AdviserInitialFee from "./Summary/AdviserInitialFee";
 import AdviserOngoingFee from "./Summary/AdviserOngoingFee";
 import AdviserDetails from "./Summary/AdviserDetails";
 
-const SummaryMain = props => {
-  const {
-    name,
-    surname,
-    dob,
-    accountType,
-    adviserInitialFee$,
-    adviserInitialFeeP,
-    adviserOngoingFee$,
-    adviserOngoingFeeP,
-    adviserOngoingFeeIncrease,
-    cpi,
-    adviserName,
-    adviserCode,
-    dealerGroup
-  } = props;
+const SummaryMain = () => {
   return (
     <div className="summaryMain-grid">
       <h1>Account Summary</h1>
       <div>
-        <PersonalDetails name={name} surname={surname} dob={dob} />
+        <PersonalDetails />
       </div>
       <div>
-        <AccountType accountType={accountType} />
+        <AccountType />
       </div>
       <div className="Details-grid_adviser">
-        <AdviserInitialFee
-          adviserInitialFee$={adviserInitialFee$}
-          adviserInitialFeeP={adviserInitialFeeP}
-        />
+        <AdviserInitialFee />
       </div>
       <div className="Details-grid_adviser">
-        <AdviserOngoingFee
-          adviserOngoingFee$={adviserOngoingFee$}
-          adviserOngoingFeeP={adviserOngoingFeeP}
-          adviserOngoingFeeIncrease={adviserOngoingFeeIncrease}
-          cpi={cpi}
-        />
+        <AdviserOngoingFee />
       </div>
       <div>
-        <AdviserDetails
-          adviserName={adviserName}
-          adviserCode={adviserCode}
-          dealerGroup={dealerGroup}
-        />
+        <AdviserDetails />
       </div>
     </div>
   );

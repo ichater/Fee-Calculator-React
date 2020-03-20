@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const AccountType = ({ setAccountType, accountType }) => {
+const AccountType = () => {
+  const { setAccountType, accountType } = useContext(SummaryDetailsContext);
   return (
     <div className="DetailsPage-positioning">
       <select

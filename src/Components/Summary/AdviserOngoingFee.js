@@ -1,12 +1,12 @@
-import React from "react";
-
-const AdviserOngoingFee = props => {
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
+const AdviserOngoingFee = () => {
   const {
     adviserOngoingFee$,
     adviserOngoingFeeP,
     adviserOngoingFeeIncrease,
     cpi
-  } = props;
+  } = useContext(SummaryDetailsContext);
   return (
     <>
       <div>{adviserOngoingFee$}</div>

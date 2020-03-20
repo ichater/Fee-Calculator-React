@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
-const AdviserDetails3 = props => {
+const AdviserDetails3 = () => {
   const {
     setAdviserName,
     setAdviserCode,
@@ -8,7 +9,7 @@ const AdviserDetails3 = props => {
     adviserName,
     adviserCode,
     dealerGroup
-  } = props;
+  } = useContext(SummaryDetailsContext);
   return (
     <div className="personal-details__self">
       <label>Name</label>
