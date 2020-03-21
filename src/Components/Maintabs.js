@@ -35,9 +35,9 @@ const Maintabs = () => {
             );
           })}
         </TabList>
-        {/* <TabPanel>
-          <Investments />
-        </TabPanel> */}
+        <TabPanel>
+          <Main />
+        </TabPanel>
         <TabPanel>
           <AccountDetails />
         </TabPanel>

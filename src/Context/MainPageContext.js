@@ -4,7 +4,7 @@ import uuid from "uuid/v4";
 export const MainPageContext = createContext();
 
 const MainPageContextProvider = props => {
-  const [balance, setBalance] = useState();
+  const [balance, setBalance] = useState(1000000);
   const [t1, setT1] = useState(0);
   const [t2, setT2] = useState(0);
   const [t3, setT3] = useState(0);

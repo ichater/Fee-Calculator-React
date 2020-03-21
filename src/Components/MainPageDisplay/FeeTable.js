@@ -1,11 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
+import ListedFee from "./ListedFee";
 
 const FeeTable = () => {
   const { t1, t2, t3, totalFee, setTotalFee } = useContext(MainPageContext);
+
   useEffect(() => {
     setTotalFee(parseFloat(t1) + parseFloat(t2) + parseFloat(t3));
   });
+
   return (
     <>
       <table className="Fee-Table">
@@ -20,17 +23,17 @@ const FeeTable = () => {
           <tr>
             <td>First $200,000</td>
             <td>0.40</td>
-            <td>{t1}</td>
+            <td>${t1}</td>
           </tr>
           <tr>
             <td>Next $300,000</td>
             <td>0.15</td>
-            <td>{t2}</td>
+            <td>${t2}</td>
           </tr>
           <tr>
             <td>Remaining balance over $500,000 </td>
             <td>0.03</td>
-            <td>{t3}</td>
+            <td>${t3}</td>
           </tr>
           <tr>
             <td>Non-Nab group investments</td>
@@ -40,11 +43,13 @@ const FeeTable = () => {
           <tr>
             <td>listed Investments</td>
             <td>0.15</td>
-            <td>0</td>
+            <td>
+              $<ListedFee />
+            </td>
           </tr>
           <tr>
             <td colSpan="2">Total Fee:</td>
-            <td>{totalFee}</td>
+            <td>${totalFee}</td>
           </tr>
         </tbody>
       </table>

@@ -68,13 +68,23 @@ const InvestmentContextProvider = props => {
       MER: 0.92
     }
   ]);
-  const [value, setValue] = useState(0);
 
-  const investmentValue = i => {
-    i.forEach(function(inv) {
-      inv.value = 100;
-    });
-  };
+  const investmentValueSMA = checkedSMA.map(function(i) {
+    var o = Object.assign({});
+    o.value = 0;
+    return o;
+  });
+
+  const investmentValueMF = checkedMF.map(function(i) {
+    var o = Object.assign({});
+    o.value = 0;
+    return o;
+  });
+
+  //   i.forEach(function(inv) {
+  //     inv.value = 0;
+  //   });
+  // };
 
   const addShareSubmit = (ListedInvestmentName, ASXcode, Category) => {
     setInSpecieShares([
@@ -135,7 +145,7 @@ const InvestmentContextProvider = props => {
         mainRemoveFundSumbit,
         mainRemoveShareSumbit,
         mainRemoveSMASumbit,
-        investmentValue,
+        investmentValueSMA,
         showText1,
         setShowText1
       }}

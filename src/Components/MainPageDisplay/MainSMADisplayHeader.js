@@ -4,8 +4,8 @@ import { InvestmentContext } from "./../../Context/InvestmentContext";
 import MainSMAdisplay from "./MainSMAdisplay";
 
 const MainSMAdisplayHeader = () => {
-  const { checkedSMA, investmentValue } = useContext(InvestmentContext);
-  investmentValue(checkedSMA);
+  const { checkedSMA } = useContext(InvestmentContext);
+
   return (
     <>
       {checkedSMA.length && (

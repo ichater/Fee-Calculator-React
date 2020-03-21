@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
+import { MainPageContext } from "./../../Context/MainPageContext";
 
 const AdviserInitialFee = () => {
   const { adviserInitialFee$, adviserInitialFeeP } = useContext(
     SummaryDetailsContext
   );
+  const { balance } = useContext(MainPageContext);
   return (
     <div className="AdviserInitialFee-summary">
       <div>
@@ -15,7 +17,11 @@ const AdviserInitialFee = () => {
 
       <div>
         {!!adviserInitialFeeP && (
-          <span> Adviser Initial Service Fee: {adviserInitialFeeP}%</span>
+          <span>
+            {" "}
+            Adviser Initial Service Fee: {adviserInitialFeeP}%($
+            {(balance / 100) * adviserInitialFeeP})
+          </span>
         )}
       </div>
     </div>

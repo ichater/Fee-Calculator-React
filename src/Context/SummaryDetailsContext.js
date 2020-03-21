@@ -3,12 +3,11 @@ import React, { createContext, useState } from "react";
 export const SummaryDetailsContext = createContext();
 
 const SummaryDetailsContextProvider = props => {
-  const [showTexti, setShowTexti] = useState(false);
-  const [showText4, setShowText4] = useState(false);
-  const [showText5, setShowText5] = useState(false);
-
-  const [showText, setShowText] = useState(false);
-  const [name, setName] = useState("John"),
+  const [showTexti, setShowTexti] = useState(false),
+    [showText4, setShowText4] = useState(false),
+    [showText5, setShowText5] = useState(false),
+    [showText, setShowText] = useState(false),
+    [name, setName] = useState("John"),
     [surname, setSurname] = useState("Doe"),
     [dob, setDob] = useState("01/01/1900"),
     [accountType, setAccountType] = useState("Please Select Account type"),
