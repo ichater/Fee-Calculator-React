@@ -13,7 +13,11 @@ const SMAdisplay = () => {
   };
   //search through investments
   React.useEffect(() => {
-    const results = SMA.map((sma, index) => ({ ...sma, id: index })).filter(
+    const results = SMA.map((sma, index) => ({
+      ...sma,
+      id: index,
+      value: 0
+    })).filter(
       SMA => SMA.Name.toLowerCase().includes(searchSMA),
       SMA => SMA.APIR.toLowerCase().includes(searchSMA),
       SMA => SMA.MER.includes(searchSMA)

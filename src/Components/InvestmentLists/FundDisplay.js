@@ -15,7 +15,8 @@ const FundDisplay = () => {
   React.useEffect(() => {
     const results = NAVMFs.map((fund, index) => ({
       ...fund,
-      id: index
+      id: index,
+      value: 0
     })).filter(
       NAVMFs => NAVMFs.FundName.toLowerCase().includes(searchFunds),
       NAVMFs =>

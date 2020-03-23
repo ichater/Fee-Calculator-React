@@ -15,7 +15,8 @@ const ShareDisplay = () => {
   React.useEffect(() => {
     const results = NavShares1.map((share, index) => ({
       ...share,
-      id: index
+      id: index,
+      value: 0
     })).filter(
       NavShares1 => NavShares1.ASXcode.toLowerCase().includes(searchShares),
       NavShares1 =>

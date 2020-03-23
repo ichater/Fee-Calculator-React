@@ -19,7 +19,9 @@ const FundDisplay = props => {
       <tr>
         <td>{FundName}</td>
         <td>{APIR}</td>
-        <td>{NabOwned}</td>
+        <td>
+          {NabOwned} {value}
+        </td>
         <td>
           {MER}
           <div>(${((value / 100) * MER).toFixed(2)})</div>
@@ -30,6 +32,7 @@ const FundDisplay = props => {
           $
           <input
             type="number"
+            value={value}
             onChange={e => handleUpdate1(id, e.target.value)}
           ></input>
         </td>

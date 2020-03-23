@@ -14,19 +14,22 @@ const InvestmentContextProvider = props => {
       id: 1,
       ASXcode: "ARB",
       ListedInvestmentName: "ARB CORPORATION LIMITED.",
-      Category: "Automobiles & Components"
+      Category: "Automobiles & Components",
+      value: 0
     },
     {
       id: 2,
       ASXcode: "GUD",
       ListedInvestmentName: "G.U.D. HOLDINGS LIMITED",
-      Category: "Automobiles & Components"
+      Category: "Automobiles & Components",
+      value: 0
     },
     {
       id: 3,
       ASXcode: "ATL",
       ListedInvestmentName: "APOLLO TOURISM & LEISURE LTD",
-      Category: "Automobiles & Components"
+      Category: "Automobiles & Components",
+      value: 0
     }
   ]);
   const [checkedMF, setCheckedMF] = useState([
@@ -35,21 +38,24 @@ const InvestmentContextProvider = props => {
       FundName: "MLC Wholesale Horizon 1 Bond Portfolio",
       APIR: "MLC0669AU",
       NabOwned: "#",
-      MER: 0.55
+      MER: 0.55,
+      value: 0
     },
     {
       id: 2,
       FundName: "MLC Wholesale Horizon 2 Income Portfolio",
       APIR: "MLC0670AU",
       NabOwned: "#",
-      MER: 0.91
+      MER: 0.91,
+      value: 0
     },
     {
       id: 3,
       FundName: "MLC Wholesale Horizon 3 Conservative Growth Portfolio",
       APIR: "MLC0398AU",
       NabOwned: "#",
-      MER: 1.04
+      MER: 1.04,
+      value: 0
     }
   ]);
   const [checkedSMA, setCheckedSMA] = useState([
@@ -58,33 +64,18 @@ const InvestmentContextProvider = props => {
       Name: "SMA Antares ex 20",
       APIR: "NUN0102AU",
       Nab: "#",
-      MER: 0.75
+      MER: 0.75,
+      value: 0
     },
     {
       id: 4,
       Name: "SMA Ausbil Australian Concentrated Equity",
       APIR: "NUN0055AU",
       Nab: "",
-      MER: 0.92
+      MER: 0.92,
+      value: 0
     }
   ]);
-
-  const investmentValueSMA = checkedSMA.map(function(i) {
-    var o = Object.assign({});
-    o.value = 0;
-    return o;
-  });
-
-  const investmentValueMF = checkedMF.map(function(i) {
-    var o = Object.assign({});
-    o.value = 0;
-    return o;
-  });
-
-  //   i.forEach(function(inv) {
-  //     inv.value = 0;
-  //   });
-  // };
 
   const addShareSubmit = (ListedInvestmentName, ASXcode, Category) => {
     setInSpecieShares([
@@ -145,7 +136,7 @@ const InvestmentContextProvider = props => {
         mainRemoveFundSumbit,
         mainRemoveShareSumbit,
         mainRemoveSMASumbit,
-        investmentValueSMA,
+
         showText1,
         setShowText1
       }}

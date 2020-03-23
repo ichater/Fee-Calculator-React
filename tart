@@ -1,0 +1,317 @@
+[33mcommit 03ac1c8d81fae52836c233d49d0a816739c43627[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sat Mar 21 18:22:30 2020 +1100
+
+    started successfully populating investment values and listed fee, still shows NaN by default and not 0
+
+[33mcommit 421762d507c59d4b5cd81ae497d40b106c174ae0[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Fri Mar 20 13:23:32 2020 +1100
+
+    created a context for personal details and summary page to make the maintabs page more readable.
+
+[33mcommit b12d44a4410a0bee16db032fc2de1facbbd7a669[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Mar 18 17:08:08 2020 +1100
+
+    sync with laptop
+
+[33mcommit 261015ba3f545a08680791ce7fe81f8287dc42c3[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Mar 18 11:12:59 2020 +1100
+
+    improved ui for investment select, continued page split theme
+
+[33mcommit 77d6e61f994042e8e13a25e7abeffbd682b9e65c[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Tue Mar 17 16:44:48 2020 +1100
+
+    huge progress on main page display, still need to tighten up a few parts of the display
+
+[33mcommit e9fcabd5c21cd51e079f5a384d271522e1e3a7f8[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Tue Mar 17 11:47:32 2020 +1100
+
+    started the fee table logic in MainPageContext
+
+[33mcommit 011791081d9f4985fbac4e4a2a02fc19df82173c[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Mar 16 15:44:43 2020 +1100
+
+    trying to get MainPageContext to work
+
+[33mcommit d638048c5eb52a426d17449ba9104f7a5897a652[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Mar 16 13:09:03 2020 +1100
+
+    improved ui for in specie page
+
+[33mcommit 82dc639ca4daed9441c6d3680e710cfbfcdbb126[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Mar 16 10:53:13 2020 +1100
+
+    major changes to context and in specie area
+
+[33mcommit 954f7df2327a5768aef07651f05f9ff2cbed7feb[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Mar 5 15:49:22 2020 +1100
+
+    MainFundDisplay not reading checkedMF prop
+
+[33mcommit 32a05c54342484cc3e81f3550c4d70cf85040600[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Mon Feb 24 20:37:15 2020 +1100
+
+    context
+
+[33mcommit 5222d2ce6273c08dfcb0ec74b7bf4780082abeb0[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Feb 24 14:32:31 2020 +1100
+
+    sync
+
+[33mcommit 6892cacbef3401fff1b4d9c64eaa467927f62653[m[33m ([m[1;32mc-vargs[m[33m)[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Feb 20 12:37:40 2020 +1100
+
+    change to title
+
+[33mcommit e52eabbd5d0adb0bddbdf100b231b8e3030aa0b9[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sat Feb 8 11:37:12 2020 +1100
+
+    updates on in specie section for pending context add
+
+[33mcommit 4fb245cc3da4b07c354f63ac4298536e2bd390b9[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Fri Feb 7 18:39:01 2020 +1100
+
+    minor changes while at work to in specie
+
+[33mcommit f0cd3c805dc6d50a77507d45790bc21cf45be42a[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Fri Feb 7 08:59:23 2020 +1100
+
+    starting to work on In specie in while following a tutorial on context
+
+[33mcommit f551344d503cb61ad3b5f3e9dd984ab4e26835e6[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sun Feb 2 10:01:15 2020 +1100
+
+    started to push the state up on high so changes in tabs won't affect changes to state
+
+[33mcommit 10ef6c114094e301bd9ba9a90b3336204f97adae[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Sat Feb 1 16:46:55 2020 +1100
+
+    learned about forms staying the same
+
+[33mcommit e18260ef17ebb8970108216057886fd4262364b0[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sat Feb 1 11:55:02 2020 +1100
+
+    still trying to append investments to table with useState
+
+[33mcommit 8ee52eaeb45cfc92ac0508260478599e55de1978[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 30 22:00:01 2020 +1100
+
+    about to refactor so add investment button doesent exist and checked investments are applied to table
+
+[33mcommit d3d0f89823160dad0fbb510394c88a17dd085b88[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Jan 27 21:48:14 2020 +1100
+
+    sync with laptop
+
+[33mcommit 3f4c01a0e31886a514e4099c16288383e1185758[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Jan 27 17:19:26 2020 +1100
+
+    working out how to push chhecked ID into new array to be accessed on main page display
+
+[33mcommit e600addd85eb4b242c09191f579b8287604b49a9[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sat Jan 25 18:24:46 2020 +1100
+
+    starting to work out how to add selected SMAs onclick
+
+[33mcommit eb580b092b651078ff655bc6692970d0858a0073[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Fri Jan 24 18:43:28 2020 +1100
+
+    fixed annoying bug
+
+[33mcommit d73c909133d00f89a87fc25f8afd9258a26ed04f[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Fri Jan 24 18:34:55 2020 +1100
+
+    added logic for checkboxes on SMA
+
+[33mcommit 424c3554acf34cc9f2d125e841b1fd34d1078fd9[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 23 16:53:21 2020 +1100
+
+    sync
+
+[33mcommit 94626dd3c473411d5fef61e700c1156468330a26[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 23 10:25:39 2020 +1100
+
+    starting to make checkboxes work to append to main page table
+
+[33mcommit 75a6174238b1f59fa720c2f10e5941b332af8cc9[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Tue Jan 21 09:18:29 2020 +1100
+
+    sync with laptop
+
+[33mcommit 1bee2d93f4dfbde39fdc9d47b31cc42950cf5971[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Fri Jan 17 09:22:25 2020 +1100
+
+    sync with laptop
+
+[33mcommit 033c0692ba210131a9b76eb6519fe0f9934cba11[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 16 14:29:36 2020 +1100
+
+    started to add IDs with UUID (exciting start)
+
+[33mcommit cdb58ebaec28e4aace7859eb9e3e9abb5f4eec16[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 16 13:48:53 2020 +1100
+
+    some updates
+
+[33mcommit 49ab0e2355715fc49366e71c461d2cb750b4a86f[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Jan 15 17:35:49 2020 +1100
+
+    added search functionality to shares and fund pages, major victory
+
+[33mcommit de760d6d81925168924a05ffd37368ec25a2b4ce[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Jan 15 17:15:30 2020 +1100
+
+    started to get investment search engine working
+
+[33mcommit 40194d0969160a526aec83016c78e4b05f916770[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Jan 15 16:22:15 2020 +1100
+
+    attempting to get some nested inputs to work
+
+[33mcommit 30bab4f8b61ba14ffa5e0329b450eda5ddec0ad5[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Mon Jan 13 21:11:29 2020 +1100
+
+    CSS changes for introduction page
+
+[33mcommit 43b11aa2d5fb14882217dae6e31e95ca702df2e3[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Jan 13 09:22:33 2020 +1100
+
+    sync with laptop
+
+[33mcommit 1eee95665ea8a10375dcc04cb107487a4f2d0488[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sat Jan 11 23:11:31 2020 +1100
+
+    adding css to make it bearable to look at
+
+[33mcommit bddd1955b7c5c55f019e33f7af04753ba50ba9be[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 9 14:34:17 2020 +1100
+
+    completed visibility on adviser details in accoutn setup screen
+
+[33mcommit f2f73a69d378e3980e2e864eac8a36608c320873[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 9 13:58:43 2020 +1100
+
+    almost added all the state for initial details on summary page
+
+[33mcommit e030280c81637b1cbf2ec05e69c0a2024ef13975[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Tue Jan 7 19:15:41 2020 +1100
+
+    some progress on logic and files
+
+[33mcommit a8316f31e2af53d298b3d1fd9aabd24dcc428e8d[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Jan 6 22:52:55 2020 +1100
+
+    update to sync laptop
+
+[33mcommit 61e06dfc94496ec30bd393f7fc1acce37f4cb843[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Jan 6 20:20:32 2020 +1100
+
+    added logic for name surname and DOB
+
+[33mcommit 69a952c3d91c343290d8f1b367bfc3eeeb4bb096[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sun Jan 5 17:49:55 2020 +1100
+
+    some more logic
+
+[33mcommit bae70543ba88383dbe22af502ef3e7a4e66b087f[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sun Jan 5 14:37:20 2020 +1100
+
+    finally worked out useState and added some JS logic!
+
+[33mcommit a8f99f946c2bc7640f434cde109f4b16f5868ec6[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 2 17:36:19 2020 +1100
+
+    started to add some CSS to main table, still unable to get input interactivity
+
+[33mcommit 7bb357d4251ba9b9ccfaa636c73cd610e77fe13b[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Jan 2 11:37:37 2020 +1100
+
+    added files and attempting to add some logic
+
+[33mcommit c53f8af17509eaa084970c919b0dac3e7c79d94a[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Dec 30 22:18:52 2019 +1100
+
+    started some form of object logic for investments
+
+[33mcommit 4e365fc6c9d64bd1ed3adcae418eb4ae7664d2cd[m
+Author: Izaak Chater <chaterizaak@gmail.com>
+Date:   Mon Dec 30 18:53:17 2019 +1100
+
+    up to date with PC
+
+[33mcommit 43f4399f236aec0167cbd5c5b1a0c1e32fe576e3[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sun Dec 29 17:45:33 2019 +1100
+
+    added in Json investment lists and some CSS
+
+[33mcommit 74146ee8a1c58fe6ab35fd646bd9ce5543ad24c6[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Sun Dec 29 12:06:31 2019 +1100
+
+    starting with some rudimentary JS logic
+
+[33mcommit 7bcdd7c445c416dd67c546f0fe3421846077a788[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Thu Dec 26 15:58:15 2019 +1100
+
+    started with basic HTML and CSS
+
+[33mcommit da21b626356251fd7690e1daa59e7840e61c0d2f[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Wed Dec 25 10:17:03 2019 +1100
+
+    first commit
+
+[33mcommit 3ed8c323e1748e27169e241577c6567c82e2949c[m
+Author: ichater <chaterizaak@gmail.com>
+Date:   Mon Dec 23 20:56:02 2019 +1100
+
+    Initial commit from Create React App

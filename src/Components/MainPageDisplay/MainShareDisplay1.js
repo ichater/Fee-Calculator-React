@@ -24,6 +24,7 @@ const ShareDisplay = props => {
         <td>
           <input
             type="number"
+            value={value}
             onChange={e => handleUpdate2(id, e.target.value)}
           ></input>
         </td>
