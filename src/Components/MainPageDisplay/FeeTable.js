@@ -4,7 +4,7 @@ import { InvestmentContext } from "../../Context/InvestmentContext";
 
 const FeeTable = () => {
   const { t1, t2, t3, totalFee, setTotalFee } = useContext(MainPageContext);
-  const { checkedShares, listedFee } = useContext(InvestmentContext);
+  const { listedFee, nabFee } = useContext(InvestmentContext);
   useEffect(() => {
     setTotalFee(parseFloat(t1) + parseFloat(t2) + parseFloat(t3));
   });
@@ -38,12 +38,12 @@ const FeeTable = () => {
           <tr>
             <td>Non-Nab group investments</td>
             <td>0.10</td>
-            <td>0</td>
+            <td>${nabFee()}</td>
           </tr>
           <tr>
             <td>listed Investments</td>
             <td>0.15</td>
-            <td>{listedFee()}</td>
+            <td>${listedFee()}</td>
           </tr>
           <tr>
             <td colSpan="2">Total Fee:</td>

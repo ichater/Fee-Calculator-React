@@ -19,9 +19,7 @@ const FundDisplay = props => {
       <tr>
         <td>{FundName}</td>
         <td>{APIR}</td>
-        <td>
-          {NabOwned} {value}
-        </td>
+        <td>{NabOwned}</td>
         <td>
           {MER}
           <div>(${((value / 100) * MER).toFixed(2)})</div>

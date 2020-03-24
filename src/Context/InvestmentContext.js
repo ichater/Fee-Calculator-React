@@ -45,7 +45,7 @@ const InvestmentContextProvider = props => {
       id: 2,
       FundName: "MLC Wholesale Horizon 2 Income Portfolio",
       APIR: "MLC0670AU",
-      NabOwned: "#",
+      NabOwned: "",
       MER: 0.91,
       value: 0
     },
@@ -123,10 +123,30 @@ const InvestmentContextProvider = props => {
     }
   };
 
+  const nabFee = () => {
+    const ncheckedMF = [...checkedMF];
+    const ncheckedSMA = [...checkedSMA];
+    const total1 = () => {
+      const b = ncheckedMF.filter(ncheckedMF => ncheckedMF.NabOwned !== "");
+      const c = ncheckedSMA.filter(ncheckedSMA => ncheckedSMA.Nab !== "");
+      const a = b.concat(c);
+      if (a.length > 0) {
+        return a
+          .map(fund => (fund.value / 100) * 0.15)
+          .reduce((acc, cur) => acc + cur)
+          .toFixed(2);
+      } else {
+        return 0.0;
+      }
+    };
+    return total1();
+  };
+
   return (
     <InvestmentContext.Provider
       value={{
         inSpecieShares,
+        nabFee,
         setInSpecieShares,
         addShareSubmit,
         removeShareSumbit,
