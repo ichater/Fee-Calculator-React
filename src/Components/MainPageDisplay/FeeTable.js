@@ -1,24 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
 import { InvestmentContext } from "../../Context/InvestmentContext";
-import ListedFee from "./ListedFee";
 
 const FeeTable = () => {
   const { t1, t2, t3, totalFee, setTotalFee } = useContext(MainPageContext);
-  const { checkedShares } = useContext(InvestmentContext);
+  const { checkedShares, listedFee } = useContext(InvestmentContext);
   useEffect(() => {
     setTotalFee(parseFloat(t1) + parseFloat(t2) + parseFloat(t3));
   });
-  const listedFee = () => {
-    if (checkedShares.length > 0) {
-      return checkedShares
-        .map(Share => (Share.value / 100) * 0.1)
-        .reduce((acc, cur) => acc + cur)
-        .toFixed(2);
-    } else {
-      return 0;
-    }
-  };
+
   return (
     <>
       <table className="Fee-Table">

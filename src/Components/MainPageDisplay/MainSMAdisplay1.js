@@ -5,9 +5,9 @@ const SMAdisplay = props => {
   const { mainRemoveSMASumbit } = useContext(InvestmentContext);
   const { balance } = useContext(MainPageContext);
   const { Name, APIR, Nab, MER, id, value, checkedSMA, handleUpdate } = props;
-  const nabFee = (i, value) => {
+  const nabFee = i => {
     if (i !== "") {
-      return "$" + ((value / 100) * 0.1).toFixed(2);
+      return ((value / 100) * 0.15).toFixed(2);
     }
   };
   return (
@@ -17,7 +17,7 @@ const SMAdisplay = props => {
         <td>{APIR}</td>
         <td>
           {Nab}
-          {nabFee(Nab, value)}
+          {nabFee(Nab)}
         </td>
         <td>
           {MER}

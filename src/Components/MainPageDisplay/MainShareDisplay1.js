@@ -22,6 +22,7 @@ const ShareDisplay = props => {
         <td>{Category}</td>
         <td>{((value / balance) * 100).toFixed(2)} %</td>
         <td>
+          $
           <input
             type="number"
             value={value}

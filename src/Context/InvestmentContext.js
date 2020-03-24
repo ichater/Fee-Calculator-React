@@ -112,6 +112,17 @@ const InvestmentContextProvider = props => {
     setCheckedSMA(checkedSMA.filter(SMA => SMA.id !== id));
   };
 
+  const listedFee = () => {
+    if (checkedShares.length > 0) {
+      return checkedShares
+        .map(Share => (Share.value / 100) * 0.1)
+        .reduce((acc, cur) => acc + cur)
+        .toFixed(2);
+    } else {
+      return 0;
+    }
+  };
+
   return (
     <InvestmentContext.Provider
       value={{
@@ -136,7 +147,7 @@ const InvestmentContextProvider = props => {
         mainRemoveFundSumbit,
         mainRemoveShareSumbit,
         mainRemoveSMASumbit,
-
+        listedFee,
         showText1,
         setShowText1
       }}

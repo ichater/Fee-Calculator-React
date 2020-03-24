@@ -36,6 +36,10 @@
   width: 80%;
   border: none;
 }
+.investment-table__default-asx-table input {
+  width: 80%;
+  border: none;
+}
 
 .investment-table__default input:focus::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -84,6 +88,26 @@
   border-bottom: 1px solid black;
 }
 
+.investment-table__default-asx-table tr td:nth-child(1) {
+  width: 35%;
+}
+
+.investment-table__default-asx-table tr td:nth-child(2) {
+  width: 13%;
+}
+.investment-table__default-asx-table tr td:nth-child(3) {
+  width: 17%;
+}
+
+.investment-table__default-asx-table tr td:nth-child(4) {
+  width: 12%;
+}
+.investment-table__default-asx-table tr td:nth-child(5) {
+  width: 15%;
+}
+.investment-table__default-asx-table tr td:nth-child(6) {
+  width: 5%;
+}
 .investment-table__default tbody tr:nth-last-child(1) td {
   border-bottom: none;
 }
@@ -94,9 +118,6 @@
 
   width: 100%;
   border-collapse: collapse;
-}
-.investment-table__default-asx-table input {
-  width: 70%;
 }
 
 .investment-table__default-asx-table th {
@@ -109,27 +130,6 @@
 .investment-table__default-asx-table td {
   border: 1px solid black;
   padding: 5px;
-}
-
-.investment-table__default-asx-table tr td:nth-child(1) {
-  width: 35%;
-}
-
-.investment-table__default-asx-table tr td:nth-child(2) {
-  width: 8%;
-}
-.investment-table__default-asx-table tr td:nth-child(3) {
-  width: 14%;
-}
-
-.investment-table__default-asx-table tr td:nth-child(4) {
-  width: 10%;
-}
-.investment-table__default-asx-table tr td:nth-child(5) {
-  width: 12%;
-}
-.investment-table__default-asx-table tr td:nth-child(6) {
-  width: 5%;
 }
 
 .investment-table__default-asx-table thead tr {
