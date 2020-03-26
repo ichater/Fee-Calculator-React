@@ -53,6 +53,7 @@ const InspecieDisplay = ({ inSpecieMFs, inSpecieShares }) => {
                   <td>{fund.APIR}</td>
                   <td>{fund.NabOwned}</td>
                   <td>{fund.MER}</td>
+
                   <td
                     className="InSpecie-Delete"
                     onClick={() => removeFundSumbit(fund.id)}

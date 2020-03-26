@@ -13,17 +13,17 @@ const MainSMAdisplay = () => {
   };
   return (
     <>
-      <tbody>
-        {checkedSMA.map(checkedSMA => {
-          return (
-            <MainSMAdisplay1
-              key={checkedSMA.id}
-              {...checkedSMA}
-              handleUpdate={handleUpdate}
-            />
-          );
-        })}
-      </tbody>
+      {/* <tbody> */}
+      {checkedSMA.map(checkedSMA => {
+        return (
+          <MainSMAdisplay1
+            key={checkedSMA.id}
+            {...checkedSMA}
+            handleUpdate={handleUpdate}
+          />
+        );
+      })}
+      {/* </tbody> */}
     </>
   );
 };

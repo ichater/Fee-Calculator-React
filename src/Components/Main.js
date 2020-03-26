@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import AccountDetailsandSearch from "./MainPageDisplay/AccountDetailsandSearch";
-import MainSMAdisplayHeader from "./MainPageDisplay/MainSMADisplayHeader";
-import MainFundDisplay from "./MainPageDisplay/MainFundDisplay";
+import GroupInvestmentHeader from "./MainPageDisplay/GroupInvestmentHeader";
 import MainShareDisplay from "./MainPageDisplay/MainShareDisplay";
 import FeeTable from "./MainPageDisplay/FeeTable";
+import MainPageCashAccount from "./MainPageDisplay/MainPageCashAccount";
 
 const Main = () => {
   return (
@@ -12,9 +12,10 @@ const Main = () => {
       <div className="main-page_grid">
         <div className="Main-table-Left">
           <div className="Main-Tables-Wrapper">
-            <MainSMAdisplayHeader />
-            <MainFundDisplay />
+            <GroupInvestmentHeader />
+
             <MainShareDisplay />
+            <MainPageCashAccount />
           </div>
         </div>
         <div className="investment-info_right">

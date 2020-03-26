@@ -7,13 +7,14 @@ const InSpecieSharesInput = props => {
     [ASXcode, setASXCode] = useState(""),
     [Category, setCategory] = useState(""),
     [id, setId] = useState(),
+    value = 0,
     addShare = e => {
       e.preventDefault();
       setListedInvestmentName("");
       setASXCode("");
       setCategory("");
       setId(uuid());
-      addShareSubmit(ListedInvestmentName, ASXcode, Category, id);
+      addShareSubmit(ListedInvestmentName, ASXcode, Category, value, id);
     };
   return (
     <>

@@ -77,10 +77,10 @@ const InvestmentContextProvider = props => {
     }
   ]);
 
-  const addShareSubmit = (ListedInvestmentName, ASXcode, Category) => {
+  const addShareSubmit = (ListedInvestmentName, ASXcode, Category, value) => {
     setInSpecieShares([
       ...inSpecieShares,
-      { ListedInvestmentName, ASXcode, Category, id: uuid() }
+      { ListedInvestmentName, ASXcode, Category, id: uuid(), value }
     ]);
   };
 
@@ -89,10 +89,10 @@ const InvestmentContextProvider = props => {
     setCheckedShates(checkedShares.filter(asx => asx.id !== id));
   };
 
-  const addFundSubmit = (FundName, APIR, NabOwned, MER) => {
+  const addFundSubmit = (FundName, APIR, NabOwned, MER, value) => {
     setInSpecieMFs([
       ...inSpecieMFs,
-      { FundName, APIR, NabOwned, MER, id: uuid() }
+      { FundName, APIR, NabOwned, MER, id: uuid(), value }
     ]);
   };
   const removeFundSumbit = id => {
@@ -127,8 +127,8 @@ const InvestmentContextProvider = props => {
     const ncheckedMF = [...checkedMF];
     const ncheckedSMA = [...checkedSMA];
     const total1 = () => {
-      const b = ncheckedMF.filter(ncheckedMF => ncheckedMF.NabOwned !== "");
-      const c = ncheckedSMA.filter(ncheckedSMA => ncheckedSMA.Nab !== "");
+      const b = ncheckedMF.filter(ncheckedMF => ncheckedMF.NabOwned == "");
+      const c = ncheckedSMA.filter(ncheckedSMA => ncheckedSMA.Nab == "");
       const a = b.concat(c);
       if (a.length > 0) {
         return a
@@ -142,10 +142,26 @@ const InvestmentContextProvider = props => {
     return total1();
   };
 
+  const totalVal = () => {
+    const a = [...checkedMF];
+    const b = [...checkedSMA];
+    const c = [...checkedShares];
+    const d = a.concat(b).concat(c);
+    const e = d
+      .map(i => i.value)
+      .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
+    if (d.length > 0) {
+      return e;
+    } else {
+      return 0.0;
+    }
+  };
+
   return (
     <InvestmentContext.Provider
       value={{
         inSpecieShares,
+        totalVal,
         nabFee,
         setInSpecieShares,
         addShareSubmit,

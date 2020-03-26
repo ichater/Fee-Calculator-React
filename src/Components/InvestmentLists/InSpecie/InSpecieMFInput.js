@@ -9,13 +9,15 @@ const InSpecieMFInput = props => {
     [MER, setmfMer] = useState(""),
     [NabOwned] = useState(false),
     [id, setId] = useState(),
+    value = 0,
     addMF = e => {
       e.preventDefault();
       setMfName("");
       setMfAPIR("");
       setmfMer("");
       setId(uuid());
-      addFundSubmit(FundName, APIR, NabOwned, MER, id);
+      // setValue(0);
+      addFundSubmit(FundName, APIR, NabOwned, MER, value, id);
     };
   return (
     <>

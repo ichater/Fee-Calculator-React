@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 
-import { InvestmentContext } from "./../../Context/InvestmentContext";
+import { InvestmentContext } from "../../Context/InvestmentContext";
 import MainSMAdisplay from "./MainSMAdisplay";
+import MainFundDisplay from "./MainFundDisplay";
 
-const MainSMAdisplayHeader = () => {
-  const { checkedSMA } = useContext(InvestmentContext);
+const GroupInvestmentHeader = () => {
+  const { checkedSMA, checkedMF } = useContext(InvestmentContext);
+  const groupInvestments = checkedSMA.concat(checkedMF);
 
   return (
     <>
-      {checkedSMA.length && (
+      {groupInvestments.length > 0 && (
         <>
           <div className="Margin-Top_20px">
             <table className="investment-table__default">
@@ -22,15 +24,11 @@ const MainSMAdisplayHeader = () => {
                   <th>$ value</th>
                 </tr>
               </thead>
-              {/* <tbody>
-                {checkedSMA.map(checkedSMA => {
-                  return (
-                    <MainSMAdisplay1 key={checkedSMA.id} {...checkedSMA} />
-                  );
-                })}
-                
-              </tbody> */}
-              <MainSMAdisplay />
+
+              <tbody>
+                <MainSMAdisplay />
+                <MainFundDisplay />
+              </tbody>
             </table>
           </div>
         </>
@@ -39,4 +37,4 @@ const MainSMAdisplayHeader = () => {
   );
 };
 
-export default MainSMAdisplayHeader;
+export default GroupInvestmentHeader;

@@ -9,13 +9,13 @@ const MainFundDisplay = props => {
     <>
       {checkedMF.length && (
         <>
-          <table className="investment-table__default">
-            <tbody>
-              {checkedMF.map(checkedMF => {
-                return <MainFundDisplay1 key={checkedMF.id} {...checkedMF} />;
-              })}
-            </tbody>
-          </table>
+          {/* <table className="investment-table__default">
+            <tbody> */}
+          {checkedMF.map(checkedMF => {
+            return <MainFundDisplay1 key={checkedMF.id} {...checkedMF} />;
+          })}
+          {/* </tbody>
+          </table> */}
         </>
       )}
     </>
