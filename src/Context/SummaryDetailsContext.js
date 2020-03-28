@@ -25,9 +25,46 @@ const SummaryDetailsContextProvider = props => {
     [showText3, setShowText3] = useState(false),
     [menuActive, setMenuState] = useState(1);
   const [showPIncrease, setshowPIncrease] = useState(false);
+
+  function getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  }
+
+  function minimumPension(age, balance) {
+    if (age < 65) {
+      return (balance * 0.04).toFixed(2);
+    }
+    if (age >= 65 && age <= 74) {
+      return (balance * 0.05).toFixed(2);
+    }
+    if (age >= 75 && age <= 79) {
+      return (balance * 0.06).toFixed(2);
+    }
+    if (age >= 80 && age <= 84) {
+      return (balance * 0.07).toFixed(2);
+    }
+    if (age >= 85 && age <= 89) {
+      return (balance * 0.09).toFixed(2);
+    }
+    if (age >= 90 && age <= 94) {
+      return (balance * 0.11).toFixed(2);
+    }
+    if (age >= 95) {
+      return (balance * 0.14).toFixed(2);
+    }
+  }
   return (
     <SummaryDetailsContext.Provider
       value={{
+        minimumPension,
+        getAge,
         showText,
         setShowText,
         menuActive,

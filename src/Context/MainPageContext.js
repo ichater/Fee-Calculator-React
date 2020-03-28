@@ -9,8 +9,12 @@ const MainPageContextProvider = props => {
   const [t2, setT2] = useState(0);
   const [t3, setT3] = useState(0);
   const [totalFee, setTotalFee] = useState(0);
+  const [paymentType, setPaymentType] = useState("Nothing Selected");
+  const [paymentAmount, setPaymentAmount] = useState();
+  const [payMentFrequency, setPaymentFrequency] = useState();
+  const [perPensionPayment, setPerPensionPayment] = useState();
 
-  function feetable(balance) {
+  const feetable = balance => {
     if (balance == 0) {
       setT1(0);
     }
@@ -34,19 +38,65 @@ const MainPageContextProvider = props => {
       setT2(600);
       setT3(((balance - 500000) * 0.0003).toFixed(2));
     }
-  }
+  };
+  const annualPayment = minpen => {
+    if (paymentType == "Minimum") {
+      setPaymentAmount(minpen);
+      return <span>{paymentAmount}</span>;
+    } else if (paymentType == "Nominated") {
+      return (
+        <input
+          type="number"
+          onChange={e => setPaymentAmount(e.target.value)}
+        ></input>
+      );
+    } else {
+      return <> Please Select </>;
+    }
+  };
+
+  const payMentFrequencyFunction = () => {
+    if (payMentFrequency == "2 weeks") {
+      setPerPensionPayment((paymentAmount / 26).toFixed(2));
+    }
+    if (payMentFrequency == "Monthly") {
+      setPerPensionPayment((paymentAmount / 12).toFixed(2));
+    }
+    if (payMentFrequency == "Quarterly") {
+      setPerPensionPayment((paymentAmount / 4).toFixed(2));
+    }
+    if (payMentFrequency == "Bi-Yearly") {
+      setPerPensionPayment((paymentAmount / 2).toFixed(2));
+    }
+    if (payMentFrequency == "Yearly") {
+      setPerPensionPayment(paymentAmount);
+    }
+
+    return perPensionPayment;
+  };
 
   return (
     <MainPageContext.Provider
       value={{
         balance,
+        payMentFrequencyFunction,
         setBalance,
         feetable,
         t1,
         t2,
         t3,
         totalFee,
-        setTotalFee
+        setTotalFee,
+        paymentAmount,
+        setPaymentAmount,
+        paymentType,
+        setPaymentType,
+        annualPayment,
+        payMentFrequency,
+        setPaymentFrequency,
+
+        perPensionPayment,
+        setPerPensionPayment
       }}
     >
       {props.children}

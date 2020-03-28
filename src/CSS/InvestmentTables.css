@@ -160,6 +160,7 @@
   color: yellow;
   padding: 0.5rem 0.75rem;
   border-radius: 50%;
+  margin-left: 25%;
 }
 
 .alert-message:hover {

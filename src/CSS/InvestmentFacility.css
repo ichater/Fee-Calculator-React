@@ -1,0 +1,29 @@
+.Pension-Facility_Wrapper {
+  border: 1px solid black;
+  margin: auto;
+  width: 80%;
+}
+
+.Pension-Facility_Wrapper select {
+  width: 190px;
+  margin-right: 0.5rem;
+}
+
+.Pension-Facility_Wrapper h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.Pension-Facility_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* justify-items: center; */
+  margin-bottom: 2rem;
+  padding-left: 15%;
+}
+
+.Pension-Facility_grid-also {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 0.5rem;
+}

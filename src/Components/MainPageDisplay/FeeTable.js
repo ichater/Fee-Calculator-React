@@ -1,13 +1,31 @@
 import React, { useContext, useEffect } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
 import { InvestmentContext } from "../../Context/InvestmentContext";
+import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
 
 const FeeTable = () => {
-  const { t1, t2, t3, totalFee, setTotalFee } = useContext(MainPageContext);
+  const { t1, t2, t3, totalFee, setTotalFee, balance } = useContext(
+    MainPageContext
+  );
   const { listedFee, nabFee } = useContext(InvestmentContext);
+  const { accountType } = useContext(SummaryDetailsContext);
   useEffect(() => {
     setTotalFee(parseFloat(t1) + parseFloat(t2) + parseFloat(t3));
   });
+
+  const superFee = () => {
+    if (accountType == "Pension" || accountType == "Super") {
+      return (
+        <tr>
+          <td>Super admin fee</td>
+          <td>0.025</td>
+          <td>
+            ${(balance / 100) * 0.025 > 600 ? 600 : (balance / 100) * 0.025}
+          </td>
+        </tr>
+      );
+    }
+  };
 
   return (
     <>
@@ -46,9 +64,10 @@ const FeeTable = () => {
             <td>${listedFee()}</td>
           </tr>
           <tr>
-            <td colSpan="2">Total Fee:</td>
+            <td colSpan="2">Total Admin Fee:</td>
             <td>${totalFee}</td>
           </tr>
+          {superFee()}
         </tbody>
       </table>
     </>
