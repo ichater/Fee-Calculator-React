@@ -7,16 +7,14 @@ export default function AccountTypeDisplay() {
   const displayAccount = () => {
     if (accountType == "Pension") {
       return <PensionFacility />;
-    } else {
-      return <> Denada</>;
     }
   };
 
   return (
     <div className="Pension-Facility_Wrapper">
       {" "}
-      <PensionFacility />
-      {/* {displayAccount()} */}
+      {/* <PensionFacility /> */}
+      {displayAccount()}
     </div>
   );
 }

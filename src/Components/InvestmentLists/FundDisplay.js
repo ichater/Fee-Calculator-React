@@ -99,7 +99,9 @@ const FundDisplay = () => {
           {checkedMF.length && (
             <>
               <h2> Slected Funds:</h2>
-              <MainFundDisplay />
+              <table className="investment-table__default">
+                <MainFundDisplay />
+              </table>
             </>
           )}
         </div>

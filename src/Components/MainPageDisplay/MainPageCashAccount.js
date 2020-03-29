@@ -63,30 +63,37 @@ export default function MainPageCashAccount() {
                 &#33;
               </span>
             )}{" "}
-            <div> Minimum Cash ${minCash()}</div>
+            <div> Minimum Cash (1% of balance max 5k): ${minCash()}</div>
           </div>
         )}
-        {/* {accountType == "Pension" && ( */}
-        <>
-          {" "}
-          <div className={cashAccount() < minCash() && "Cash-Account-Alert"}>
-            Cash Account: {cashAccount()}{" "}
-            {cashAccount() < minCash() && (
-              <span
-                className="alert-message"
-                onClick={() =>
-                  alert(
-                    "Cash account below minimum, adjust balance or investment value"
-                  )
-                }
-              >
-                &#33;
-              </span>
-            )}{" "}
-            <div> Minimum Cash ${minCash()}</div> {pensionCashAccount()}{" "}
-          </div>{" "}
-        </>
-        // )}
+
+        {accountType == "Pension" && (
+          <>
+            {" "}
+            <div
+              className={
+                cashAccount() < minCash() + pensionCashAccount() &&
+                "Cash-Account-Alert"
+              }
+            >
+              Cash Account: {cashAccount()}{" "}
+              {cashAccount() < minCash() && (
+                <span
+                  className="alert-message"
+                  onClick={() =>
+                    alert(
+                      "Cash account below minimum, adjust balance or investment value"
+                    )
+                  }
+                >
+                  &#33;
+                </span>
+              )}{" "}
+              <div> Minimum Cash (1% of balance max 5k) ${minCash()}</div>{" "}
+              {pensionCashAccount()}{" "}
+            </div>{" "}
+          </>
+        )}
       </div>
     </>
   );

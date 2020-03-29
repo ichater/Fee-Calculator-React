@@ -4,7 +4,7 @@ import uuid from "uuid/v4";
 export const MainPageContext = createContext();
 
 const MainPageContextProvider = props => {
-  const [balance, setBalance] = useState(1000000);
+  const [balance, setBalance] = useState(0);
   const [t1, setT1] = useState(0);
   const [t2, setT2] = useState(0);
   const [t3, setT3] = useState(0);
@@ -36,7 +36,9 @@ const MainPageContextProvider = props => {
     if (balance > 500000) {
       setT1(800);
       setT2(600);
-      setT3(((balance - 500000) * 0.0003).toFixed(2));
+      ((balance - 500000) * 0.0003).toFixed(2) > 1000
+        ? setT3(1000)
+        : setT3(((balance - 500000) * 0.0003).toFixed(2));
     }
   };
   const annualPayment = minpen => {

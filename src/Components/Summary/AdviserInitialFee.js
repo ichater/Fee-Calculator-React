@@ -10,7 +10,7 @@ const AdviserInitialFee = () => {
   return (
     <div className="AdviserInitialFee-summary">
       <div>
-        {false && adviserInitialFee$ && (
+        {adviserInitialFee$ && (
           <span> Adviser Initial Service Fee: ${adviserInitialFee$}</span>
         )}
       </div>
