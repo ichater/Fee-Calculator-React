@@ -88,3 +88,18 @@
   margin-left: auto;
   margin-right: 20%;
 }
+
+.AdviserDetails2Expanded__grid-persentage-increase {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 17px;
+  margin-left: 20%;
+}
+
+.AdviserDetails2Expanded__grid-persentage-increase label {
+}
+
+/* body {
+  background-color: red;
+} */

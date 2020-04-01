@@ -33,12 +33,11 @@ const AdviserDetails2Expanded = props => {
               }
             }}
           />
-          <labal>Dollar based Fee</labal>
+          <labal>Dollar based Fee: $</labal>
         </div>
         {showText4 && (
           <>
             <div>
-              <span>$</span>
               <input
                 type="number"
                 onChange={e => setAdviserOngoingFee$("$" + e.target.value)}
@@ -64,14 +63,14 @@ const AdviserDetails2Expanded = props => {
               ></input>{" "}
               <label for="increase-no">no</label>
             </div>
-            {showTexti && (
-              <div>
-                <AdviserDetails2Expanded2
-                  setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
-                  setCpi={setCpi}
-                />
-              </div>
-            )}
+            {/* {showTexti && ( */}
+            <div>
+              <AdviserDetails2Expanded2
+                setadviserOngoingFeeIncrease={setadviserOngoingFeeIncrease}
+                setCpi={setCpi}
+              />
+            </div>
+            {/* )} */}
           </>
         )}
 

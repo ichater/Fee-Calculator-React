@@ -20,7 +20,7 @@ const AdviserDetails2 = () => {
           name="fee2"
           id="yes-fee2"
           onClick={() => setShowText(true)}
-          checked={setShowText(true)}
+          // checked={setShowText(true)}
         ></input>
         <label for="no-fee2">No</label>
         <input
@@ -28,7 +28,7 @@ const AdviserDetails2 = () => {
           name="fee2"
           id="no-fee2"
           onClick={() => setShowText(false)}
-          checked={setShowText}
+          // checked={setShowText(false)}
         ></input>
       </form>
       {showText && (

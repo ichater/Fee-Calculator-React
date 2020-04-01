@@ -6,7 +6,7 @@ const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
 
   return (
     <>
-      <div>
+      <div className="AdviserDetails2Expanded__grid-persentage-increase">
         <input
           name="setshowPIncrease"
           type="radio"
