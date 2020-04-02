@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
-import { InvestmentContext } from "../../Context/InvestmentContext";
+
 import { SummaryDetailsContext } from "./../../Context/SummaryDetailsContext";
-import PersonalDetails from "../Account-details/PersonalDetails";
 
 export default function PensionFacility() {
   const { dob, getAge, minimumPension } = useContext(SummaryDetailsContext);

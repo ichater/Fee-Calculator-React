@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import InspecieDisplay from "./InSpecie/InspecieDisplay";
 import InSpecieMF from "./InSpecie/InSpecieMF";
 import InSpecieShares from "./InSpecie/InSpecieShares";
@@ -10,16 +10,15 @@ import { InvestmentContext } from "../../Context/InvestmentContext";
 const InSpecie = () => {
   const {
     inSpecieShares,
-    setInSpecieShares,
+
     addShareSubmit,
-    removeShareSumbit,
+
     showShares,
     setShowShares,
     showMFs,
     setShowMFs,
     addFundSubmit,
-    inSpecieMFs,
-    setInSpecieMFs
+    inSpecieMFs
   } = useContext(InvestmentContext);
 
   return (

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MainPageContext } from "./../../Context/MainPageContext";
 
 const AccountDetailsandSearch = () => {
-  const { balance, setBalance, feetable } = useContext(MainPageContext);
+  const { balance } = useContext(MainPageContext);
 
   return (
     <>

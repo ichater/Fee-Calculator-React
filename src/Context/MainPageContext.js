@@ -1,5 +1,4 @@
 import React, { createContext, useState } from "react";
-import uuid from "uuid/v4";
 
 export const MainPageContext = createContext();
 
@@ -15,7 +14,7 @@ const MainPageContextProvider = props => {
   const [perPensionPayment, setPerPensionPayment] = useState();
 
   const feetable = balance => {
-    if (balance == 0) {
+    if (balance === 0) {
       setT1(0);
     }
     if (balance > 1 && balance < 93750) {
@@ -42,10 +41,10 @@ const MainPageContextProvider = props => {
     }
   };
   const annualPayment = minpen => {
-    if (paymentType == "Minimum") {
+    if (paymentType === "Minimum") {
       setPaymentAmount(minpen);
       return <span>{paymentAmount}</span>;
-    } else if (paymentType == "Nominated") {
+    } else if (paymentType === "Nominated") {
       return (
         <input
           type="number"
@@ -58,19 +57,19 @@ const MainPageContextProvider = props => {
   };
 
   const payMentFrequencyFunction = () => {
-    if (payMentFrequency == "2 weeks") {
+    if (payMentFrequency === "2 weeks") {
       setPerPensionPayment((paymentAmount / 26).toFixed(2));
     }
-    if (payMentFrequency == "Monthly") {
+    if (payMentFrequency === "Monthly") {
       setPerPensionPayment((paymentAmount / 12).toFixed(2));
     }
-    if (payMentFrequency == "Quarterly") {
+    if (payMentFrequency === "Quarterly") {
       setPerPensionPayment((paymentAmount / 4).toFixed(2));
     }
-    if (payMentFrequency == "Bi-Yearly") {
+    if (payMentFrequency === "Bi-Yearly") {
       setPerPensionPayment((paymentAmount / 2).toFixed(2));
     }
-    if (payMentFrequency == "Yearly") {
+    if (payMentFrequency === "Yearly") {
       setPerPensionPayment(paymentAmount);
     }
 

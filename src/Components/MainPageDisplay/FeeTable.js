@@ -14,7 +14,7 @@ const FeeTable = () => {
   });
 
   const superFee = () => {
-    if (accountType == "Pension" || accountType == "Super") {
+    if (accountType === "Pension" || accountType === "Super") {
       return (
         <tr>
           <td>Super admin fee</td>

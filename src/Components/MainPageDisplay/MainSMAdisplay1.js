@@ -4,7 +4,7 @@ import { MainPageContext } from "../../Context/MainPageContext";
 const SMAdisplay = props => {
   const { mainRemoveSMASumbit } = useContext(InvestmentContext);
   const { balance } = useContext(MainPageContext);
-  const { Name, APIR, Nab, MER, id, value, checkedSMA, handleUpdate } = props;
+  const { Name, APIR, Nab, MER, id, value, handleUpdate } = props;
 
   return (
     <>

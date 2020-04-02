@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AccountDetailsandSearch from "./MainPageDisplay/AccountDetailsandSearch";
 import GroupInvestmentHeader from "./MainPageDisplay/GroupInvestmentHeader";
 import MainShareDisplay from "./MainPageDisplay/MainShareDisplay";

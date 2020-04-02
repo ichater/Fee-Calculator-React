@@ -14,6 +14,7 @@ const AccountDetails = () => {
         <h1>Fill out Details Below</h1>
         <img
           className="Account-Details_MLC-logo"
+          alt="mlc logo"
           src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/MLC_Limited_logo.svg/1200px-MLC_Limited_logo.svg.png"
         />
       </div>

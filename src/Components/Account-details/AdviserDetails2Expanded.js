@@ -11,7 +11,6 @@ const AdviserDetails2Expanded = props => {
   } = props;
 
   const {
-    showTexti,
     setShowTexti,
     showText4,
     setShowText4,

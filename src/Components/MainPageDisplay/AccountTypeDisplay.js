@@ -5,7 +5,7 @@ export default function AccountTypeDisplay() {
   const { accountType } = useContext(SummaryDetailsContext);
 
   const displayAccount = () => {
-    if (accountType == "Pension") {
+    if (accountType === "Pension") {
       return <PensionFacility />;
     }
   };

@@ -63,8 +63,8 @@ const InvestmentContextProvider = props => {
     const ncheckedMF = [...checkedMF];
     const ncheckedSMA = [...checkedSMA];
     const total1 = () => {
-      const b = ncheckedMF.filter(ncheckedMF => ncheckedMF.NabOwned == "");
-      const c = ncheckedSMA.filter(ncheckedSMA => ncheckedSMA.Nab == "");
+      const b = ncheckedMF.filter(ncheckedMF => ncheckedMF.NabOwned === "");
+      const c = ncheckedSMA.filter(ncheckedSMA => ncheckedSMA.Nab === "");
       const a = b.concat(c);
       if (a.length > 0) {
         return a
@@ -86,7 +86,7 @@ const InvestmentContextProvider = props => {
     // const e = d
     //   .map(i => i.value)
     //   .reduce((acc, cur) => parseInt(acc) + parseInt(cur));
-    if (d.length == 0) {
+    if (d.length === 0) {
       return 0.0;
     } else {
       return d

@@ -20,7 +20,7 @@ export default function MainPageCashAccount() {
   };
 
   const cashAccount = () => {
-    if (balance - totalVal() == 0) {
+    if (balance - totalVal() === 0) {
       return 0;
     } else {
       return balance - totalVal();
@@ -28,7 +28,7 @@ export default function MainPageCashAccount() {
   };
 
   const pensionCashAccount = () => {
-    if (payMentFrequency == "2 weeks" || payMentFrequency == "Monthly") {
+    if (payMentFrequency === "2 weeks" || payMentFrequency === "Monthly") {
       return (
         <>
           <div>Upcoming pension Payments: ${perPensionPayment * 2}</div>
@@ -67,7 +67,7 @@ export default function MainPageCashAccount() {
           </div>
         )}
 
-        {accountType == "Pension" && (
+        {accountType === "Pension" && (
           <>
             {" "}
             <div
