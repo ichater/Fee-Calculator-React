@@ -1,6 +1,36 @@
 input[type="checkbox"] {
-  display: block;
-  margin: 0.2em;
+  display: none;
+}
+
+.Mlc-checkbox-container {
+  display: inline-block;
   cursor: pointer;
-  padding: 0.2em;
+}
+
+.Mlc-checkbox-container:hover .checkMark {
+  background-color: rosybrown;
+}
+
+.checkMark {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 5px;
+  background-color: #c95109;
+  border: 1px solid black;
+}
+
+.Mlc-checkbox-container input:checked + .checkMark {
+  background-color: #017780;
+  border: 1px solid yellow;
+}
+
+.Mlc-checkbox-container input:checked + .checkMark:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 10px;
+  border-left: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+  transform: translate(20%, 50%) rotate(-45deg);
 }

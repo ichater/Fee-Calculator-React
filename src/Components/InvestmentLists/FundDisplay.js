@@ -56,7 +56,7 @@ const FundDisplay = () => {
                 return (
                   <tr key={fund.id}>
                     <td>
-                      <label>
+                      <label className="Mlc-checkbox-container">
                         <input
                           onChange={e => {
                             let checked = e.target.checked;
@@ -75,6 +75,7 @@ const FundDisplay = () => {
                             .map(checkedFund => checkedFund.id)
                             .includes(fund.id)}
                         />
+                        <span className="checkMark"></span>
                       </label>
                     </td>
                     <td>{fund.FundName} </td>

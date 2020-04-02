@@ -49,25 +49,28 @@ const ShareDisplay = () => {
               return (
                 <tr>
                   <td>
-                    <input
-                      onChange={e => {
-                        let checked = e.target.checked;
-                        if (checked) {
-                          setCheckedShates([...checkedShares, investment1]);
-                        } else {
-                          setCheckedShates(
-                            checkedShares.filter(
-                              checkedInvestment1 =>
-                                checkedInvestment1.id !== investment1.id
-                            )
-                          );
-                        }
-                      }}
-                      type="checkbox"
-                      checked={checkedShares
-                        .map(i => i.id)
-                        .includes(investment1.id)}
-                    />
+                    <label className="Mlc-checkbox-container">
+                      <input
+                        onChange={e => {
+                          let checked = e.target.checked;
+                          if (checked) {
+                            setCheckedShates([...checkedShares, investment1]);
+                          } else {
+                            setCheckedShates(
+                              checkedShares.filter(
+                                checkedInvestment1 =>
+                                  checkedInvestment1.id !== investment1.id
+                              )
+                            );
+                          }
+                        }}
+                        type="checkbox"
+                        checked={checkedShares
+                          .map(i => i.id)
+                          .includes(investment1.id)}
+                      />
+                      <span className="checkMark"></span>
+                    </label>
                   </td>
                   <td>{investment1.ASXcode}</td>
                   <td>{investment1.ListedInvestmentName}</td>

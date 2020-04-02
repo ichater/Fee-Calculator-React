@@ -30,24 +30,27 @@ const InspecieDisplay = ({ inSpecieMFs, inSpecieShares }) => {
               return (
                 <tr key={fund.id}>
                   <td>
-                    <input
-                      onChange={e => {
-                        let checked = e.target.checked;
-                        if (checked) {
-                          setCheckedMF([...checkedMF, fund]);
-                        } else {
-                          setCheckedMF(
-                            checkedMF.filter(
-                              checkedFund => checkedFund.id !== fund.id
-                            )
-                          );
-                        }
-                      }}
-                      type="checkbox"
-                      checked={checkedMF
-                        .map(checkedFund => checkedFund.id)
-                        .includes(fund.id)}
-                    />
+                    <label className="Mlc-checkbox-container">
+                      <input
+                        onChange={e => {
+                          let checked = e.target.checked;
+                          if (checked) {
+                            setCheckedMF([...checkedMF, fund]);
+                          } else {
+                            setCheckedMF(
+                              checkedMF.filter(
+                                checkedFund => checkedFund.id !== fund.id
+                              )
+                            );
+                          }
+                        }}
+                        type="checkbox"
+                        checked={checkedMF
+                          .map(checkedFund => checkedFund.id)
+                          .includes(fund.id)}
+                      />
+                      <span className="checkMark"></span>
+                    </label>
                   </td>
                   <td>{fund.FundName}</td>
                   <td>{fund.APIR}</td>
@@ -81,22 +84,27 @@ const InspecieDisplay = ({ inSpecieMFs, inSpecieShares }) => {
               return (
                 <tr key={share.id}>
                   <td>
-                    <input
-                      onChange={e => {
-                        let checked = e.target.checked;
-                        if (checked) {
-                          setCheckedShates([...checkedShares, share]);
-                        } else {
-                          setCheckedShates(
-                            checkedShares.filter(
-                              checkedshare => checkedshare.id !== share.id
-                            )
-                          );
-                        }
-                      }}
-                      type="checkbox"
-                      checked={checkedShares.map(i => i.id).includes(share.id)}
-                    />
+                    <label className="Mlc-checkbox-container">
+                      <input
+                        onChange={e => {
+                          let checked = e.target.checked;
+                          if (checked) {
+                            setCheckedShates([...checkedShares, share]);
+                          } else {
+                            setCheckedShates(
+                              checkedShares.filter(
+                                checkedshare => checkedshare.id !== share.id
+                              )
+                            );
+                          }
+                        }}
+                        type="checkbox"
+                        checked={checkedShares
+                          .map(i => i.id)
+                          .includes(share.id)}
+                      />{" "}
+                      <span className="checkMark"></span>
+                    </label>
                   </td>
 
                   <td>{share.ASXcode}</td>

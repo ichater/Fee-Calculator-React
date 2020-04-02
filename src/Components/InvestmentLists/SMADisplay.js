@@ -52,7 +52,7 @@ const SMAdisplay = () => {
                 return (
                   <tr key={investment.id}>
                     <td>
-                      <label>
+                      <label className="Mlc-checkbox-container">
                         <input
                           onChange={e => {
                             let checked = e.target.checked;
@@ -73,6 +73,7 @@ const SMAdisplay = () => {
                             .map(checkedInvestment => checkedInvestment.id)
                             .includes(investment.id)}
                         />
+                        <span className="checkMark"></span>
                       </label>
                     </td>
                     <td>{investment.Name}</td>
