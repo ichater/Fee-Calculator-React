@@ -1,4 +1,4 @@
-input[type="checkbox"] {
+.Mlc-checkbox-container input[type="checkbox"] {
   display: none;
 }
 
@@ -8,13 +8,15 @@ input[type="checkbox"] {
 }
 
 .Mlc-checkbox-container:hover .checkMark {
-  background-color: rosybrown;
+  background-color: #017780;
+  border: 1px solid yellow;
+  transition-duration: 0.5s;
 }
 
 .checkMark {
   display: inline-block;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 5px;
   background-color: #c95109;
   border: 1px solid black;
@@ -23,6 +25,7 @@ input[type="checkbox"] {
 .Mlc-checkbox-container input:checked + .checkMark {
   background-color: #017780;
   border: 1px solid yellow;
+  transition-duration: 0.8s;
 }
 
 .Mlc-checkbox-container input:checked + .checkMark:after {

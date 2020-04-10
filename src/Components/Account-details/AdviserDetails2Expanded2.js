@@ -6,19 +6,20 @@ const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
 
   return (
     <>
-      <div className="AdviserDetails2Expanded__grid-persentage-increase">
-        <input
-          name="setshowPIncrease"
-          type="radio"
-          for="setshowPIncrease"
-          onChange={() => setshowPIncrease(true)}
-
-          // onClick={() => setCpi(false)}
-        />
-        <label id="setshowPIncrease">Increase by %</label>
+      <div className="Two-fr-grid1">
+        <label id="setshowPIncrease">
+          <input
+            name="setshowPIncrease"
+            type="radio"
+            for="setshowPIncrease"
+            onChange={() => setshowPIncrease(true)}
+          />
+          Increase by %
+        </label>
         {showPIncrease && (
           <>
             <input
+              className="inline-input"
               type="number"
               onChange={e =>
                 setadviserOngoingFeeIncrease(
@@ -29,7 +30,8 @@ const AdviserDetails2Expanded2 = ({ setadviserOngoingFeeIncrease, setCpi }) => {
           </>
         )}
       </div>
-      or
+      <div> or</div>
+
       <input
         type="radio"
         name="setshowPIncrease"

@@ -40,44 +40,46 @@ const ShareDisplay = () => {
         <div className="Investment-select-wrapper">
           <table>
             <tr>
-              <th>Select</th>
+              <th></th>
               <th>ASX</th>
               <th>Name</th>
               <th>Category</th>
             </tr>
-            {searchResults.map(investment1 => {
-              return (
-                <tr>
-                  <td>
-                    <label className="Mlc-checkbox-container">
-                      <input
-                        onChange={e => {
-                          let checked = e.target.checked;
-                          if (checked) {
-                            setCheckedShates([...checkedShares, investment1]);
-                          } else {
-                            setCheckedShates(
-                              checkedShares.filter(
-                                checkedInvestment1 =>
-                                  checkedInvestment1.id !== investment1.id
-                              )
-                            );
-                          }
-                        }}
-                        type="checkbox"
-                        checked={checkedShares
-                          .map(i => i.id)
-                          .includes(investment1.id)}
-                      />
-                      <span className="checkMark"></span>
-                    </label>
-                  </td>
-                  <td>{investment1.ASXcode}</td>
-                  <td>{investment1.ListedInvestmentName}</td>
-                  <td>{investment1.Category}</td>
-                </tr>
-              );
-            })}
+            <tbody>
+              {searchResults.map(investment1 => {
+                return (
+                  <tr>
+                    <td>
+                      <label className="Mlc-checkbox-container">
+                        <input
+                          onChange={e => {
+                            let checked = e.target.checked;
+                            if (checked) {
+                              setCheckedShates([...checkedShares, investment1]);
+                            } else {
+                              setCheckedShates(
+                                checkedShares.filter(
+                                  checkedInvestment1 =>
+                                    checkedInvestment1.id !== investment1.id
+                                )
+                              );
+                            }
+                          }}
+                          type="checkbox"
+                          checked={checkedShares
+                            .map(i => i.id)
+                            .includes(investment1.id)}
+                        />
+                        <span className="checkMark"></span>
+                      </label>
+                    </td>
+                    <td>{investment1.ASXcode}</td>
+                    <td>{investment1.ListedInvestmentName}</td>
+                    <td>{investment1.Category}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
         <div className="Investment-Selected-Wrapper">

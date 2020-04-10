@@ -15,17 +15,20 @@ const AdviserDetails1Expanded = () => {
   return (
     <div className="AdviserDetails1Expanded__grid">
       <div>
-        <input
-          type="checkbox"
-          onChange={e => {
-            if (e.target.checked === true) {
-              setShowText2(true);
-            } else {
-              setShowText2(false);
-            }
-          }}
-        ></input>
-        <labal>Dollar based Fee</labal>
+        <label>
+          <input
+            className="Main-Page-Checkbox"
+            type="checkbox"
+            onChange={e => {
+              if (e.target.checked === true) {
+                setShowText2(true);
+              } else {
+                setShowText2(false);
+              }
+            }}
+          ></input>
+          Dollar based Fee
+        </label>
       </div>
       {showText2 && (
         <div>

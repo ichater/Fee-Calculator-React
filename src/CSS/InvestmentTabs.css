@@ -17,6 +17,8 @@
 
 .investmentList-tabs :nth-child(n):hover {
   cursor: pointer;
+  background-color: #017780;
+  color: white;
 }
 
 .investmentList-tabs .selectedTab2 {

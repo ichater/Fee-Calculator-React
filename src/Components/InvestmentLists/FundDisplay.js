@@ -44,7 +44,7 @@ const FundDisplay = () => {
           <table>
             <thead>
               <tr>
-                <th>Select</th>
+                <th></th>
                 <th>Name</th>
                 <th>APIR</th>
                 <th>Nab</th>

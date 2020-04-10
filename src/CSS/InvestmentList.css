@@ -49,3 +49,25 @@
   overflow: scroll;
   padding-right: 15%;
 }
+
+.Investment-select-wrapper1 table {
+  margin: auto;
+  width: 80%;
+}
+
+.Investment-select-wrapper1 table tbody tr td:nth-child(1) label {
+  margin-left: 45%;
+}
+
+.Investment-select-wrapper table {
+  margin: auto;
+  width: 80%;
+}
+
+.Investment-select-wrapper table tbody tr td:nth-child(1) label {
+  margin-left: 15%;
+}
+
+.Investment-select-wrapper table tbody tr td:nth-child(1) label {
+  margin-left: 15%;
+}
